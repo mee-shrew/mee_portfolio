@@ -34,6 +34,13 @@
     ::selection{background:#141412;color:#f8f5f0}
     [data-slider]::-webkit-scrollbar{display:none}
     @keyframes star-spin{to{transform:rotate(360deg)}}
+    @keyframes gb-drift1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(22cqw,14cqh) scale(1.15)}66%{transform:translate(-16cqw,24cqh) scale(.9)}}
+    @keyframes gb-drift2{0%,100%{transform:translate(0,0) scale(1)}40%{transform:translate(30cqw,-20cqh) scale(1.18)}75%{transform:translate(10cqw,10cqh) scale(.92)}}
+    @keyframes au-haze{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-6cqw,8cqh) scale(1.15)}}
+    @keyframes au-breathe{0%{transform:scale(1)}100%{transform:scale(1.06)}}
+    @keyframes au-spin{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+    @keyframes sg-flow{0%{background-position:50% 0%}100%{background-position:50% 100%}}
+    @keyframes gb-drift3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-26cqw,28cqh) scale(1.2)}}
   </style>
 </helmet>
 <div style="position: relative; min-height: 100vh; background: var(--color-cream); overflow-x: clip">
@@ -149,7 +156,7 @@
       <div ref="{{ trackRef }}" onScroll="{{ onTrackScroll }}" data-slider="" style="display:flex;gap:{{ slideGap }};overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:80px 0 10px;margin-top:-80px">
         <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
           <div data-rv="40" data-delay="{{ p.delay }}" data-count="{{ p.id }}" style="min-width:0;flex:0 0 {{ slideW }};scroll-snap-align:start">
-            <div id="{{ p.id }}" data-screen-label="{{ p.label }}" style="display:flex;flex-direction:column">
+            <div id="{{ p.id }}" data-screen-label="{{ p.label }}" style="display:flex;flex-direction:column;height:100%">
               <div style="display:flex;justify-content:center;padding:25px 0 20px;border-radius:20px;background:var(--color-sand)">
                 <x-import component="GlassFolder" from="./glass-folder.jsx" dc-props="{{ p.folder }}" hint-size="320px,360px"></x-import>
               </div>
@@ -170,7 +177,7 @@
                   </div>
                 </sc-for>
               </div>
-              <button onClick="{{ p.open }}" style="align-self:flex-start;margin-top:25px;display:inline-flex;align-items:center;gap:8px;padding:0;border:0;background:none;cursor:pointer;font:500 14px/1 var(--font-body);color:var(--color-ink);transition:color .2s, gap .25s" style-hover="color:var(--color-orange);gap:12px">프로젝트 자세히 보기<x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-right" size="{{ 16 }}" hint-size="16px,16px"></x-import></button>
+              <span aria-hidden="true" style="flex:1 0 25px"></span><button onClick="{{ p.open }}" style="align-self:flex-start;height:44px;display:inline-flex;align-items:center;gap:12px;padding:0 6px 0 18px;border:0;border-radius:100px;background:var(--color-white);cursor:pointer;font:500 14px/1 var(--font-body);color:var(--color-ink);transition:background .2s" style-hover="background:var(--color-sand)">프로젝트 자세히 보기<span style="width:32px;height:32px;border-radius:50%;background:var(--color-orange);color:var(--color-ink);display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-right" size="{{ 14 }}" hint-size="14px,14px"></x-import></span></button>
             </div>
           </div>
         </sc-for>
@@ -276,15 +283,18 @@
             <div aria-hidden="true" style="position:absolute;right:0;bottom:0;width:clamp(120px, 13vw, 200px);height:clamp(120px, 13vw, 200px);pointer-events:none">{{ star }}</div>
           </sc-if>
           <div data-rv="40" style="min-width:0;width:100%;max-width:{{ cardMax }};position:{{ cardPos }}">
-            <div style="position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;background:var(--color-ink)">
+            <div style="position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;background:{{ procCardBg }};transition:background-color .8s cubic-bezier(.4,0,.2,1);isolation:isolate">
               <sc-for list="{{ steps }}" as="s" hint-placeholder-count="1">
                 <div aria-hidden="{{ s.hidden }}" style="position:absolute;inset:0;opacity:{{ s.layerOpacity }};transition:opacity .8s cubic-bezier(.4,0,.2,1)">
-                  <div style="position:absolute;left:25px;top:25px;right:25px;display:flex;justify-content:space-between;align-items:center;font:500 13px/1 var(--font-body);color:var(--color-stone)">
-                    <span style="display:inline-flex;align-items:center;gap:8px;color:var(--color-cream)"><i style="width:6px;height:6px;border-radius:50%;background:var(--color-orange)"></i>{{ s.key }}</span>
+                  <sc-if value="{{ s.hasBg }}" hint-placeholder-val="{{ false }}">{{ grainBg }}</sc-if>
+                  <sc-if value="{{ s.hasStripe }}" hint-placeholder-val="{{ false }}">{{ stripeBg }}</sc-if>
+                  <sc-if value="{{ s.hasAurora }}" hint-placeholder-val="{{ false }}">{{ auroraBg }}</sc-if>
+                  <div style="position:absolute;left:25px;top:25px;right:25px;display:flex;justify-content:space-between;align-items:center;font:500 13px/1 var(--font-body);color:{{ s.sub }}">
+                    <span style="display:inline-flex;align-items:center;gap:8px;color:{{ s.fg }}"><i style="width:6px;height:6px;border-radius:50%;background:var(--color-orange)"></i>{{ s.key }}</span>
                     <span style="font-variant-numeric:tabular-nums">{{ s.no }} / 03</span>
                   </div>
                   <div style="position:absolute;left:25px;right:25px;bottom:25px;transform:{{ s.textShift }};transition:transform 1s cubic-bezier(.16,1,.3,1)">
-                    <span style="display:block;font:500 clamp(56px, 6.4vw, 96px)/1 var(--font-display);letter-spacing:-.04em;color:var(--color-cream)">{{ s.en }}</span>
+                    <span style="display:block;font:500 clamp(56px, 6.4vw, 96px)/1 var(--font-display);letter-spacing:-.04em;color:{{ s.fg }}">{{ s.en }}</span>
                   </div>
                 </div>
               </sc-for>
@@ -392,7 +402,7 @@
 const PROJECTS = [
   { id: "beautypin", no: "01", name: "뷰티핀", cat: "웹·서비스", company: "스타닥", year: "2025", order: 2,
     summary: "외국인 관광객에게 직접 묻고, 그 답으로 필요한 서비스를 더해 Shopify로 구현한 프로젝트",
-    kpis: [{ value: "약 1억 원", label: "뷰티핀으로 예약한 외국인 고객으로, 제휴 피부과 한 곳이 시술 매출 약 1억 원을 냈어요" }],
+    kpis: [{ value: "약 1억 원", label: "뷰티핀으로 예약한 외국인 고객으로, 제휴 피부과 한 곳이 시술 매출 약 1억 원을 냈습니다" }],
     image: "뷰티핀 메인 화면 캡처 (데스크톱 + 모바일)" },
   { id: "beaver-lab", no: "02", name: "비버매장연구소", cat: "공간·경험", company: "비버웍스", year: "2023", order: 1,
     summary: "신규 브랜드 비버매장연구소를 박람회에서 처음 알리기 위해, 브랜딩부터 부스·체험존·인쇄물 디자인과 현장까지 함께한 프로젝트",
@@ -400,11 +410,11 @@ const PROJECTS = [
     image: "코엑스 박람회 부스 전경 사진" },
   { id: "unospay", no: "03", name: "우노스페이", cat: "웹·서비스", company: "우노스", year: "2022", order: 0,
     summary: "실무자의 업무 과중을 문제로 보고, 리서치로 원인을 찾아 정보 구조와 운영 방식까지 다시 설계한 홈페이지 리디자인 프로젝트",
-    kpis: [{ value: "상담 설명이 수월해졌어요", quote: true, label: "리디자인 후 영업팀에게 '상담 설명이 수월해졌다'는 피드백을 받았어요" }],
+    kpis: [{ value: "상담 설명이 수월해졌어요", quote: true, label: "리디자인 후 영업팀에게 '상담 설명이 수월해졌다'는 피드백을 받았습니다" }],
     image: "우노스페이 홈페이지 화면" },
   { id: "elije", no: "04", name: "엘리쥬", cat: "콘텐츠", company: "스타닥", year: "2025", order: 3,
     summary: "로고와 방향성만 있던 신제품에 콘셉트 사진과 메시지를 만들고, 상담 랜딩페이지부터 박람회 부스까지 하나의 톤으로 이어간 프로젝트",
-    kpis: [{ value: "피부에 빛을 불어넣다", quote: true, label: "지금까지도(~2026) 브랜드 메시지와 콘셉트 사진으로 쓰이고 있어요" }],
+    kpis: [{ value: "피부에 빛을 불어넣다", quote: true, label: "지금까지도(~2026) 브랜드 메시지와 콘셉트 사진으로 쓰이고 있습니다" }],
     image: "스튜디오 콘셉트 사진 (맑은 톤의 제품 컷)" }
 ];
 const SOFT = { soft: true, style: "marble", scale: 0.2, warp: 0.45, gloss: 0, veins: 0 };
@@ -465,7 +475,7 @@ const QNA = [
   { q: "요즘 가장 관심 있는 건 무엇인가요?", a: "디자이너가 직접 만들 수 있는 범위가 어디까지 넓어질 수 있는지에 관심이 많습니다. 요즘은 간단한 랜딩페이지를 혼자서도 구현부터 배포까지 할 수 있도록 AI와 함께 공부하고 있습니다." }
 ];
 const DETAIL = { beautypin: "beautipin.html", "beaver-lab": "beaver.html", unospay: "unospay.html", elije: "elreju.html" };
-const EMAIL = "9606kimmi@naver.com";
+const EMAIL = "9606kimmi@gmail.com";
 const EASE = "cubic-bezier(.16,1,.3,1)";
 
 class Component extends DCLogic {
@@ -681,6 +691,7 @@ class Component extends DCLogic {
     const wide = w >= 860;
     const act = wide ? (s.step ?? 0) : -1;
     const steps = STEPS.map((st, i) => { const on = act === -1 || act === i, cur = wide ? act === i : i === 0; return { ...st, i,
+      hasBg: i === 0, hasStripe: i === 1, hasAurora: i === 2, fg: "var(--color-ink)", sub: "rgba(20,20,18,.6)",
       layerOpacity: cur ? 1 : 0, hidden: cur ? "false" : "true", textShift: cur ? "none" : "translateY(16px)",
       rowOpacity: wide ? (cur ? 1 : 0) : 1, rowShift: wide && !cur ? (i < act ? "translateY(-12px)" : "translateY(12px)") : "none",
       rowEvents: wide && !cur ? "none" : "auto", rowHidden: wide && !cur ? "true" : "false",
@@ -717,6 +728,55 @@ class Component extends DCLogic {
         color: on ? "var(--color-ink)" : "var(--color-stone)", edge: i === SHELF.length - 1 ? "0 solid transparent" : "1px solid var(--color-line)",
         select: () => { if (s.shelfOpen !== i) this.setState({ shelfOpen: i }); },
         hover: e => { if (e.pointerType === "mouse" && this.state.shelfOpen !== i) this.setState({ shelfOpen: i }); } }; }),
+      procCardBg: ["#EBE5DC", "#D3DAE5", "#F3C9B4"][wide ? (s.step ?? 0) : 0],
+      auroraBg: this.auroraEl3 || (this.auroraEl3 = (() => {
+        const h = React.createElement;
+        const still = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const an = v => (still ? "none" : v);
+        const haze = (k, st, a) => h("div", { key: k, style: { position: "absolute", borderRadius: "50%", filter: "blur(13cqmax)", willChange: "transform", animation: an(a), ...st } });
+        const ring = (k, size, inn, m1, m2, op, dur, rev) => {
+          const mask = `radial-gradient(closest-side, transparent ${inn}, #000 ${m1}, #000 ${m2}, transparent 100%)`;
+          return h("div", { key: k, style: { position: "absolute", width: size, height: size, borderRadius: "50%", transform: "translate(-50%, -50%)",
+            background: "conic-gradient(from 0deg, #EFB196 0deg, #F3C9B4 50deg, #F4D9C2 95deg, #E8D6CF 140deg, #D3DAE5 185deg, #E3E1EA 220deg, #F3C9B4 270deg, #EFB196 315deg, #EFB196 360deg)",
+            WebkitMask: mask, mask, filter: "blur(3cqmin)", opacity: op, willChange: "transform", animation: an(`au-spin ${dur} linear infinite${rev ? " reverse" : ""}`) } });
+        };
+        return h("div", { "aria-hidden": "true", style: { position: "absolute", inset: 0, overflow: "hidden", containerType: "size", background: "linear-gradient(170deg, #F4D9C2 0%, #EFB196 35%, #F3C9B4 62%, #E8D6CF 84%, #D3DAE5 100%)" } },
+          haze("blue", { width: "75cqmax", height: "55cqmax", left: "-30cqmax", bottom: "-32cqmax", background: "#D3DAE5", opacity: .7 }, "au-haze 6s ease-in-out infinite alternate-reverse"),
+          haze("peach", { width: "85cqmax", height: "72cqmax", left: "-25cqmax", top: "0%", background: "#EFB196", opacity: .95 }, "au-haze 5.5s ease-in-out infinite alternate"),
+          haze("lav", { width: "85cqmax", height: "70cqmax", right: "-30cqmax", top: "-20cqmax", background: "#E3E1EA", opacity: .9 }, "au-haze 5s ease-in-out infinite alternate"),
+          h("div", { key: "rings", style: { position: "absolute", left: "108%", top: "56%", width: 0, height: 0, animation: an("au-breathe 4s ease-in-out infinite alternate") } },
+            ring("r3", "265cqmin", "62%", "78%", "89%", .7, "14s"),
+            ring("r1", "200cqmin", "50%", "72%", "85%", .95, "9s"),
+            ring("r2", "145cqmin", "68%", "82%", "90%", .85, "12s", true),
+            ring("r4", "95cqmin", "64%", "80%", "90%", .65, "10s", true)));
+      })()),
+      stripeBg: this.stripeEl || (this.stripeEl = (() => {
+        const h = React.createElement;
+        const still = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const G = {
+          edge: ["0 0 9%", "linear-gradient(to bottom, #E3E1EA 0%, #D3DAE5 25%, #F4D9C2 50%, #D3DAE5 72%, #BCC6D6 100%)", "4.5s", "alternate"],
+          wide: ["0 0 22%", "linear-gradient(to bottom, #F3C9B4 0%, #EFB196 18%, #F3C9B4 34%, #E8D6CF 50%, #F4D9C2 64%, #E3E1EA 80%, #BCC6D6 100%)", "3.5s", "alternate"],
+          thin: ["0 0 5%", "linear-gradient(to bottom, #EBDCD5 0%, #E3E1EA 35%, #D3DAE5 60%, #E8D6CF 80%, #BCC6D6 100%)", "5s", "alternate-reverse"],
+          center: ["1 1 auto", "linear-gradient(to bottom, #E3E1EA 0%, #EBDCD5 22%, #F4D9C2 45%, #E8D6CF 65%, #D3DAE5 85%, #E3E1EA 100%)", "4s", "alternate-reverse"]
+        };
+        const col = (k, i) => { const [flex, bg, dur, dir] = G[k]; return h("div", { key: i, style: { flex, height: "100%", backgroundImage: bg, backgroundSize: "100% 170%", willChange: "background-position", animation: still ? "none" : `sg-flow ${dur} ease-in-out infinite ${dir}` } }); };
+        return h("div", { "aria-hidden": "true", style: { position: "absolute", inset: 0, overflow: "hidden", background: "#D3DAE5" } },
+          h("div", { style: { position: "absolute", inset: "-40px", display: "flex", filter: "blur(16px)" } },
+            ["edge", "wide", "thin", "center", "thin", "wide", "edge"].map(col)));
+      })()),
+      grainBg: this.grainEl3 || (this.grainEl3 = (() => {
+        const h = React.createElement;
+        const still = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const blob = (k, st, anim) => h("div", { key: k, style: { position: "absolute", borderRadius: "50%", filter: "blur(7cqmax)", willChange: "transform", animation: still ? "none" : anim, ...st } });
+        return h("div", { "aria-hidden": "true", style: { position: "absolute", inset: 0, overflow: "hidden", containerType: "size", background: "#EBE5DC" } },
+          blob("b1", { width: "75cqmax", height: "42cqmax", left: "0%", top: "2%", background: "#EFB196" }, "gb-drift1 6s ease-in-out infinite"),
+          blob("b2", { width: "65cqmax", height: "50cqmax", left: "-25%", top: "58%", background: "#EFB196", opacity: .9 }, "gb-drift2 7s ease-in-out infinite"),
+          blob("b5", { width: "50cqmax", height: "40cqmax", left: "55%", top: "-12%", background: "#E3E1EA" }, "gb-drift2 7.5s ease-in-out infinite reverse"),
+          blob("b6", { width: "48cqmax", height: "42cqmax", left: "50%", top: "68%", background: "#E3E1EA" }, "gb-drift1 6.5s ease-in-out infinite reverse"),
+          blob("b4", { width: "38cqmax", height: "32cqmax", left: "28%", top: "20%", background: "#E3E1EA" }, "gb-drift3 8s ease-in-out infinite reverse"),
+          blob("b3", { width: "42cqmax", height: "38cqmax", left: "42%", top: "32%", background: "#F3C9B4" }, "gb-drift3 5s ease-in-out infinite"),
+          h("div", { key: "g", style: { position: "absolute", inset: 0, pointerEvents: "none", opacity: .38, mixBlendMode: "overlay", backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" } }));
+      })()),
       showStar: wide, star: this.starEl || (this.starEl = React.createElement("svg", {
         viewBox: "0 0 1000 1000", fill: "none",
         style: { width: "100%", height: "100%", display: "block",
