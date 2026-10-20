@@ -1,0 +1,4 @@
+:root{
+--ease-in:cubic-bezier(0.4,0,1,1);/* @kind other */--ease-out:cubic-bezier(0,0,0.2,1);/* @kind other */
+--dur-press:0.1s;/* @kind other */--dur-hover:0.2s;/* @kind other */--dur-reveal:0.4s;/* @kind other */--scale-press:0.97;/* @kind other */
+}

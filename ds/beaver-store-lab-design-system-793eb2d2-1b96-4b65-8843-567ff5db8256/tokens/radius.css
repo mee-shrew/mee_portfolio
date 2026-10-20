@@ -1,0 +1,5 @@
+:root{
+--radius-10:10px;--radius-12:12px;--radius-20:20px;--radius-pill:100px;--radius-round:50%;
+--radius-input:var(--radius-12);--radius-card:var(--radius-20);--radius-image:var(--radius-20);--radius-button:var(--radius-pill);
+--shadow-none:none;--shadow-pop:0 10px 30px rgba(20,20,18,0.08);--shadow-overlay:0 20px 50px rgba(20,20,18,0.16);
+}

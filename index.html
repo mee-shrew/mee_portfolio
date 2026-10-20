@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/tokens/fonts.css">
+  <link rel="stylesheet" href="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/tokens/colors.css">
+  <link rel="stylesheet" href="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/tokens/typography.css">
+  <link rel="stylesheet" href="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/tokens/spacing.css">
+  <link rel="stylesheet" href="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/tokens/radius.css">
+  <link rel="stylesheet" href="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/tokens/motion.css">
+  <link rel="stylesheet" href="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/tokens/base.css">
+  <link rel="stylesheet" href="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/styles.css">
+  <script src="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/ds_bundle.js"></script>
+  <meta name="image-slot-state" content="image-slots-main.state.json" data-resource-id="imageSlotStatePage">
+  <meta name="ext-resource-dependency" content="image-slots-main.state.json" data-resource-id="imageSlotStatePage">
+  <script src="./image-slot.js"></script>
+  <meta name="ext-resource-dependency" content="image-slots.state.json" data-resource-id="imageSlotState">
+  <title>김미정 · 디자이너 포트폴리오</title>
+  <template id="__bundler_thumbnail" data-bg-color="#f8f5f0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#f8f5f0"></rect><text x="50" y="62" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="600" fill="#141412">김</text><circle cx="72" cy="36" r="4" fill="#ff6b35"></circle></svg></template>
+  <style>
+    *{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    body{margin:0;background:#f8f5f0;color:#000;font-family:var(--font-body);word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:#141412;text-decoration:none;transition:color .2s}
+    a:hover{color:#ff6b35}
+    button{font:inherit}
+    ::selection{background:#141412;color:#f8f5f0}
+    [data-slider]::-webkit-scrollbar{display:none}
+    @keyframes star-spin{to{transform:rotate(360deg)}}
+  </style>
+</helmet>
+<div style="position: relative; min-height: 100vh; background: var(--color-cream); overflow-x: clip">
+
+  <header style="position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s, box-shadow .3s;background:{{ navBg }};box-shadow:{{ navShadow }};backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)">
+    <div style="width:min(1300px, calc(100% - clamp(40px, 7vw, 100px)));margin:0 auto;height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+      <a href="#top" onClick="{{ goTop }}" aria-label="김미정 포트폴리오 홈" style="display:flex;align-items:flex-end;gap:3px;color:var(--color-ink);font:600 20px/1 var(--font-display);letter-spacing:-.02em"><x-import component-from-global-scope="mj-logo" from="./logo-mark.js" hint-size="54px,30px"></x-import><span style="margin-bottom:5px;font:500 12px/1 var(--font-body);color:var(--color-stone);letter-spacing:.02em">Portfolio</span></a>
+
+      <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;align-items:center;gap:30px">
+          <nav style="display:flex;align-items:center;gap:30px">
+            <div onMouseEnter="{{ ddShow }}" onMouseLeave="{{ ddHide }}" style="position:relative">
+              <button onClick="{{ ddToggle }}" style="display:inline-flex;align-items:center;gap:6px;height:40px;padding:0;border:0;background:transparent;cursor:pointer;font:500 14px/1 var(--font-body);color:var(--color-ink)">Work<x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="chevron-down" size="{{ 14 }}" dc-props="{{ caretProps }}" hint-size="14px,14px"></x-import></button>
+              <div style="position:absolute;top:100%;left:-15px;padding-top:10px;opacity:{{ ddOpacity }};transform:{{ ddShift }};pointer-events:{{ ddEvents }};transition:opacity .2s, transform .25s cubic-bezier(.2,.7,.2,1)">
+                <div style="width:300px;padding:8px;border-radius:20px;background:#fff;box-shadow:0 20px 40px -20px rgba(20,20,18,.18);display:flex;flex-direction:column">
+                  <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
+                    <a href="#work" onClick="{{ p.goTo }}" style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;color:var(--color-ink);font:500 15px/1.2 var(--font-body);transition:background .2s" style-hover="background:var(--color-cream);color:var(--color-ink)">
+                      <span style="display:flex;align-items:center;gap:10px"><span style="font:500 12px/1 var(--font-body);color:var(--color-stone)">{{ p.no }}</span>{{ p.name }}</span>
+                      <span style="font:500 12px/1 var(--font-body);color:var(--color-stone)">{{ p.cat }}</span>
+                    </a>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+            
+            <a href="#about" onClick="{{ goAbout }}" style="font:500 14px/1 var(--font-body)">About</a><a href="#archive" onClick="{{ goArchive }}" style="font:500 14px/1 var(--font-body)">Archive</a>
+          </nav>
+          <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Button" variant="dark" icon="download" on-click="{{ resume }}" hint-size="120px,40px">Resume</x-import>
+        </div>
+      </sc-if>
+      <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ menuToggle }}" aria-label="메뉴" style="width:44px;height:44px;border:0;border-radius:50%;background:var(--color-sand);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px">
+          <span style="display:block;width:16px;height:1.5px;background:var(--color-ink);transition:transform .3s cubic-bezier(.2,.7,.2,1);transform:{{ burgerTop }}"></span>
+          <span style="display:block;width:16px;height:1.5px;background:var(--color-ink);transition:transform .3s cubic-bezier(.2,.7,.2,1);transform:{{ burgerBot }}"></span>
+        </button>
+      </sc-if>
+    </div>
+  </header>
+
+  <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;top:72px;left:0;right:0;z-index:49;padding:5px 20px 25px;background:rgba(248,245,240,.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:inset 0 -1px 0 var(--color-line);display:flex;flex-direction:column;opacity:{{ menuOpacity }};transform:{{ menuShift }};pointer-events:{{ menuEvents }};transition:opacity .25s, transform .3s cubic-bezier(.2,.7,.2,1)">
+      <span style="padding:15px 0 8px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">Work</span>
+      <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
+        <a href="#work" onClick="{{ p.goTo }}" style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid var(--color-line);font:500 17px/1.2 var(--font-body)">{{ p.name }}<span style="font:500 13px/1 var(--font-body);color:var(--color-stone)">{{ p.cat }}</span></a>
+      </sc-for>
+      <a href="#archive" onClick="{{ goArchive }}" style="padding:20px 0 15px;border-bottom:1px solid var(--color-line);font:500 17px/1.2 var(--font-body)">Archive</a>
+      <a href="#about" onClick="{{ goAbout }}" style="padding:15px 0;border-bottom:1px solid var(--color-line);font:500 17px/1.2 var(--font-body)">About</a>
+      <div style="margin-top:20px">
+        <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Button" variant="dark" size="lg" icon="download" full-width="{{ true }}" on-click="{{ resume }}" hint-size="100%,50px">이력서 다운로드</x-import>
+      </div>
+    </div>
+  </sc-if>
+
+  <section id="top" data-screen-label="01 인트로" style="position:relative;padding:clamp(150px, 18vw, 220px) 0 clamp(60px, 7vw, 100px)">
+    <div style="width:min(1300px, calc(100% - clamp(40px, 7vw, 100px)));margin:0 auto">
+      <div data-rv="16" data-delay="60" style="display:flex;align-items:center;gap:10px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-ink)">
+        <span style="height:28px;padding:0 12px;display:inline-flex;align-items:center;border-radius:100px;background:var(--color-sand)">Designer</span><span style="color:var(--color-stone)">김미정의 포트폴리오</span>
+      </div>
+      <h1 style="margin:30px 0 0;font:600 clamp(42px, 7.2vw, 96px)/1.4 var(--font-display);letter-spacing:-.04em;color:#000">
+        <span data-rv="rise" data-delay="160" style="display:block;overflow:hidden;padding:.04em 0 .1em;margin-bottom:-.08em"><span style="display:inline-block">관찰한 것을 <span style="color:var(--color-orange)">디자인</span>으로</span></span>
+        <span data-rv="rise" data-delay="280" style="display:block;overflow:hidden;padding:.04em 0 .1em;margin-bottom:-.08em"><span style="display:inline-block">풀어내길 좋아합니다</span></span>
+      </h1>
+      <div data-rv="16" data-delay="520" style="margin-top:clamp(50px, 6vw, 80px);padding-top:30px;border-top:1px solid var(--color-line);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:30px 50px">
+        <div style="flex:1 1 420px;min-width:0">
+          <p style="margin:0;max-width:520px;font:500 clamp(16px, 1.5vw, 19px)/1.65 var(--font-body);letter-spacing:-.01em;color:var(--color-stone);text-wrap:pretty">서비스기획, 웹디자인, 콘텐츠를 오가며 기획부터 디자인 구현까지<br>폭넓은 경험을 가지고 있습니다.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:25px">
+            <span style="height:34px;padding:0 15px;display:inline-flex;align-items:center;border-radius:100px;background:var(--color-sand);font:500 14px/1 var(--font-body);color:var(--color-ink)">웹 · 서비스</span>
+            <span style="height:34px;padding:0 15px;display:inline-flex;align-items:center;border-radius:100px;background:var(--color-sand);font:500 14px/1 var(--font-body);color:var(--color-ink)">브랜딩</span>
+            <span style="height:34px;padding:0 15px;display:inline-flex;align-items:center;border-radius:100px;background:var(--color-sand);font:500 14px/1 var(--font-body);color:var(--color-ink)">콘텐츠</span>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:25px;flex-wrap:wrap">
+          <button onClick="{{ goProcess }}" style="padding:0;border:0;background:none;cursor:pointer;font:500 15px/1 var(--font-body);color:var(--color-ink);transition:color .2s" style-hover="color:var(--color-orange)">어떻게 일하나요?</button>
+          <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Button" variant="dark" size="lg" icon="arrow-right" on-click="{{ goBeautypin }}" hint-size="150px,50px">작업 보기</x-import>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div data-rv="30" data-delay="300" aria-label="작업 이미지 띠" onMouseEnter="{{ mqEnter }}" onMouseLeave="{{ mqLeave }}" style="position:relative;overflow:hidden;padding:0 0 10px">
+    <div data-mq-track="" style="display:flex;align-items:flex-start;gap:10px;width:max-content;will-change:transform">
+      <sc-for list="{{ marquee }}" as="m" hint-placeholder-count="6">
+        <div style="width:clamp(240px, 24vw, 340px);flex-shrink:0;display:flex;flex-direction:column;gap:10px">
+          <div style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:var(--color-sand)">
+            <image-slot id="mq-{{ m.k }}" shape="rounded" radius="20" placeholder="{{ m.label }}"></image-slot>
+          </div>
+          <span style="font: 500 13px/1.3 var(--font-body); color: var(--color-stone); display: none">{{ m.label }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <section id="work" data-screen-label="02 Selected Work" style="position:relative;padding:clamp(160px, 20vw, 300px) 0 0">
+    <div style="width:min(1300px, calc(100% - clamp(40px, 7vw, 100px)));margin:0 auto">
+      <div data-rv="" style="display:flex;justify-content:space-between;align-items:flex-end;gap:25px;flex-wrap:wrap;margin-bottom:50px">
+        <div>
+          <span style="display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-ink)"><i style="width:6px;height:6px;border-radius:50%;background:var(--color-orange)"></i>Selected Work</span>
+          <h2 style="margin:20px 0 0;font:600 clamp(32px, 4.4vw, 56px)/1.4 var(--font-display);letter-spacing:-.035em;color:#000;text-wrap:balance">기획부터&nbsp; 구현까지<br data-om-id="8b16425a:95">대표 프로젝트를 꼽아 소개합니다</h2>
+        </div>
+        <div style="display:flex;align-items:center;gap:15px">
+          <span style="font:500 14px/1 var(--font-body);color:var(--color-stone);font-variant-numeric:tabular-nums"><span style="color:var(--color-ink)">{{ slideNo }}</span> / {{ slideTotal }}</span>
+          <div style="display:flex;gap:8px">
+            <button onClick="{{ slidePrev }}" disabled="{{ prevDisabled }}" aria-label="이전 프로젝트" style="width:44px;height:44px;border:1px solid var(--color-line-strong);border-radius:50%;background:transparent;color:var(--color-ink);cursor:pointer;pointer-events:{{ prevEvents }};display:flex;align-items:center;justify-content:center;opacity:{{ prevOpacity }};transition:opacity .3s, background .2s, color .2s, border-color .2s" style-hover="background:var(--color-ink);color:var(--color-cream);border-color:var(--color-ink)">
+              <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-left" size="{{ 18 }}" hint-size="18px,18px"></x-import>
+            </button>
+            <button onClick="{{ slideNext }}" disabled="{{ nextDisabled }}" aria-label="다음 프로젝트" style="width:44px;height:44px;border:1px solid var(--color-line-strong);border-radius:50%;background:transparent;color:var(--color-ink);cursor:pointer;pointer-events:{{ nextEvents }};display:flex;align-items:center;justify-content:center;opacity:{{ nextOpacity }};transition:opacity .3s, background .2s, color .2s, border-color .2s" style-hover="background:var(--color-ink);color:var(--color-cream);border-color:var(--color-ink)">
+              <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-right" size="{{ 18 }}" hint-size="18px,18px"></x-import>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div ref="{{ trackRef }}" onScroll="{{ onTrackScroll }}" data-slider="" style="display:flex;gap:{{ slideGap }};overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:80px 0 10px;margin-top:-80px">
+        <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
+          <div data-rv="40" data-delay="{{ p.delay }}" data-count="{{ p.id }}" style="min-width:0;flex:0 0 {{ slideW }};scroll-snap-align:start">
+            <div id="{{ p.id }}" data-screen-label="{{ p.label }}" style="display:flex;flex-direction:column">
+              <div style="display:flex;justify-content:center;padding:25px 0 20px;border-radius:20px;background:var(--color-sand)">
+                <x-import component="GlassFolder" from="./glass-folder.jsx" dc-props="{{ p.folder }}" hint-size="320px,360px"></x-import>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:baseline;gap:15px;margin-top:25px">
+                <h3 style="margin:0;font:600 clamp(24px, 2.2vw, 30px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">{{ p.name }}</h3>
+                <span style="font:500 13px/1 var(--font-body);color:var(--color-stone);font-variant-numeric:tabular-nums">{{ p.no }}</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px;font:500 13px/1 var(--font-body);color:var(--color-stone)">
+                <span style="display:inline-flex;align-items:center;height:26px;padding:0 11px;border-radius:100px;background:var(--color-sand);color:var(--color-ink)">{{ p.cat }}</span>
+                <span>{{ p.company }} · {{ p.year }}</span>
+              </div>
+              <p style="margin:15px 0 0;font:500 15px/1.65 var(--font-body);letter-spacing:-.01em;color:var(--color-stone);text-wrap:pretty">{{ p.summary }}</p>
+              <div style="display:flex;gap:25px;flex-wrap:wrap;margin-top:20px;padding-top:20px;border-top:1px solid var(--color-line)">
+                <sc-for list="{{ p.kpis }}" as="k" hint-placeholder-count="1">
+                  <div style="flex:1 1 140px;min-width:0">
+                    <b style="display:block;font:500 {{ k.size }}/1.2 var(--font-display);letter-spacing:-.03em;color:#000;font-variant-numeric:tabular-nums">{{ k.display }}</b>
+                    <small style="display:block;margin-top:8px;font:500 13px/1.5 var(--font-body);color:var(--color-stone)">{{ k.label }}</small>
+                  </div>
+                </sc-for>
+              </div>
+              <button onClick="{{ p.open }}" style="align-self:flex-start;margin-top:25px;display:inline-flex;align-items:center;gap:8px;padding:0;border:0;background:none;cursor:pointer;font:500 14px/1 var(--font-body);color:var(--color-ink);transition:color .2s, gap .25s" style-hover="color:var(--color-orange);gap:12px">프로젝트 자세히 보기<x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-right" size="{{ 16 }}" hint-size="16px,16px"></x-import></button>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section><section id="about" data-screen-label="05 About" style="position:relative;padding:clamp(160px, 20vw, 300px) 0 0">
+    <div style="width:min(1300px, calc(100% - clamp(40px, 7vw, 100px)));margin:0 auto;display:flex;flex-wrap:wrap;gap:50px clamp(50px, 7vw, 100px);align-items:flex-start">
+      <div data-rv="" style="flex:5 1 380px;min-width:0">
+        <span style="display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-ink)"><i style="width:6px;height:6px;border-radius:50%;background:var(--color-orange)"></i>About</span>
+        <h2 style="margin:20px 0 0;font:600 clamp(32px, 4.4vw, 56px)/1.4 var(--font-display);letter-spacing:-.035em;color:#000">안녕하세요,<br>디자이너 김미정입니다</h2>
+        <ul style="margin:50px 0 0;padding:0;list-style:none;border-top:1px solid var(--color-line)">
+          <sc-for list="{{ timeline }}" as="t" hint-placeholder-count="3">
+            <li style="display:flex;align-items:baseline;gap:10px 20px;padding:20px 0;border-bottom:1px solid var(--color-line);flex-wrap:wrap">
+              <b style="width:100px;flex-shrink:0;font:500 16px/1.3 var(--font-body);color:var(--color-ink)">{{ t.company }}<em style="display:block;margin-top:5px;font:500 12px/1.4 var(--font-body);font-style:normal;color:var(--color-stone)">{{ t.year }}</em></b>
+              <span style="flex:1 1 200px;display:flex;flex-direction:column;gap:4px">
+                <sc-for list="{{ t.items }}" as="w" hint-placeholder-count="3">
+                  <span style="display:grid;grid-template-columns:4px minmax(0, 1fr);gap:10px;align-items:baseline;font:500 15px/1.6 var(--font-body);color:var(--color-stone)"><i style="width:4px;height:4px;border-radius:50%;background:var(--color-stone);transform:translateY(-3px)"></i>{{ w }}</span>
+                </sc-for>
+              </span>
+            </li>
+          </sc-for>
+        </ul>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:30px">
+          <sc-for list="{{ tools }}" as="tool" hint-placeholder-count="8">
+            <span style="height:32px;padding:0 13px;display:inline-flex;align-items:center;border-radius:100px;background:var(--color-sand);font:500 13px/1 var(--font-body);color:var(--color-ink)">{{ tool }}</span>
+          </sc-for>
+        </div>
+      </div>
+      <div data-rv="" data-delay="120" style="flex:6 1 420px;min-width:0;display:flex;flex-direction:column;gap:10px;padding-top:{{ qnaTop }}">
+        <span style="font:500 13px/1 var(--font-body);color:var(--color-stone);margin-bottom:10px">저는 이런 사람이에요</span>
+        <sc-for list="{{ qna }}" as="q" hint-placeholder-count="4">
+          <div style="border-radius:20px;background:{{ q.bg }};transition:background .25s">
+            <button onClick="{{ q.toggle }}" onMouseEnter="{{ q.enter }}" onMouseLeave="{{ q.leave }}" aria-expanded="{{ q.open }}" style="width:100%;min-height:68px;display:flex;align-items:center;gap:15px;padding:15px 15px 15px 25px;border:0;background:transparent;cursor:pointer;text-align:left">
+              <span style="flex:1;font:500 17px/1.5 var(--font-body);letter-spacing:-.02em;color:var(--color-ink)">{{ q.q }}</span>
+              <span style="flex-shrink:0;width:30px;height:30px;border-radius:50%;background:{{ q.iconBg }};color:{{ q.iconColor }};display:flex;align-items:center;justify-content:center;transition:background .25s, transform .3s cubic-bezier(.2,.7,.2,1);transform:{{ q.iconRot }}">
+                <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="plus" size="{{ 16 }}" hint-size="16px,16px"></x-import>
+              </span>
+            </button>
+            <div style="display:grid;grid-template-rows:{{ q.rows }};transition:grid-template-rows .35s cubic-bezier(.2,.7,.2,1)">
+              <div style="overflow:hidden;min-height:0">
+                <p style="margin:0;padding:0 60px 25px 25px;font:500 15px/1.75 var(--font-body);letter-spacing:-.01em;color:var(--color-stone);text-wrap:pretty">{{ q.a }}</p>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+  <section id="archive" data-screen-label="04 Archive" style="position: relative; padding: clamp(160px, 20vw, 300px) 0 0">
+    <div style="width:min(1300px, calc(100% - clamp(40px, 7vw, 100px)));margin:0 auto">
+      <div data-rv="" style="display:flex;justify-content:space-between;align-items:flex-end;gap:25px;flex-wrap:wrap;margin-bottom:50px">
+        <div>
+          <span style="display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-ink)"><i style="width:6px;height:6px;border-radius:50%;background:var(--color-orange)"></i>Archive</span>
+          <h2 style="margin:20px 0 0;font:600 clamp(32px, 4.4vw, 56px)/1.4 var(--font-display);letter-spacing:-.035em;color:#000;text-wrap:balance">온 · 오프라인을 넘나드는<br>다양한 작업들</h2>
+        </div>
+        <a href="{{ driveUrl }}" onClick="{{ driveClick }}" target="_blank" rel="noopener" style="height:48px;padding:0 8px 0 20px;display:inline-flex;align-items:center;gap:12px;border-radius:100px;background:var(--color-white);font:500 15px/1 var(--font-body);color:var(--color-ink);transition:background .2s" style-hover="background:var(--color-sand);color:var(--color-ink)">작업 아카이브<span style="width:34px;height:34px;border-radius:50%;background:var(--color-ink);color:var(--color-cream);display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-up-right" size="{{ 16 }}" hint-size="16px,16px"></x-import></span></a>
+      </div>
+      <sc-if value="{{ shelfRow }}" hint-placeholder-val="{{ true }}">
+        <div data-rv="30" style="display:flex;width:100%;height:clamp(440px, 46vw, 600px);border-top:1px solid var(--color-line);border-bottom:1px solid var(--color-line)">
+          <sc-for list="{{ shelf }}" as="sp" hint-placeholder-count="7">
+            <div role="button" tabindex="0" aria-expanded="{{ sp.expanded }}" aria-label="{{ sp.title }}" onClick="{{ sp.select }}" onFocus="{{ sp.select }}" onPointerEnter="{{ sp.hover }}" style="position:relative;flex:0 1 {{ sp.basis }};min-width:64px;cursor:pointer;outline:none;border-right:{{ sp.edge }};transition:flex-basis .7s cubic-bezier(.22,1,.36,1)">
+              <span style="position:absolute;top:12px;right:12px;bottom:12px;left:64px;display:block;border-radius:12px;overflow:hidden;background:var(--color-sand);opacity:{{ sp.artOpacity }};pointer-events:{{ sp.artEvents }};transition:opacity .7s ease">
+                <image-slot id="spine-{{ sp.k }}" shape="rounded" radius="12" placeholder="{{ sp.title }} 이미지"></image-slot>
+              </span>
+              <span style="position:absolute;top:16px;bottom:16px;left:18px;display:flex;flex-direction:column-reverse;justify-content:space-between;align-items:center;pointer-events:none;color:{{ sp.color }};transition:color .5s">
+                <span style="writing-mode:vertical-rl;text-orientation:sideways;transform:rotate(180deg);white-space:nowrap;font:600 18px/1 var(--font-display);letter-spacing:-.02em">{{ sp.title }}</span>
+                <span style="writing-mode:vertical-rl;text-orientation:sideways;transform:rotate(180deg);font:500 13px/1 var(--font-body);font-variant-numeric:tabular-nums;color:var(--color-stone);opacity:{{ sp.metaOpacity }};transition:opacity .5s">{{ sp.meta }}</span>
+              </span>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ shelfStack }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:30px">
+          <sc-for list="{{ shelf }}" as="sp" hint-placeholder-count="7">
+            <div>
+              <div style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:var(--color-sand)">
+                <image-slot id="spine-{{ sp.k }}" shape="rounded" radius="20" placeholder="{{ sp.title }} 이미지"></image-slot>
+              </div>
+              <div style="margin-top:12px;display:flex;justify-content:space-between;align-items:baseline;gap:15px">
+                <span style="font:600 17px/1.4 var(--font-display);letter-spacing:-.02em;color:var(--color-ink)">{{ sp.title }}</span>
+                <span style="font:500 13px/1 var(--font-body);color:var(--color-stone);font-variant-numeric:tabular-nums">{{ sp.meta }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+  <sc-if value="{{ showProcess }}" hint-placeholder-val="{{ true }}">
+    <section id="process" data-screen-label="03 How I Work" style="position: relative; padding: clamp(160px, 20vw, 300px) 0 clamp(160px, 20vw, 300px)">
+      <div style="width:min(1300px, calc(100% - clamp(40px, 7vw, 100px)));margin:0 auto">
+        <div data-rv="" style="display:flex;justify-content:space-between;align-items:flex-end;gap:25px;flex-wrap:wrap;margin-bottom:30px">
+          <div>
+            <span style="display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-ink)"><i style="width:6px;height:6px;border-radius:50%;background:var(--color-orange)"></i>How I Work</span><h2 style="margin:20px 0 0;font:600 clamp(32px, 4.4vw, 56px)/1.4 var(--font-display);letter-spacing:-.035em;color:#000;text-wrap:balance">지금까지<br>어떻게 일해왔나요?</h2>
+            
+          </div>
+          
+        </div>
+        <div data-proc="" style="position:relative;height:{{ procH }}">
+        <div style="display:grid;grid-template-columns:{{ procCols }};gap:clamp(30px, 5vw, 100px);align-items:{{ procAlign }};position:{{ gridPos }};top:150px">
+          <sc-if value="{{ showStar }}" hint-placeholder-val="{{ false }}">
+            <div aria-hidden="true" style="position:absolute;right:0;bottom:0;width:clamp(120px, 13vw, 200px);height:clamp(120px, 13vw, 200px);pointer-events:none">{{ star }}</div>
+          </sc-if>
+          <div data-rv="40" style="min-width:0;width:100%;max-width:{{ cardMax }};position:{{ cardPos }}">
+            <div style="position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;background:var(--color-ink)">
+              <sc-for list="{{ steps }}" as="s" hint-placeholder-count="1">
+                <div aria-hidden="{{ s.hidden }}" style="position:absolute;inset:0;opacity:{{ s.layerOpacity }};transition:opacity .8s cubic-bezier(.4,0,.2,1)">
+                  <div style="position:absolute;left:25px;top:25px;right:25px;display:flex;justify-content:space-between;align-items:center;font:500 13px/1 var(--font-body);color:var(--color-stone)">
+                    <span style="display:inline-flex;align-items:center;gap:8px;color:var(--color-cream)"><i style="width:6px;height:6px;border-radius:50%;background:var(--color-orange)"></i>{{ s.key }}</span>
+                    <span style="font-variant-numeric:tabular-nums">{{ s.no }} / 03</span>
+                  </div>
+                  <div style="position:absolute;left:25px;right:25px;bottom:25px;transform:{{ s.textShift }};transition:transform 1s cubic-bezier(.16,1,.3,1)">
+                    <span style="display:block;font:500 clamp(56px, 6.4vw, 96px)/1 var(--font-display);letter-spacing:-.04em;color:var(--color-cream)">{{ s.en }}</span>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="min-width:0;display:grid;grid-template-columns:minmax(0, 1fr)">
+            <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+              <div data-step="{{ s.i }}" aria-hidden="{{ s.rowHidden }}" style="grid-area:{{ s.area }};display:grid;grid-template-columns:{{ stepCols }};align-items:start;gap:15px clamp(20px, 3vw, 50px);padding:{{ s.pad }};border-top:{{ s.line }};opacity:{{ s.rowOpacity }};transform:{{ s.rowShift }};pointer-events:{{ s.rowEvents }};transition:opacity .6s cubic-bezier(.4,0,.2,1), transform .8s cubic-bezier(.16,1,.3,1)">
+                <span style="font:500 15px/1.6 var(--font-body);color:{{ s.noColor }};font-variant-numeric:tabular-nums;transition:color .4s">{{ s.no }}</span>
+                <div style="min-width:0">
+                  <span style="display:block;font:500 13px/1.3 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">{{ s.en }}</span>
+                  <h3 style="margin:10px 0 0;font:600 clamp(22px, 2vw, 28px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000;text-wrap:balance;white-space:pre-line">{{ s.title }}</h3>
+                </div>
+                <div style="min-width:0;grid-column:{{ descCol }}">
+                  <p style="margin:0;padding-top:{{ descPad }};font:500 15px/1.75 var(--font-body);letter-spacing:-.01em;color:var(--color-stone);text-wrap:pretty">{{ s.desc }}</p>
+                  <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:20px">
+                    <sc-for list="{{ s.tags }}" as="t" hint-placeholder-count="3">
+                      <span style="height:30px;padding:0 12px;display:inline-flex;align-items:center;border-radius:100px;background:var(--color-sand);font:500 13px/1 var(--font-body);color:var(--color-ink)">{{ t }}</span>
+                    </sc-for>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  
+
+  
+
+  <section id="contact" data-screen-label="06 Contact" style="position:relative;background:var(--color-ink);color:var(--color-cream);padding:clamp(100px, 12vw, 160px) 0 30px">
+    <div style="width:min(1300px, calc(100% - clamp(40px, 7vw, 100px)));margin:0 auto;display:flex;flex-direction:column">
+      <span data-rv="16" style="display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-cream)"><i style="width:6px;height:6px;border-radius:50%;background:var(--color-orange)"></i>Contact</span>
+      <h2 style="margin:20px 0 0;font:600 clamp(40px, 6.4vw, 88px)/1.4 var(--font-display);letter-spacing:-.04em;color:var(--color-cream)">
+        <span data-rv="rise" data-delay="80" style="display:block;overflow:hidden;padding:.04em 0 .1em;margin-bottom:-.08em"><span style="display:inline-block">함께 하고싶다면</span></span>
+        <span data-rv="rise" data-delay="200" style="display:block;overflow:hidden;padding:.04em 0 .1em;margin-bottom:-.08em"><span style="display:inline-block">편하게 연락 주세요</span></span>
+      </h2>
+      <div data-rv="20" data-delay="320" style="margin-top:clamp(50px, 6vw, 80px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:25px">
+        <button onClick="{{ copyMail }}" style="display:inline-flex;align-items:center;gap:15px;max-width:100%;padding:0;border:0;background:none;cursor:pointer;font:500 clamp(20px, 2.6vw, 32px)/1.2 var(--font-display);letter-spacing:-.02em;color:var(--color-cream);transition:color .2s" style-hover="color:var(--color-orange)">{{ email }}<span style="height:30px;padding:0 12px;display:inline-flex;align-items:center;border-radius:100px;border:1px solid rgba(248,245,240,.25);color:var(--color-cream);font:500 12px/1 var(--font-body);white-space:nowrap">{{ copyLabel }}</span></button>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Button" variant="light" size="lg" icon="mail" on-click="{{ mailTo }}" hint-size="160px,50px">메일 보내기</x-import>
+          <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Button" variant="primary" size="lg" icon="download" on-click="{{ resume }}" hint-size="180px,50px">이력서 다운로드</x-import>
+        </div>
+      </div>
+
+      <footer data-rv="30" style="margin-top:clamp(100px, 12vw, 160px);padding-top:30px;border-top:1px solid rgba(248,245,240,.12);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:30px 50px">
+        <div style="flex:1 1 320px;display:flex;flex-direction:column;gap:15px">
+          <span style="font:600 24px/1 var(--font-display);letter-spacing:-.02em;color:var(--color-cream)">김미정</span>
+          <p style="margin:0;max-width:380px;font:500 14px/1.7 var(--font-body);color:var(--color-stone)">관찰한 것을 디자인으로 풀어내길 좋아합니다.<br>문제를 먼저 정의하고, 기획부터 디자인 결과물까지 구현합니다.</p>
+        </div>
+        <nav style="display:flex;gap:25px;flex-wrap:wrap">
+          <a href="#work" onClick="{{ goWork }}" style="font:500 14px/1 var(--font-body);color:var(--color-cream)">Work</a>
+          <a href="#archive" onClick="{{ goArchive }}" style="font:500 14px/1 var(--font-body);color:var(--color-cream)">Archive</a>
+          <a href="#about" onClick="{{ goAbout }}" style="font:500 14px/1 var(--font-body);color:var(--color-cream)">About</a>
+          <a href="#" onClick="{{ resume }}" style="font:500 14px/1 var(--font-body);color:var(--color-cream)">Resume</a>
+        </nav>
+        <div style="flex-basis:100%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:20px;font:400 12px/1.5 sans-serif;color:var(--color-stone)">
+          <span>© 2026 김미정. All rights reserved.</span>
+          <span>This site was designed by 김미정, built with Claude</span>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+    <div data-lb="" onClick="{{ lbBackdrop }}" role="dialog" aria-modal="true" style="position:fixed;inset:0;z-index:80;display:flex;align-items:center;justify-content:center;padding:clamp(10px, 3vw, 30px);background:rgba(20,20,18,.4);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)">
+      <div data-lb-panel="" style="position:relative;width:min(1080px, 100%);max-height:calc(100svh - 30px);overflow:auto;display:flex;flex-wrap:wrap;gap:30px;padding:20px;border-radius:20px;background:var(--color-cream);box-shadow:0 30px 80px -30px rgba(20,20,18,.4)">
+        <button onClick="{{ lbClose }}" aria-label="닫기" style="position:absolute;top:15px;right:15px;z-index:2;width:40px;height:40px;border:0;border-radius:50%;background:var(--color-ink);color:var(--color-cream);cursor:pointer;display:flex;align-items:center;justify-content:center">
+          <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="x" size="{{ 18 }}" hint-size="18px,18px"></x-import>
+        </button>
+        <div style="flex:1 1 520px;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div style="position:relative;grid-column:span 2;aspect-ratio:16/10;border-radius:12px;overflow:hidden;background:var(--color-sand)"><image-slot id="arc-{{ lb.id }}" shape="rounded" radius="12" placeholder="{{ lb.img }}"></image-slot></div>
+          <div style="position:relative;aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:var(--color-sand)"><image-slot id="arc-{{ lb.id }}-2" shape="rounded" radius="12" placeholder="상세 이미지 2"></image-slot></div>
+          <div style="position:relative;aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:var(--color-sand)"><image-slot id="arc-{{ lb.id }}-3" shape="rounded" radius="12" placeholder="상세 이미지 3"></image-slot></div>
+        </div>
+        <div style="flex:1 1 280px;display:flex;flex-direction:column;padding:15px 5px 5px 0">
+          <div style="display:flex;gap:5px">
+            <span style="display:inline-flex;align-items:center;height:26px;padding:0 11px;border-radius:100px;background:var(--color-sand);color:var(--color-ink);font:500 12px/1 var(--font-body)">{{ lb.cat }}</span>
+            <sc-if value="{{ lb.ai }}" hint-placeholder-val="{{ false }}"><span style="display:inline-flex;align-items:center;height:26px;padding:0 11px;border-radius:100px;background:var(--color-ink);color:var(--color-cream);font:600 12px/1 var(--font-body)">AI</span></sc-if>
+          </div>
+          <h3 style="margin:15px 0 0;font:600 28px/1.4 var(--font-display);letter-spacing:-.03em;color:#000">{{ lb.title }}</h3>
+          <dl style="margin:25px 0 0;display:grid;gap:15px">
+            <div><dt style="font:500 12px/1 var(--font-body);color:var(--color-stone)">연도 · 회사</dt><dd style="margin:8px 0 0;font:500 15px/1.6 var(--font-body);color:var(--color-ink)">{{ lb.meta }}</dd></div>
+            <div><dt style="font:500 12px/1 var(--font-body);color:var(--color-stone)">내가 한 일</dt><dd style="margin:8px 0 0;font:500 15px/1.6 var(--font-body);color:var(--color-ink)">{{ lb.did }}</dd></div>
+            <sc-if value="{{ lb.ai }}" hint-placeholder-val="{{ false }}"><div><dt style="font:500 12px/1 var(--font-body);color:var(--color-stone)">사용한 AI 툴</dt><dd style="margin:8px 0 0;font:500 15px/1.6 var(--font-body);color:var(--color-ink)">{{ lb.tools }}</dd></div></sc-if>
+          </dl>
+          <sc-if value="{{ lb.ai }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-top:auto;padding-top:30px">
+              <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Button" variant="dark" size="lg" full-width="{{ true }}" on-click="{{ siteLink }}" hint-size="100%,50px">사이트 보기</x-import>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <div role="status" style="position:fixed;left:50%;bottom:30px;z-index:90;height:44px;padding:0 20px;display:flex;align-items:center;white-space:nowrap;border-radius:100px;background:var(--color-ink);color:var(--color-cream);font:500 14px/1 var(--font-body);pointer-events:none;box-shadow:0 12px 30px -12px rgba(20,20,18,.35);transition:opacity .3s, transform .4s cubic-bezier(.16,1,.3,1);opacity:{{ toastOpacity }};transform:{{ toastShift }}">{{ toastMsg }}</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;projectOrder&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;임팩트순&quot;,&quot;시간순&quot;],&quot;default&quot;:&quot;임팩트순&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;구성&quot;},&quot;showProcess&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;구성&quot;},&quot;marqueeSpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:100,&quot;step&quot;:5,&quot;unit&quot;:&quot;px/s&quot;,&quot;default&quot;:30,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;모션&quot;},&quot;driveUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;링크&quot;}}">
+const PROJECTS = [
+  { id: "beautypin", no: "01", name: "뷰티핀", cat: "웹·서비스", company: "스타닥", year: "2025", order: 2,
+    summary: "외국인 관광객에게 직접 묻고, 그 답으로 필요한 서비스를 더해 Shopify로 구현한 프로젝트",
+    kpis: [{ value: "약 1억 원", label: "뷰티핀으로 예약한 외국인 고객으로, 제휴 피부과 한 곳이 시술 매출 약 1억 원을 냈어요" }],
+    image: "뷰티핀 메인 화면 캡처 (데스크톱 + 모바일)" },
+  { id: "beaver-lab", no: "02", name: "비버매장연구소", cat: "공간·경험", company: "비버웍스", year: "2023", order: 1,
+    summary: "신규 브랜드 비버매장연구소를 박람회에서 처음 알리기 위해, 브랜딩부터 부스·체험존·인쇄물 디자인과 현장까지 함께한 프로젝트",
+    kpis: [{ count: 100, suffix: "건+", label: "인스타그램 인증 게시글" }, { count: 9000, suffix: "부+", label: "현장에서 배포된 쇼핑백" }],
+    image: "코엑스 박람회 부스 전경 사진" },
+  { id: "unospay", no: "03", name: "우노스페이", cat: "웹·서비스", company: "우노스", year: "2022", order: 0,
+    summary: "실무자의 업무 과중을 문제로 보고, 리서치로 원인을 찾아 정보 구조와 운영 방식까지 다시 설계한 홈페이지 리디자인 프로젝트",
+    kpis: [{ value: "상담 설명이 수월해졌어요", quote: true, label: "리디자인 후 영업팀에게 '상담 설명이 수월해졌다'는 피드백을 받았어요" }],
+    image: "우노스페이 홈페이지 화면" },
+  { id: "elije", no: "04", name: "엘리쥬", cat: "콘텐츠", company: "스타닥", year: "2025", order: 3,
+    summary: "로고와 방향성만 있던 신제품에 콘셉트 사진과 메시지를 만들고, 상담 랜딩페이지부터 박람회 부스까지 하나의 톤으로 이어간 프로젝트",
+    kpis: [{ value: "피부에 빛을 불어넣다", quote: true, label: "지금까지도(~2026) 브랜드 메시지와 콘셉트 사진으로 쓰이고 있어요" }],
+    image: "스튜디오 콘셉트 사진 (맑은 톤의 제품 컷)" }
+];
+const SOFT = { soft: true, style: "marble", scale: 0.2, warp: 0.45, gloss: 0, veins: 0 };
+const ART = {
+  beautypin: { ...SOFT, angle: -0.6, colors: ["#f8f5f0", "#f4efe8", "#d3dae5", "#f7f3ed", "#f8f5f0", "#bcc6d6", "#f4efe8"] },
+  "beaver-lab": { ...SOFT, angle: 0.5, colors: ["#f8f5f0", "#f6ebe0", "#f8f5f0", "#f3c9b4", "#efb196", "#f4d9c2", "#f8f5f0"] },
+  unospay: { ...SOFT, angle: -1.4, colors: ["#f6f3ee", "#ebe5dc", "#f8f5f0", "#d9d0c3", "#efe9e0", "#ccc2b3", "#f6f3ee"] },
+  elije: { ...SOFT, angle: 1.2, colors: ["#efedf1", "#f7f3f1", "#e8d6cf", "#f3eeec", "#e3e1ea", "#f8f5f0", "#ebdcd5"] },
+  ink: { ...SOFT, angle: -0.4, colors: ["#f0ede8", "#e4ded4", "#f8f5f0", "#d6d0c6", "#f0ede8"] }
+};
+const FILES = {
+  unospay: [{ name: "실무자 인터뷰", meta: "리서치" }, { name: "정보 구조 재설계", meta: "IA" }, { name: "홈페이지 리디자인", meta: "Web", art: ART.ink }],
+  beautypin: [{ name: "현장 인터뷰 리서치", meta: "명동 · 강남" }, { name: "메인 화면", meta: "Web", art: ART.ink }, { name: "Shopify 전환 제안", meta: "서비스기획" }],
+  "beaver-lab": [{ name: "부스 전경", meta: "COEX", art: ART["beaver-lab"] }, { name: "체험존 동선", meta: "평면도" }, { name: "쇼핑백 · 리플렛", meta: "박람회", art: ART.ink }],
+  elije: [{ name: "메시지 정리", meta: "카피" }, { name: "콘셉트 촬영", meta: "사진", art: ART.ink }, { name: "상담 랜딩페이지", meta: "브랜딩", art: ART.elije }]
+};
+const SHELF = [
+  { k: 0, title: "박람회", meta: "2022" },
+  { k: 2, title: "박람회", meta: "2025" },
+  { k: 5, title: "홈페이지", meta: "2022" },
+  { k: 6, title: "홈페이지", meta: "2025" },
+  { k: 1, title: "리플렛", meta: "2022" },
+  { k: 3, title: "리플렛", meta: "2025" },
+  { k: 4, title: "카드뉴스", meta: "-2026" },
+  { k: 7, title: "상세페이지", meta: "-2026" }
+];
+const MARQUEE = ["뷰티핀 메인 화면", "비버매장연구소 부스 전경", "엘리쥬 콘셉트 사진", "카툰 설문지", "쇼핑백 실물 사진", "엘리쥬 랜딩페이지", "체험존 현장 사진", "뷰티핀 매거진 화면", "엘리쥬 박람회 백월"];
+const STEPS = [
+  { no: "01", key: "기획", en: "Define", title: "디자인 전에\n다시 한번 생각해요",
+    desc: "요청받은 그대로 바로 그리지 않고 한 번 더 생각해요. 헷갈리는 부분이 있으면 정확하게 묻고, 답을 확인한 뒤에 시작해요. 처음에 짚고 가야 나중에 다시 만드는 일이 없더라고요.",
+    tags: ["현장 인터뷰", "문제 재정의", "방향 제안"] },
+  { no: "02", key: "디자인", en: "Design", title: "편하게 읽히고,\n기억되게 만들어요",
+    desc: "처음 보는 사람도 쉽게 이해할 수 있게 정보를 정리해요. 그 위에 브랜드 메시지를 얹고, 색과 이미지, 카피까지 같은 톤으로 맞춰요.",
+    tags: ["메시지 설계", "비주얼 디렉션", "톤 일관성"] },
+  { no: "03", key: "구현", en: "Deliver", title: "시안이 구현될 때까지,\n끊임없이 검토해요",
+    desc: "부스·촬영·인쇄 업체와 직접 소통하며, 시안대로 나오는지 꼼꼼히 확인해요. 간단한 개발이 필요하면 AI로 직접 만들어 적용해요.",
+    tags: ["AI 구현", "현장 운영", "개선 반복"] }
+];
+const ARCHIVE = [
+  { id: "unospay-web", title: "엘리쥬 스킨부스터 리플렛 디자인", cat: "웹·서비스", meta: "우노스", did: "정보 구조(IA)를 다시 짜고 화면 전체를 리디자인", img: "리디자인 전/후 IA 비교" },
+  { id: "beautypin-mag", title: "우노스 제품 브로슈어", cat: "콘텐츠", meta: "스타닥 · 2025", did: "관광 키워드로 검색에 걸리는 여행·뷰티 콘텐츠 기획과 디자인", img: "매거진 콘텐츠 화면" },
+  { id: "ai-landing-1", title: "비버매장연구소 제품 상세페이지", cat: "AI·랜딩페이지", meta: "개인 작업 · 2026", did: "기획 · 프롬프트 · 디자인 판단 · 구현", img: "랜딩페이지 첫 화면 캡처", ai: true, tools: "이미지 생성 툴 + Claude" },
+  { id: "unospay-guide", title: "병원 홈페이지", cat: "콘텐츠", meta: "우노스", did: "가맹점이 바로 따라 할 수 있는 운영 가이드와 매뉴얼 제작", img: "운영 가이드 · 매뉴얼 펼침면" },
+  { id: "ai-landing-2", title: "제안서", cat: "AI·랜딩페이지", meta: "개인 작업 · 2026", did: "기획 · 프롬프트 · 디자인 판단 · 구현", img: "랜딩페이지 첫 화면 캡처", ai: true, tools: "이미지 생성 툴 + Claude" },
+  { id: "this-site", title: "(AI 프론트 구현) 랜딩페이지", cat: "AI·랜딩페이지", meta: "개인 작업 · 2026", did: "구조 기획과 디자인 시스템 정리, Claude로 구현", img: "포트폴리오 사이트 화면", ai: true, tools: "Claude" }
+];
+const TIMELINE = [
+  { company: "스타닥", year: "2024 - 2025", what: "뷰티핀 플랫폼 기획 및 디자인\n스킨부스터 엘리쥬 브랜딩 및 박람회 주도\n병원 홈페이지 기획 및 디자인\n병원 SNS 콘텐츠 기획 및 디자인" },
+  { company: "비버웍스", year: "2023", what: "비버매장연구소 브랜딩\n박람회 콘텐츠 기획 및 디자인\n온 · 오프라인 콘텐츠 기획 및 디자인" },
+  { company: "우노스", year: "2020 - 2023", what: "우노스 홈페이지 리디자인\n홈페이지 운영 가이드 제작 및 배포\n제안서 기획 및 디자인\n온 · 오프라인 콘텐츠 기획 및 디자인" }
+];
+const TOOLS = ["Figma", "Illustrator", "Photoshop", "After Effects", "Premiere Pro", "Shopify", "Imweb", "Cafe24", "Midjourney", "Claude", "Notion", "HTML", "CSS"];
+const QNA = [
+  { q: "어떤 디자이너인가요?", a: "직접 찾아보고 확인하는 디자이너입니다. 전달받은 자료를 화면에 옮기는 것만으로는 충분하지 않다고 생각합니다. 완성도 있는 디자인은 그 자료를 얼마나 깊이 이해하느냐에서 시작되기 때문입니다. 그래서 새로운 작업을 시작하면 비슷한 제품과 서비스, 레퍼런스를 폭넓게 찾아보며 그 분야를 먼저 이해한 뒤에 디자인을 시작합니다." },
+  { q: "함께 일할 때 어떤 동료인가요?", a: "해결 방법을 제안하고, 함께 조율하는 동료입니다. 의견이 다를 때는 충분한 근거를 가지고 제안하고, 동료들과 이야기하며 합의점을 찾습니다." },
+  { q: "계획대로 안 될 때는 어떻게 하나요?", a: "방법을 바꾸며 개선합니다. 외국인 현장 인터뷰 중 질문이 길고 복잡해 관광객들이 부담스러워했고, 영어가 익숙하지 않은 분도 많았습니다. 그래서 여행 상황을 그린 카툰을 먼저 보여 주고 답변하는 방식으로 바꿨고, 훨씬 구체적인 답을 얻을 수 있었습니다." },
+  { q: "어떤 분야의 일을 해봤나요?", a: "웹사이트 리디자인, 서비스 기획, 박람회 기획, 온·오프라인 콘텐츠까지 다양한 분야에서 일해 왔습니다. 브랜딩도, 박람회 기획도 처음이었지만 필요한 것을 공부하며 해냈습니다. 그렇게 쌓인 경험이 지금 제가 일하는 방식의 바탕이 되었습니다." },
+  { q: "요즘 가장 관심 있는 건 무엇인가요?", a: "디자이너가 직접 만들 수 있는 범위가 어디까지 넓어질 수 있는지에 관심이 많습니다. 요즘은 간단한 랜딩페이지를 혼자서도 구현부터 배포까지 할 수 있도록 AI와 함께 공부하고 있습니다." }
+];
+const DETAIL = { beautypin: "beautipin.html", "beaver-lab": "beaver.html", unospay: "unospay.html", elije: "elreju.html" };
+const EMAIL = "9606kimmi@naver.com";
+const EASE = "cubic-bezier(.16,1,.3,1)";
+
+class Component extends DCLogic {
+  state = { w: typeof window !== "undefined" ? window.innerWidth : 1440, scrolled: false, dd: false, menu: false, lb: null, qOpen: 0, toastMsg: "", toastOn: false, cp: {}, copied: false };
+  trackRef = React.createRef();
+
+  componentDidMount() {
+    this.reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    this.onScroll = () => { const s = window.scrollY > 24; if (s !== this.state.scrolled) this.setState({ scrolled: s }); this.trackStep(); };
+    this.onKey = e => { if (e.key === "Escape") this.setState({ lb: null, menu: false, dd: false }); };
+    window.addEventListener("resize", this.onResize);
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+    document.addEventListener("keydown", this.onKey);
+    this.io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) this.reveal(e.target); }), { rootMargin: "0px 0px -8% 0px", threshold: 0.1 });
+    this.scan();
+    this.startMarquee();
+    this.onCheck = () => { if (this.ck) return; this.ck = requestAnimationFrame(() => { this.ck = 0; this.check(); }); };
+    window.addEventListener("scroll", this.onCheck, { passive: true });
+    window.addEventListener("resize", this.onCheck);
+    this.onPrint = () => this.revealAll();
+    window.addEventListener("beforeprint", this.onPrint);
+    setTimeout(() => { this.check(); this.onTrack(); }, 150);
+    this.setupDrag();
+    this.safety = setTimeout(() => this.revealAll(), 2500);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.onResize);
+    window.removeEventListener("scroll", this.onScroll);
+    window.removeEventListener("scroll", this.onCheck);
+    window.removeEventListener("resize", this.onCheck);
+    window.removeEventListener("beforeprint", this.onPrint);
+    document.removeEventListener("keydown", this.onKey);
+    clearTimeout(this.safety);
+    this.dragOff && this.dragOff();
+    cancelAnimationFrame(this.raf); this.io && this.io.disconnect();
+  }
+  componentDidUpdate(pp, ps) {
+    this.scan();
+    if (this.onCheck) this.onCheck();
+    if (!ps.lb && this.state.lb) {
+      document.body.style.overflow = "hidden";
+      const b = document.querySelector("[data-lb]"), p = document.querySelector("[data-lb-panel]");
+      if (b && !this.reduce) b.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 200, easing: "ease" });
+      if (p && !this.reduce) p.animate([{ opacity: 0, transform: "translateY(16px)" }, { opacity: 1, transform: "none" }], { duration: 400, easing: EASE });
+    }
+    if (ps.lb && !this.state.lb) document.body.style.overflow = "";
+  }
+  check() {
+    const lim = window.innerHeight * 0.92;
+    document.querySelectorAll("[data-rv-init]:not([data-rv-done])").forEach(el => { if (el.getBoundingClientRect().top < lim) this.reveal(el); });
+  }
+  revealAll() { document.querySelectorAll("[data-rv-init]:not([data-rv-done])").forEach(el => this.reveal(el, true)); }
+  trackStep() {
+    if (window.innerWidth < 860) return;
+    const box = document.querySelector("[data-proc]");
+    if (!box) return;
+    const r = box.getBoundingClientRect();
+    const span = Math.max(1, r.height - window.innerHeight + 150);
+    const p = Math.min(1, Math.max(0, (150 - r.top) / span));
+    const idx = p < 0.28 ? 0 : p < 0.62 ? 1 : 2;
+    if (idx !== (this.state.step ?? 0)) this.setState({ step: idx });
+  }
+  stepW(t) {
+    const item = t.querySelector("[data-count]");
+    return item ? item.getBoundingClientRect().width + parseFloat(getComputedStyle(t).columnGap || 0) : t.clientWidth;
+  }
+  slideBy(dir) {
+    const t = this.trackRef.current; if (!t) return;
+    t.scrollBy({ left: dir * this.stepW(t), behavior: this.reduce ? "auto" : "smooth" });
+  }
+  setupDrag() {
+    const t = this.trackRef.current;
+    if (!t) { setTimeout(() => this.setupDrag(), 300); return; }
+    let down = false, moved = false, sx = 0, sl = 0, lx = 0, lt = 0, vel = 0;
+    const onDown = e => {
+      if (e.pointerType !== "mouse" || e.button !== 0) return;
+      if (e.target.closest && e.target.closest("image-slot")) return;
+      down = true; moved = false; sx = lx = e.clientX; sl = t.scrollLeft; lt = performance.now(); vel = 0;
+    };
+    const onMove = e => {
+      if (!down) return;
+      const dx = e.clientX - sx;
+      if (!moved && Math.abs(dx) > 5) { moved = true; t.style.scrollSnapType = "none"; t.style.scrollBehavior = "auto"; t.style.cursor = "grabbing"; document.body.style.userSelect = "none"; }
+      if (!moved) return;
+      const now = performance.now();
+      vel = (e.clientX - lx) / Math.max(1, now - lt); lx = e.clientX; lt = now;
+      t.scrollLeft = sl - dx;
+    };
+    const onUp = () => {
+      if (!down) return;
+      down = false;
+      if (!moved) return;
+      document.body.style.userSelect = ""; t.style.cursor = "grab";
+      const step = this.stepW(t);
+      const fling = Math.abs(vel) > 0.4 ? -Math.sign(vel) : 0;
+      const target = Math.max(0, Math.round((t.scrollLeft + fling * step * 0.5) / step)) * step;
+      t.style.scrollBehavior = "smooth";
+      t.scrollTo({ left: target, behavior: this.reduce ? "auto" : "smooth" });
+      setTimeout(() => { t.style.scrollSnapType = ""; }, 500);
+      const kill = ev => { ev.stopPropagation(); ev.preventDefault(); };
+      t.addEventListener("click", kill, { capture: true, once: true });
+      setTimeout(() => t.removeEventListener("click", kill, { capture: true }), 50);
+    };
+    t.addEventListener("pointerdown", onDown);
+    window.addEventListener("pointermove", onMove);
+    window.addEventListener("pointerup", onUp);
+    t.style.cursor = "grab";
+    t.addEventListener("dragstart", e => e.preventDefault());
+    this.dragOff = () => { t.removeEventListener("pointerdown", onDown); window.removeEventListener("pointermove", onMove); window.removeEventListener("pointerup", onUp); };
+  }
+  onTrack() {
+    const t = this.trackRef.current; if (!t) return;
+    const step = this.stepW(t);
+    const max = t.scrollWidth - t.clientWidth;
+    const idx = t.scrollLeft >= max - 4 ? -1 : Math.round(t.scrollLeft / step);
+    const atEnd = max <= 4 || t.scrollLeft >= max - 4, atStart = t.scrollLeft <= 4;
+    if (idx !== this.state.slide || atEnd !== this.state.atEnd || atStart !== this.state.atStart) this.setState({ slide: idx, atEnd, atStart });
+  }
+  scan() {
+    if (!this.io) return;
+    document.querySelectorAll("[data-rv]:not([data-rv-init])").forEach(el => {
+      el.setAttribute("data-rv-init", "");
+      if (this.reduce) { if (el.dataset.count) this.setCount(el.dataset.count, 1); return; }
+      const rise = el.dataset.rv === "rise";
+      const t = rise ? el.firstElementChild : el;
+      if (!t) return;
+      t.style.transform = rise ? "translate3d(0,105%,0)" : `translate3d(0,${el.dataset.rv || 24}px,0)`;
+      if (!rise) t.style.opacity = "0";
+      this.io.observe(el);
+    });
+  }
+  reveal(el, instant) {
+    if (el.hasAttribute("data-rv-done")) return;
+    el.setAttribute("data-rv-done", "");
+    this.io && this.io.unobserve(el);
+    const rise = el.dataset.rv === "rise";
+    const t = rise ? el.firstElementChild : el;
+    const d = +(el.dataset.delay || 0), dur = rise ? 1000 : 850;
+    t.style.transition = instant ? "none" : `opacity ${dur}ms ${EASE} ${d}ms, transform ${dur}ms ${EASE} ${d}ms`;
+    void t.offsetHeight;
+    t.style.opacity = ""; t.style.transform = "";
+    setTimeout(() => { t.style.transition = ""; }, dur + d + 60);
+    if (el.dataset.count) this.runCount(el.dataset.count, d + 250);
+  }
+  setCount(id, v) { this.setState(s => ({ cp: { ...s.cp, [id]: v } })); }
+  runCount(id, delay) {
+    const p = PROJECTS.find(x => x.id === id);
+    if (!p || !p.kpis.some(k => k.count)) return;
+    setTimeout(() => {
+      const t0 = performance.now(), D = 1600;
+      const step = t => { const k = Math.min(1, (t - t0) / D); this.setCount(id, 1 - Math.pow(1 - k, 4)); if (k < 1) requestAnimationFrame(step); };
+      requestAnimationFrame(step);
+      setTimeout(() => this.setCount(id, 1), D + 100);
+    }, delay);
+  }
+  startMarquee() {
+    let x = 0, v = 0, last = performance.now();
+    const tick = t => {
+      const dt = Math.min(64, t - last); last = t;
+      const tr = document.querySelector("[data-mq-track]");
+      const base = this.props.marqueeSpeed ?? 30;
+      const target = this.reduce ? 0 : this.mqHover ? base * 3 : base;
+      v += (target - v) * Math.min(1, dt / 220);
+      if (tr) {
+        const half = (tr.scrollWidth + 10) / 2;
+        x -= v * dt / 1000; if (-x >= half) x += half;
+        tr.style.transform = `translate3d(${x.toFixed(2)}px,0,0)`;
+      }
+      this.raf = requestAnimationFrame(tick);
+    };
+    this.raf = requestAnimationFrame(tick);
+  }
+  go(id) {
+    return e => {
+      if (e && e.preventDefault) e.preventDefault();
+      this.setState({ menu: false, dd: false });
+      const sec = id === "top" ? null : document.getElementById(id);
+      const el = sec && /^(about|archive|process|work)$/.test(id) && sec.firstElementChild ? sec.firstElementChild : sec;
+      const top = el ? el.getBoundingClientRect().top + window.scrollY - (el === sec ? 60 : 110) : 0;
+      window.scrollTo({ top, behavior: this.reduce ? "auto" : "smooth" });
+    };
+  }
+  toast(msg) {
+    clearTimeout(this.tt);
+    this.setState({ toastMsg: msg, toastOn: true });
+    this.tt = setTimeout(() => this.setState({ toastOn: false }), 2400);
+  }
+
+  renderVals() {
+    const s = this.state, w = s.w;
+    const isDesktop = w >= 1020;
+    const chrono = (this.props.projectOrder ?? "임팩트순") === "시간순";
+    const gutter = Math.min(100, Math.max(40, w * 0.07));
+    const cw = Math.min(1300, w - gutter);
+    const gap = w >= 760 ? 20 : 10;
+    const cardW = w >= 1100 ? (cw - gap * 2) / 3 : w >= 700 ? (cw - gap) / 2 : cw * 0.86;
+    const folderW = Math.floor(Math.max(240, Math.min(340, cardW - 50)));
+    const ordered = chrono ? [...PROJECTS].sort((a, b) => a.order - b.order) : PROJECTS;
+    const projects = ordered.map((p, i) => {
+      const cp = s.cp[p.id] ?? 0;
+      return { ...p, no: String(i + 1).padStart(2, "0"), label: `02-${i + 1} ${p.name}`, delay: i * 100,
+        folder: { label: p.name, meta: `${p.cat} · ${p.year}`, art: ART[p.id], seed: 3 + i * 4, files: FILES[p.id], width: folderW, appearDelay: i * 140,
+          action: "none",
+          onFileSelect: f => this.toast(`‘${f.name}’ 내용은 상세 페이지에서 보여드릴게요`) },
+        goTo: e => { e.preventDefault(); if (DETAIL[p.id]) { window.location.href = DETAIL[p.id]; return; } this.go(p.id)(); },
+        open: () => { if (DETAIL[p.id]) { window.location.href = DETAIL[p.id]; return; } this.toast(`${p.name} 상세 페이지는 다음 단계에서 이어서 만들어요`); },
+        kpis: p.kpis.map(k => ({ label: k.label,
+          size: k.quote ? "clamp(19px, 1.8vw, 23px)" : "clamp(30px, 3vw, 40px)",
+          display: k.count ? Math.round(k.count * cp).toLocaleString("ko-KR") + k.suffix : k.value })) };
+    });
+    const marquee = [0, 1].flatMap(() => MARQUEE.map((label, i) => ({ k: i, label })));
+    const wide = w >= 860;
+    const act = wide ? (s.step ?? 0) : -1;
+    const steps = STEPS.map((st, i) => { const on = act === -1 || act === i, cur = wide ? act === i : i === 0; return { ...st, i,
+      layerOpacity: cur ? 1 : 0, hidden: cur ? "false" : "true", textShift: cur ? "none" : "translateY(16px)",
+      rowOpacity: wide ? (cur ? 1 : 0) : 1, rowShift: wide && !cur ? (i < act ? "translateY(-12px)" : "translateY(12px)") : "none",
+      rowEvents: wide && !cur ? "none" : "auto", rowHidden: wide && !cur ? "true" : "false",
+      area: wide ? "1 / 1" : "auto", noColor: "var(--color-ink)",
+      line: wide || i === 0 ? "0 solid transparent" : "1px solid var(--color-line)",
+      pad: wide ? "0px" : (i === 0 ? "0 0 50px" : "50px 0") }; });
+    const archive = ARCHIVE.map(a => ({ ...a, ai: !!a.ai, onOpen: e => { if (e.target.closest && e.target.closest("image-slot")) return; this.setState({ lb: a }); } }));
+    const qna = QNA.map((x, i) => { const open = s.qOpen === i, hov = s.qHover === i; return { ...x, open,
+      bg: open || hov ? "var(--color-white)" : "var(--color-sand)",
+      rows: open ? "1fr" : "0fr", iconRot: open ? "rotate(45deg)" : "none",
+      iconBg: open ? "var(--color-ink)" : "transparent", iconColor: open ? "var(--color-cream)" : "var(--color-ink)",
+      enter: () => this.setState({ qHover: i }), leave: () => this.setState(st => st.qHover === i ? { qHover: -1 } : null),
+      toggle: () => this.setState({ qOpen: open ? -1 : i }) }; });
+    const lb = s.lb || {};
+    return {
+      isDesktop, isMobile: !isDesktop,
+      navBg: s.scrolled || s.menu ? "rgba(248,245,240,.85)" : "rgba(248,245,240,0)",
+      navShadow: s.scrolled ? "inset 0 -1px 0 rgba(20,20,18,.08)" : "none",
+      ddShow: () => this.setState({ dd: true }), ddHide: () => this.setState({ dd: false }), ddToggle: () => this.setState({ dd: !s.dd }),
+      ddOpacity: s.dd ? 1 : 0, ddShift: s.dd ? "none" : "translateY(-6px)", ddEvents: s.dd ? "auto" : "none",
+      caretProps: { style: { transform: s.dd ? "rotate(180deg)" : "none", transition: "transform .25s" } },
+      menuToggle: () => this.setState({ menu: !s.menu }),
+      menuOpacity: s.menu ? 1 : 0, menuShift: s.menu ? "none" : "translateY(-10px)", menuEvents: s.menu ? "auto" : "none",
+      burgerTop: s.menu ? "translateY(3.25px) rotate(45deg)" : "none", burgerBot: s.menu ? "translateY(-3.25px) rotate(-45deg)" : "none",
+      goTop: this.go("top"), goWork: this.go("work"), goProcess: this.go(this.props.showProcess === false ? "work" : "process"), goArchive: this.go("archive"), goAbout: this.go("about"),
+      resume: e => { if (e && e.preventDefault) e.preventDefault(); this.setState({ menu: false }); this.toast("이력서 PDF를 연결해 주세요"); },
+      mqEnter: () => { this.mqHover = true; }, mqLeave: () => { this.mqHover = false; },
+      procCols: wide ? "minmax(0, 4fr) minmax(0, 7fr)" : "minmax(0, 1fr)", cardMax: wide ? "none" : "440px", cardPos: "relative",
+      goBeautypin: () => { window.location.href = DETAIL.beautypin; },
+      shelfRow: w >= 760, shelfStack: w < 760,
+      shelfLeave: () => { if ((this.state.shelfOpen ?? 0) !== 0) this.setState({ shelfOpen: 0 }); },
+      shelf: SHELF.map((it, i) => { const on = (s.shelfOpen ?? 0) === i; return { ...it, expanded: on ? "true" : "false",
+        basis: on ? "100%" : "64px", artOpacity: on ? 1 : 0, artEvents: on ? "auto" : "none", metaOpacity: on ? 1 : 0,
+        color: on ? "var(--color-ink)" : "var(--color-stone)", edge: i === SHELF.length - 1 ? "0 solid transparent" : "1px solid var(--color-line)",
+        select: () => { if (s.shelfOpen !== i) this.setState({ shelfOpen: i }); },
+        hover: e => { if (e.pointerType === "mouse" && this.state.shelfOpen !== i) this.setState({ shelfOpen: i }); } }; }),
+      showStar: wide, star: this.starEl || (this.starEl = React.createElement("svg", {
+        viewBox: "0 0 1000 1000", fill: "none",
+        style: { width: "100%", height: "100%", display: "block",
+          animation: (typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) ? "none" : "star-spin 15s linear infinite" }
+      }, React.createElement("g", { stroke: "#FF602F", strokeWidth: 100 },
+        ["M500 0V1000", "M0 500H1000", "M146.45 146.45L853.55 853.55", "M853.55 146.45L146.45 853.55"].map(d => React.createElement("path", { key: d, d }))))),
+      procH: wide ? "calc(100vh + 300vh)" : "auto", gridPos: wide ? "sticky" : "relative", procAlign: "start",
+      stepCols: w >= 760 ? "40px minmax(0, 1fr) minmax(0, 1.15fr)" : "40px minmax(0, 1fr)",
+      descCol: w >= 760 ? "auto" : "2", descPad: w >= 760 ? "28px" : "0px",
+      projects, marquee, steps, slideW: cardW + "px", slideGap: gap + "px",
+      slideNo: String(s.slide === -1 ? projects.length : (s.slide ?? 0) + 1).padStart(2, "0"), slideTotal: String(projects.length).padStart(2, "0"),
+      prevOpacity: s.atStart === false ? 1 : 0.35, nextOpacity: s.atEnd ? 0.35 : 1,
+      prevDisabled: s.atStart !== false, nextDisabled: !!s.atEnd,
+      prevEvents: s.atStart !== false ? "none" : "auto", nextEvents: s.atEnd ? "none" : "auto",
+      slidePrev: () => this.slideBy(-1), slideNext: () => this.slideBy(1),
+      trackRef: this.trackRef, onTrackScroll: () => this.onTrack(),
+      showProcess: this.props.showProcess ?? true,
+      archive, archiveEmpty: archive.length === 0,
+      driveUrl: this.props.driveUrl || "#",
+      driveClick: e => { if (!this.props.driveUrl) { e.preventDefault(); this.toast("Tweaks에서 구글 드라이브 URL을 입력해 주세요"); } },
+      archiveAll: () => this.toast("아카이브 페이지는 다음 단계에서 만들어요"),
+      qnaTop: w >= 1000 ? "calc(50px + clamp(89.6px, 12.32vw, 156.8px))" : "0px",
+      timeline: TIMELINE.map(t => ({ ...t, items: t.what.split("\n") })), tools: TOOLS, qna,
+      email: EMAIL, copyLabel: s.copied ? "복사완료" : "복사하기",
+      copyMail: () => { navigator.clipboard && navigator.clipboard.writeText(EMAIL).catch(() => {}); this.setState({ copied: true }); clearTimeout(this.ct); this.ct = setTimeout(() => this.setState({ copied: false }), 2000); this.toast("이메일 주소를 복사했어요"); },
+      mailTo: () => { window.location.href = `mailto:${EMAIL}`; },
+      lbOpen: !!s.lb, lb: { ...lb, ai: !!lb.ai },
+      lbClose: () => this.setState({ lb: null }),
+      lbBackdrop: e => { if (e.target === e.currentTarget) this.setState({ lb: null }); },
+      siteLink: () => this.toast("사이트 링크를 연결해 주세요"),
+      toastMsg: s.toastMsg, toastOpacity: s.toastOn ? 1 : 0, toastShift: s.toastOn ? "translate(-50%,0)" : "translate(-50%,20px)"
+    };
+  }
+}
+</script>
+</body>
+</html>

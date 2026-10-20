@@ -1,0 +1,11 @@
+:root{
+--color-cream:#f8f5f0;--color-sand:#f0ede8;--color-stone:#9c9a97;--color-stone-50:rgba(156,154,151,0.5);--color-ink:#141412;--color-black:#000000;--color-white:#ffffff;
+--color-orange:#ff6b35;--color-orange-hover:#f25a22;--color-orange-soft:#ffe3d6;--color-slate:#7e8ea8;--color-slate-soft:#e4e8ef;
+--color-line:rgba(20,20,18,0.10);--color-line-strong:rgba(20,20,18,0.20);
+--surface-page:var(--color-cream);--surface-muted:var(--color-sand);--surface-card:var(--color-white);--surface-inverse:var(--color-ink);--surface-accent:var(--color-orange);
+--text-primary:var(--color-black);--text-strong:var(--color-ink);--text-muted:var(--color-stone);--text-faint:var(--color-stone-50);--text-inverse:var(--color-cream);--text-on-accent:var(--color-ink);--text-secondary-accent:var(--color-slate);
+--accent:var(--color-orange);--accent-hover:var(--color-orange-hover);--accent-soft:var(--color-orange-soft);
+--border-subtle:var(--color-line);--border-strong:var(--color-line-strong);
+--link:var(--color-ink);--link-hover:var(--color-orange);--link-muted:var(--color-stone-50);
+--success:#3f9a63;--danger:#d8432c;
+}

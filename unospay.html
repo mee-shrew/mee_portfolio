@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/tokens/fonts.css">
+  <link rel="stylesheet" href="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/tokens/colors.css">
+  <link rel="stylesheet" href="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/tokens/typography.css">
+  <link rel="stylesheet" href="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/tokens/spacing.css">
+  <link rel="stylesheet" href="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/tokens/radius.css">
+  <link rel="stylesheet" href="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/tokens/motion.css">
+  <link rel="stylesheet" href="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/tokens/base.css">
+  <link rel="stylesheet" href="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/styles.css">
+  <script src="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/ds_bundle.js"></script>
+  <meta name="image-slot-state" content="image-slots-unospay.state.json" data-resource-id="imageSlotStatePage">
+  <meta name="ext-resource-dependency" content="image-slots-unospay.state.json" data-resource-id="imageSlotStatePage">
+  <script src="./image-slot.js"></script>
+  <meta name="ext-resource-dependency" content="image-slots.state.json" data-resource-id="imageSlotState">
+  <title>우노스페이 · 김미정 포트폴리오</title>
+  <style>
+    *{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    body{margin:0;background:#f8f5f0;color:#000;font-family:var(--font-body);word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+    a{color:#141412;text-decoration:none;transition:color .2s}
+    a:hover{color:#ff6b35}
+    button{font:inherit}
+    ::selection{background:#141412;color:#f8f5f0}
+  </style>
+</helmet>
+<div style="min-height:100vh;background:var(--color-cream)">
+
+  <header style="position:sticky;top:0;z-index:50;background:rgba(248,245,240,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:inset 0 -1px 0 var(--color-line)">
+    <div style="width:min(1300px, calc(100% - clamp(40px, 7vw, 100px)));margin:0 auto;height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+      <div style="display:flex;align-items:center;gap:20px;min-width:0">
+        <a href="index.html" aria-label="김미정 포트폴리오 홈" style="display:flex;align-items:flex-end;gap:3px;font:600 18px/1 var(--font-display);letter-spacing:-.02em;color:var(--color-ink)"><x-import component-from-global-scope="mj-logo" from="./logo-mark.js" hint-size="54px,30px"></x-import><span style="margin-bottom:5px;font:500 12px/1 var(--font-body);color:var(--color-stone)">Portfolio</span></a>
+        <span style="width:1px;height:16px;background:var(--color-line-strong)"></span>
+        <span style="font:500 14px/1 var(--font-body);color:var(--color-stone);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Work / 우노스페이</span>
+      </div>
+      <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Button" variant="dark" icon="download" on-click="{{ resume }}" hint-size="120px,40px">Resume</x-import>
+    </div>
+  </header>
+
+  <div style="width:min(1300px, calc(100% - clamp(40px, 7vw, 100px)));margin:0 auto;display:grid;grid-template-columns:{{ cols }};gap:50px;align-items:start;padding:50px 0 100px">
+
+    <sc-if value="{{ showLeft }}" hint-placeholder-val="{{ true }}">
+      <aside style="position:sticky;top:114px;display:flex;flex-direction:column;gap:5px">
+        <span style="padding:0 12px 10px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">Selected Work</span>
+        <sc-for list="{{ works }}" as="w" hint-placeholder-count="4">
+          <a href="{{ w.href }}" onClick="{{ w.onClick }}" style="display:flex;align-items:center;justify-content:space-between;gap:10px;height:40px;padding:0 12px;border-radius:12px;background:{{ w.bg }};font:500 14px/1 var(--font-body);color:{{ w.color }}">{{ w.name }}<span style="font:500 12px/1 var(--font-body);color:{{ w.noColor }}">{{ w.no }}</span></a>
+        </sc-for>
+      </aside>
+    </sc-if>
+
+    <article style="min-width:0;max-width:760px;width:100%;justify-self:center">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;font:500 13px/1 var(--font-body);color:var(--color-stone)">
+        <span style="height:26px;padding:0 11px;display:inline-flex;align-items:center;border-radius:100px;background:var(--color-sand);color:var(--color-ink)">웹·서비스</span>
+        <span>우노스 · 2022</span>
+      </div>
+      <div style="margin-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 18px">
+        <h1 style="margin:0;font:600 clamp(40px, 5vw, 60px)/1.4 var(--font-display);letter-spacing:-.04em;color:#000">우노스페이</h1>
+        <a href="{{ siteUrl }}" onClick="{{ siteClick }}" target="_blank" rel="noopener" aria-label="우노스페이 사이트 바로가기" style="height:40px;padding:0 8px 0 16px;display:inline-flex;align-items:center;gap:10px;border-radius:100px;background:var(--color-white);font:500 14px/1 var(--font-body);color:var(--color-ink);transition:background .2s" style-hover="background:var(--color-sand);color:var(--color-ink)">사이트 보기<span style="width:28px;height:28px;border-radius:50%;background:var(--color-ink);color:var(--color-cream);display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-up-right" size="{{ 14 }}" hint-size="14px,14px"></x-import></span></a>
+      </div>
+      <p style="margin:10px 0 0;font:500 clamp(18px, 1.6vw, 21px)/1.65 var(--font-body);letter-spacing:-.02em;color:var(--color-ink);text-wrap:pretty">제품 비교와 정보 탐색이 어려워 같은 상담이 반복되던 홈페이지를, 실무자 리서치로 원인을 찾아 정보 구조와 운영 방식까지 다시 설계한 프로젝트</p>
+      <p style="margin:10px 0 0;font:500 15px/1.6 var(--font-body);color:var(--color-stone)">키오스크 서비스 홈페이지 리디자인</p>
+
+      <dl style="margin:40px 0 0;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 160px), 1fr));gap:0;border-top:1px solid var(--color-line);border-bottom:1px solid var(--color-line)">
+        <div style="padding:20px 20px 20px 0"><dt style="font:500 12px/1 var(--font-body);color:var(--color-stone)">회사 · 기간</dt><dd style="margin:10px 0 0;font:500 14px/1.6 var(--font-body);color:var(--color-ink)">우노스<br>2022.06 – 08</dd></div>
+        <div style="padding:20px 20px 20px 0"><dt style="font:500 12px/1 var(--font-body);color:var(--color-stone)">팀</dt><dd style="margin:10px 0 0;font:500 14px/1.6 var(--font-body);color:var(--color-ink)">디자이너 1 (본인)<br>기획자 1 · 개발자 1</dd></div>
+        <div style="padding:20px 20px 20px 0"><dt style="font:500 12px/1 var(--font-body);color:var(--color-stone)">기여도</dt><dd style="margin:10px 0 0;font:500 14px/1.6 var(--font-body);color:var(--color-ink)">디자인 100%<br>기획 80%</dd></div>
+        <div style="padding:20px 0"><dt style="font:500 12px/1 var(--font-body);color:var(--color-stone)">툴</dt><dd style="margin:10px 0 0;font:500 14px/1.6 var(--font-body);color:var(--color-ink)">Figma<br>Illustrator · Notion</dd></div>
+      </dl>
+      <p style="margin:20px 0 0;font:500 14px/1.7 var(--font-body);color:var(--color-stone)">리서치 · 구조 설계 · UX/UI 디자인 · 운영 체계 설계 — 기획자와 함께 기획하고, 디자인은 단독</p>
+
+      <div style="position:relative;margin-top:40px;aspect-ratio:16/10;border-radius:20px;overflow:hidden;background:var(--color-sand)">
+        <image-slot id="up-hero" shape="rounded" radius="20" placeholder="디바이스 목업 (노트북 · 태블릿 · 모바일)"></image-slot>
+      </div>
+      <div style="margin-top:15px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 15px">
+        
+      </div>
+
+      <section id="s1" data-sec="0" style="scroll-margin-top:90px;margin-top:100px">
+        <span style="font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">01 · Background</span>
+        <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">배경 · 과제</h2>
+        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">매장용 키오스크·결제 솔루션(하드웨어 + 소프트웨어) 서비스예요. 주요 문의 고객은 키오스크 결제 방식에 익숙하지 않은 신규 창업 점주였어요.</p>
+        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">그런데 홈페이지만 보고는 제품 차이를 알기 어려워 상담 시간이 길어지고, 같은 문의가 반복됐어요. 영업·고객지원팀은 같은 설명을 계속해야 했어요.</p>
+      </section>
+
+      <section id="s2" data-sec="1" style="scroll-margin-top:90px;margin-top:100px">
+        <span style="font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">02 · Planning — Research</span>
+        <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">고객을 가장 많이 만나는 사람에게 묻기</h2>
+        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">문제를 추측하지 않고 확인부터 했어요. 고객과 직접 상담하고 VOC를 받는 내부 실무자가 고객이 어디서 막히는지 가장 잘 알고 있었기 때문이에요.</p>
+        <div style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr));gap:10px">
+          <div style="padding:20px 25px;border-radius:20px;background:var(--color-sand);display:flex;align-items:center;gap:15px">
+            <span style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--color-cream);color:var(--color-ink);display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="users" size="{{ 16 }}" hint-size="16px,16px"></x-import></span>
+            <div><b style="display:block;font:600 16px/1.4 var(--font-body);color:var(--color-ink)">전사 설문</b><span style="display:block;margin-top:3px;font:500 13px/1.5 var(--font-body);color:var(--color-stone)">구글폼 · 우노스 전 직원</span></div>
+          </div>
+          <div style="padding:20px 25px;border-radius:20px;background:var(--color-sand);display:flex;align-items:center;gap:15px">
+            <span style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--color-cream);color:var(--color-ink);display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="message-circle" size="{{ 16 }}" hint-size="16px,16px"></x-import></span>
+            <div><b style="display:block;font:600 16px/1.4 var(--font-body);color:var(--color-ink)">심층 인터뷰 2명</b><span style="display:block;margin-top:3px;font:500 13px/1.5 var(--font-body);color:var(--color-stone)">영업팀 1 · 고객지원팀 1</span></div>
+          </div>
+        </div>
+        <h3 style="margin:50px 0 0;font:600 22px/1.4 var(--font-display);letter-spacing:-.02em;color:#000">실무자에게 들은 말</h3>
+        <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr));gap:10px">
+          <sc-for list="{{ quotes }}" as="q" hint-placeholder-count="3">
+            <figure style="margin:0;padding:25px;border-radius:20px;background:var(--color-white);display:flex;flex-direction:column;justify-content:space-between;gap:25px">
+              <blockquote style="margin:0;font:600 18px/1.55 var(--font-display);letter-spacing:-.02em;color:#000;text-wrap:pretty">“{{ q.t }}”</blockquote>
+              <figcaption style="font:500 13px/1 var(--font-body);color:var(--color-stone)">{{ q.who }}</figcaption>
+            </figure>
+          </sc-for>
+        </div>
+      </section>
+
+      <section id="s3" data-sec="2" style="scroll-margin-top:90px;margin-top:100px">
+        <span style="font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">03 · Planning — Problem</span>
+        <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">문제 정의 → 개선 방향</h2>
+        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">흩어진 의견을 문제 3개로 묶고, 해결 방향 4개로 바꿨어요.</p>
+        <div style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 210px), 1fr));gap:10px">
+          <sc-for list="{{ problems }}" as="p" hint-placeholder-count="3">
+            <div style="padding:25px;border-radius:20px;background:var(--color-sand)">
+              <span style="font:500 13px/1 var(--font-body);color:var(--color-stone)">문제 {{ p.no }} · {{ p.area }}</span>
+              <p style="margin:15px 0 0;font:600 17px/1.55 var(--font-body);letter-spacing:-.01em;color:var(--color-ink)">{{ p.t }}</p>
+            </div>
+          </sc-for>
+        </div>
+
+        <blockquote style="margin:50px 0 0;padding:clamp(30px, 5vw, 50px);border-radius:20px;background:var(--color-ink)">
+          <span style="display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-cream)"><i style="width:6px;height:6px;border-radius:50%;background:var(--color-orange)"></i>핵심 인사이트</span>
+          <p style="margin:25px 0 0;font:600 clamp(26px, 3.2vw, 38px)/1.45 var(--font-display);letter-spacing:-.03em;color:var(--color-cream);text-wrap:balance">홈페이지가 답하지 못한 질문은<br>모두 상담 전화가 됐어요</p>
+          <p style="margin:20px 0 0;max-width:520px;font:500 17px/1.7 var(--font-body);letter-spacing:-.01em;color:var(--color-stone);text-wrap:pretty">그리고 그 전화는 고스란히 실무자의 업무로 쌓이고 있었어요.</p>
+        </blockquote>
+
+        <h3 style="margin:50px 0 0;font:600 22px/1.4 var(--font-display);letter-spacing:-.02em;color:#000">개선 방향 4가지</h3>
+        <div style="margin-top:20px;border-top:1px solid var(--color-line)">
+          <sc-for list="{{ directions }}" as="d" hint-placeholder-count="4">
+            <a href="#{{ d.to }}" onClick="{{ d.go }}" style="display:grid;grid-template-columns:40px minmax(0, 1fr) auto;gap:15px;align-items:center;padding:22px 0;border-bottom:1px solid var(--color-line);color:var(--color-ink);transition:background .2s" style-hover="color:var(--color-ink);background:rgba(240,237,232,.6)">
+              <span style="font:500 14px/1.6 var(--font-body);color:var(--color-stone);font-variant-numeric:tabular-nums">{{ d.no }}</span>
+              <span style="min-width:0">
+                <b style="display:block;font:600 18px/1.4 var(--font-display);letter-spacing:-.02em;color:#000">{{ d.title }}</b>
+                <span style="display:block;margin-top:5px;font:500 14px/1.6 var(--font-body);color:var(--color-stone)">{{ d.desc }}</span>
+              </span>
+              <span style="display:inline-flex;align-items:center;gap:6px;padding-right:5px;font:500 12px/1 var(--font-body);color:var(--color-stone);white-space:nowrap">{{ d.label }}<x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-down" size="{{ 13 }}" hint-size="13px,13px"></x-import></span>
+            </a>
+          </sc-for>
+        </div>
+      </section>
+
+      <section id="s4" data-sec="3" style="scroll-margin-top:90px;margin-top:100px">
+        <span style="font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">04 · Planning — IA</span>
+        <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">정보 구조 재설계</h2>
+        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">내부 기준으로 짜여 있던 구조를 사용자 기준으로 바꿨어요.</p>
+
+        <h3 style="margin:60px 0 0;font:600 22px/1.4 var(--font-display);letter-spacing:-.02em;color:#000">① 글로벌 내비게이션</h3>
+        <div style="margin-top:25px;display:grid;grid-template-columns:{{ bfCols }};align-items:stretch;gap:10px">
+          <div style="padding:25px;border-radius:20px;background:var(--color-sand);display:flex;flex-direction:column;gap:12px">
+            <span style="font:500 12px/1 var(--font-body);color:var(--color-stone)">AS IS · 내부 제품 분류 기준</span>
+            <b style="font:600 16px/1.6 var(--font-body);color:#74726f">회사소개 / 하드웨어 / 소프트웨어 / 설치사례 / 고객지원</b>
+            <span style="font:500 13px/1.6 var(--font-body);color:var(--color-stone)">하드웨어와 소프트웨어를 별개 제품으로 오인함</span>
+          </div>
+          <span aria-hidden="true" style="align-self:center;justify-self:center;width:36px;height:36px;border-radius:50%;background:var(--color-ink);color:var(--color-cream);display:flex;align-items:center;justify-content:center;transform:{{ bfArrow }}"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-right" size="{{ 16 }}" hint-size="16px,16px"></x-import></span>
+          <div style="padding:25px;border-radius:20px;background:var(--color-white);display:flex;flex-direction:column;gap:12px">
+            <span style="font:500 12px/1 var(--font-body);color:var(--color-orange-hover)">TO BE · 사용자의 판단 순서</span>
+            <b style="font:600 16px/1.6 var(--font-body);color:#000">사용자가 차례로 떠올리는 질문을 메뉴로 만들었어요</b>
+          </div>
+        </div>
+        <div style="position:relative;margin-top:25px;aspect-ratio:2/1;border-radius:20px;overflow:hidden;background:var(--color-sand)">
+          <image-slot id="up-gnb" shape="rounded" radius="20" placeholder="GNB AS IS / TO BE 트리 (PDF 7p)" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+        </div>
+        <div style="margin-top:50px">
+          <sc-if value="{{ wideMenu }}" hint-placeholder-val="{{ true }}">
+            <div style="display:grid;grid-template-columns:{{ menuCols }};gap:20px;padding:0 0 12px;border-bottom:1px solid var(--color-line-strong);font:500 12px/1 var(--font-body);color:var(--color-stone)">
+              <span>메뉴</span><span>사용자의 질문</span>
+            </div>
+          </sc-if>
+          <sc-for list="{{ menus }}" as="m" hint-placeholder-count="5">
+            <div style="display:grid;grid-template-columns:{{ menuCols }};gap:8px 20px;padding:22px 0;border-bottom:1px solid var(--color-line);align-items:baseline">
+              <b style="font:600 18px/1.4 var(--font-display);letter-spacing:-.02em;color:#000">{{ m.name }}</b>
+              <span style="font:500 15px/1.6 var(--font-body);color:var(--color-ink)">“{{ m.q }}”</span>
+            </div>
+          </sc-for>
+        </div>
+
+
+        <h3 style="margin:80px 0 0;font:600 22px/1.4 var(--font-display);letter-spacing:-.02em;color:#000">② 제품 분류 방식</h3>
+        <div style="margin-top:25px;display:grid;grid-template-columns:{{ bfCols }};align-items:stretch;gap:10px">
+          <div style="padding:25px;border-radius:20px;background:var(--color-sand);display:flex;flex-direction:column;gap:12px">
+            <span style="font:500 12px/1 var(--font-body);color:var(--color-stone)">AS IS · 결제 방식부터</span>
+            <b style="font:600 16px/1.6 var(--font-body);color:#74726f">선불 · 후불 · 유인 · 무인</b>
+            <span style="font:500 13px/1.6 var(--font-body);color:var(--color-stone)">신규 창업 점주에게는 어려운 기술적 선택</span>
+          </div>
+          <span aria-hidden="true" style="align-self:center;justify-self:center;width:36px;height:36px;border-radius:50%;background:var(--color-ink);color:var(--color-cream);display:flex;align-items:center;justify-content:center;transform:{{ bfArrow }}"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-right" size="{{ 16 }}" hint-size="16px,16px"></x-import></span>
+          <div style="padding:25px;border-radius:20px;background:var(--color-white);display:flex;flex-direction:column;gap:12px">
+            <span style="font:500 12px/1 var(--font-body);color:var(--color-orange-hover)">TO BE · 매장 상황부터</span>
+            <b style="font:600 16px/1.6 var(--font-body);color:#000">요식업 · 무인 매장 · 마라탕(저울 연동)</b>
+            <span style="font:500 13px/1.6 var(--font-body);color:var(--color-stone)">기능은 이용 흐름으로 따로 탐색</span>
+          </div>
+        </div>
+        <div style="margin-top:15px;padding:20px 25px;border-radius:20px;background:var(--color-white);display:flex;flex-wrap:wrap;align-items:center;gap:8px">
+          <span style="margin-right:8px;font:500 12px/1 var(--font-body);color:var(--color-stone)">이용 흐름</span>
+          <sc-for list="{{ flow }}" as="f" hint-placeholder-count="5">
+            <span style="display:inline-flex;align-items:center;gap:8px;font:500 14px/1 var(--font-body);color:var(--color-ink)"><span style="height:32px;padding:0 14px;display:inline-flex;align-items:center;border-radius:100px;background:var(--color-cream)">{{ f.t }}</span><sc-if value="{{ f.more }}" hint-placeholder-val="{{ true }}"><span style="color:var(--color-stone)">→</span></sc-if></span>
+          </sc-for>
+        </div>
+        <div style="position:relative;margin-top:40px;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:var(--color-sand)">
+          <image-slot id="up-category" shape="rounded" radius="20" placeholder="제품 분류 AS IS / TO BE 트리 (PDF 8p)"></image-slot>
+        </div>
+      </section>
+
+      <section id="s5" data-sec="4" style="scroll-margin-top:90px;margin-top:100px">
+        <span style="font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">05 · Design</span>
+        <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">화면별로 바꾼 것</h2>
+        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">새 구조가 실제 화면에서 어떻게 풀렸는지, 화면을 골라 확인해 보세요.</p>
+        <div style="margin-top:30px;padding:8px;border-radius:24px;background:var(--color-sand)">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:4px 4px 12px">
+        <div role="tablist" style="display:flex;flex-wrap:wrap;gap:4px">
+          <sc-for list="{{ screens }}" as="sc" hint-placeholder-count="5">
+            <button role="tab" aria-selected="{{ sc.on }}" onClick="{{ sc.pick }}" style="height:40px;padding:0 18px;border:0;border-radius:100px;cursor:pointer;background:{{ sc.bg }};color:{{ sc.fg }};font:500 14px/1 var(--font-body);transition:background .2s, color .2s">{{ sc.name }}</button>
+          </sc-for>
+        </div>
+        <span style="padding-right:8px;font:500 13px/1 var(--font-body);color:var(--color-stone);font-variant-numeric:tabular-nums"><span style="color:var(--color-ink)">{{ tabNo }}</span> / {{ tabTotal }}</span>
+        </div>
+        <div style="padding:25px;border-radius:18px;background:var(--color-white)">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;font:600 18px/1.4 var(--font-display);letter-spacing:-.02em;color:#000">{{ cur.name }}<span style="font:500 13px/1 var(--font-body);color:var(--color-stone)">화면</span></div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr));gap:20px">
+            <div><span style="display:block;font:500 12px/1 var(--font-body);color:var(--color-stone)">AS IS</span><span style="display: block; margin-top: 10px; font: 500 15px/1.6 var(--font-body); color: var(--color-ink)">{{ cur.asis }}</span></div>
+            <div style="padding-left:20px;box-shadow:inset 1px 0 0 var(--color-line)"><span style="display: block; font: 500 12px/1 var(--font-body); color: var(--color-orange-hover)">바꾼 것</span><span style="display:block;margin-top:10px;font:600 16px/1.6 var(--font-body);color:var(--color-ink)">{{ cur.tobe }}</span></div>
+          </div>
+          <sc-if value="{{ cur.hasNote }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:20px 0 0;padding:15px 18px;border-radius:12px;background:var(--color-cream);font:500 14px/1.6 var(--font-body);color:var(--color-ink)">{{ cur.note }}</p>
+          </sc-if>
+          <div style="margin-top:20px;display:grid;grid-template-columns:{{ cmpCols }};gap:10px">
+            <sc-if value="{{ cur.hasAsis }}" hint-placeholder-val="{{ true }}">
+            <figure style="margin:0">
+              <div style="position:relative;aspect-ratio:1/1;border-radius:12px;overflow:hidden;background:var(--color-sand)"><image-slot id="up-screen-{{ cur.k }}-asis" shape="rounded" radius="12" placeholder="{{ cur.name }} AS IS ({{ cur.src }})"></image-slot></div>
+              <figcaption style="margin-top:10px;font:500 13px/1.5 var(--font-body);color:var(--color-stone)">AS IS</figcaption>
+            </figure>
+            </sc-if>
+            <figure style="margin:0">
+              <div style="position:relative;aspect-ratio:{{ tobeRatio }};border-radius:12px;overflow:hidden;background:var(--color-sand)"><image-slot id="up-screen-{{ cur.k }}-tobe" shape="rounded" radius="12" placeholder="{{ cur.name }} TO BE ({{ cur.src }})"></image-slot></div>
+              <figcaption style="margin-top:10px;font:500 13px/1.5 var(--font-body);color:var(--color-stone)">TO BE</figcaption>
+            </figure>
+          </div>
+        </div>
+        </div>
+        <figure style="margin:30px 0 0">
+          <div style="position:relative;aspect-ratio:16/7;border-radius:20px;overflow:hidden;background:var(--color-sand)"><image-slot id="up-visual-system" shape="rounded" radius="20" placeholder="비주얼 시스템 (타이포 · 컬러 · 아이콘, PDF 16p)"></image-slot></div>
+          <figcaption style="margin-top:10px;font:500 13px/1.5 var(--font-body);color:var(--color-stone)">타이포 · 컬러 · 아이콘을 정리해 화면 전반을 통일했어요.</figcaption>
+        </figure>
+      </section>
+
+      <section id="s6" data-sec="5" style="scroll-margin-top:90px;margin-top:100px">
+        <span style="font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">06 · Build</span>
+        <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">운영 체계까지 만들기</h2>
+        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">화면을 넘겨주고 끝내지 않고, 오픈 이후에도 디자이너 없이 굴러가게 만들었어요.</p>
+        <div style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 300px), 1fr));gap:10px">
+          <sc-for list="{{ ops }}" as="o" hint-placeholder-count="2">
+            <div style="padding:25px;border-radius:20px;background:var(--color-white);display:flex;flex-direction:column">
+              <span style="width:36px;height:36px;border-radius:50%;background:var(--color-ink);color:var(--color-cream);display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="{{ o.icon }}" size="{{ 16 }}" hint-size="16px,16px"></x-import></span>
+              <h3 style="margin:20px 0 0;font:600 20px/1.4 var(--font-display);letter-spacing:-.02em;color:#000">{{ o.title }}</h3>
+              <dl style="margin:20px 0 0;display:flex;flex-direction:column">
+                <sc-for list="{{ o.rows }}" as="r" hint-placeholder-count="3">
+                  <div style="display:grid;grid-template-columns:44px minmax(0, 1fr);gap:10px;padding:12px 0;border-top:1px solid var(--color-line)">
+                    <dt style="font:500 13px/1.6 var(--font-body);color:var(--color-stone)">{{ r.k }}</dt>
+                    <dd style="margin:0;font:500 14px/1.6 var(--font-body);color:var(--color-ink)">{{ r.v }}</dd>
+                  </div>
+                </sc-for>
+              </dl>
+              <div style="margin-top:auto;padding:15px 18px;border-radius:12px;background:var(--color-sand)">
+                <span style="display:block;font:500 12px/1 var(--font-body);color:var(--color-stone)">결과</span>
+                <b style="display:block;margin-top:8px;font:600 15px/1.55 var(--font-body);color:var(--color-ink)">{{ o.result }}</b>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="margin-top:10px;display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:10px">
+          <figure style="margin:0">
+            <div style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:var(--color-sand)"><image-slot id="up-notice" shape="rounded" radius="20" placeholder="공지 구조도 (PDF 14p)"></image-slot></div>
+            <figcaption style="margin-top:10px;font:500 13px/1.5 var(--font-body);color:var(--color-stone)">공지 운영 구조</figcaption>
+          </figure>
+          <figure style="margin:0">
+            <div style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:var(--color-sand)"><image-slot id="up-notion" shape="rounded" radius="20" placeholder="Notion 이용 가이드 캡처 (PDF 15p)"></image-slot></div>
+            <figcaption style="margin-top:10px;font:500 13px/1.5 var(--font-body);color:var(--color-stone)">고객지원팀이 관리하는 Notion 이용 가이드</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="s7" data-sec="6" style="scroll-margin-top:90px;margin-top:100px">
+        <span style="font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">07 · Result</span>
+        <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">결과</h2>
+        <div style="margin-top:30px;padding:clamp(30px, 4vw, 50px);border-radius:20px;background:var(--color-ink)">
+          <span style="display:inline-flex;align-items:center;gap:8px;font:500 13px/1 var(--font-body);color:var(--color-stone)"><i style="width:6px;height:6px;border-radius:50%;background:var(--color-orange)"></i>영업팀 피드백</span>
+          <b style="display:block;margin-top:20px;font:600 clamp(32px, 4.4vw, 52px)/1.3 var(--font-display);letter-spacing:-.04em;color:var(--color-cream)">“상담 설명이<br>수월해졌어요”</b>
+          <p style="margin:15px 0 0;max-width:520px;font:500 16px/1.7 var(--font-body);color:var(--color-cream);opacity:.8">리디자인 후 영업팀의 업무 과중이 실제로 줄었다는 실무자 피드백이에요.</p>
+        </div>
+        <ul style="margin:20px 0 0;padding:0;list-style:none;border-top:1px solid var(--color-line)">
+          <li style="display:flex;align-items:center;gap:12px;padding:15px 0;border-bottom:1px solid var(--color-line);font:500 15px/1.6 var(--font-body);color:var(--color-ink)"><span style="flex-shrink:0;display:flex;color:var(--color-stone)"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="calendar-check" size="{{ 16 }}" hint-size="16px,16px"></x-import></span>2022.08 리뉴얼 홈페이지 오픈</li>
+          <li style="display:flex;align-items:center;gap:12px;padding:15px 0;border-bottom:1px solid var(--color-line);font:500 15px/1.6 var(--font-body);color:var(--color-ink)"><span style="flex-shrink:0;display:flex;color:var(--color-stone)"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="users" size="{{ 16 }}" hint-size="16px,16px"></x-import></span>공지 · 이용 가이드를 각 팀이 직접 운영</li>
+        </ul>
+        <p style="margin:15px 0 0;font:500 14px/1.7 var(--font-body);color:var(--color-stone)">회사 합병으로 장기 데이터를 추적하지 못해, 전환율·문의 감소율 같은 정량 성과는 확인하지 못했어요.</p>
+      </section>
+
+      <section id="s8" data-sec="7" style="scroll-margin-top:90px;margin-top:100px">
+        <span style="font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">08 · Retrospective</span>
+        <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">회고</h2>
+        <div style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr));gap:40px 30px;align-items:stretch">
+        <div style="display:flex;flex-direction:column">
+          <div style="padding:0 0 12px;border-bottom:1px solid var(--color-line-strong);font:500 12px/1 var(--font-body);color:var(--color-stone)">배운 점</div>
+          <sc-for list="{{ retro }}" as="r" hint-placeholder-count="2">
+            <div style="flex:1;display:flex;align-items:center;padding:22px 0;border-bottom:1px solid var(--color-line)">
+              <b style="font:600 17px/1.55 var(--font-body);letter-spacing:-.01em;color:#000">{{ r.learn }}</b>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column">
+          <div style="padding:0 0 12px;border-bottom:1px solid var(--color-line-strong);font:500 12px/1 var(--font-body);color:var(--color-stone)">아쉬운 점 → 다음에는</div>
+          <sc-for list="{{ retro }}" as="r" hint-placeholder-count="2">
+            <div style="flex:1;padding:22px 0;border-bottom:1px solid var(--color-line)">
+              <span style="display:block;font:500 15px/1.6 var(--font-body);color:var(--color-stone)">{{ r.miss }}</span>
+              <span style="display:flex;align-items:center;gap:6px;margin-top:8px;font:600 15px/1.6 var(--font-body);color:var(--color-ink)"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-right" size="{{ 14 }}" hint-size="14px,14px"></x-import>{{ r.next }}</span>
+            </div>
+          </sc-for>
+        </div>
+        </div>
+        <p style="margin:20px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">'다음에는 실제 사용자를 직접 만나겠다'는 다짐은, 3년 뒤 뷰티핀에서 명동·강남 현장 리서치로 이어졌어요.</p>
+      </section>
+
+      <nav style="margin-top:100px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr));gap:10px">
+        <a href="beaver.html" style="display:flex;align-items:center;gap:15px;padding:16px 20px 16px 16px;border-radius:100px;background:var(--color-white);transition:background .2s" style-hover="background:var(--color-sand);color:var(--color-ink)">
+          <span style="flex-shrink:0;width:40px;height:40px;border-radius:50%;color:var(--color-ink);display:flex;align-items:center;justify-content:center;background-color:var(--border-subtle)"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-left" size="{{ 16 }}" hint-size="16px,16px"></x-import></span>
+          <span style="min-width:0;display:flex;flex-direction:column;gap:6px">
+            <span style="font:500 12px/1 var(--font-body);color:var(--color-stone)">이전 프로젝트</span>
+            <span style="font:600 16px/1.3 var(--font-display);letter-spacing:-.02em;color:var(--color-ink)">비버매장연구소</span>
+          </span>
+        </a>
+        <a href="elreju.html" style="display:flex;align-items:center;justify-content:flex-end;gap:15px;padding:16px 16px 16px 20px;border-radius:100px;background:var(--color-white);text-align:right;transition:background .2s" style-hover="background:var(--color-sand);color:var(--color-ink)">
+          <span style="min-width:0;display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+            <span style="font:500 12px/1 var(--font-body);color:var(--color-stone)">다음 프로젝트</span>
+            <span style="font:600 16px/1.3 var(--font-display);letter-spacing:-.02em;color:var(--color-ink)">엘리쥬</span>
+          </span>
+          <span style="flex-shrink:0;width:40px;height:40px;border-radius:50%;background:var(--color-ink);color:var(--color-cream);display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-right" size="{{ 16 }}" hint-size="16px,16px"></x-import></span>
+        </a>
+      </nav>
+    </article>
+
+    <sc-if value="{{ showRight }}" hint-placeholder-val="{{ true }}">
+      <aside style="position:sticky;top:114px;display:flex;flex-direction:column">
+        <span style="padding-bottom:15px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">On this page</span>
+        <sc-for list="{{ toc }}" as="t" hint-placeholder-count="8">
+          <a href="#{{ t.id }}" onClick="{{ t.onClick }}" style="display:flex;align-items:center;gap:10px;padding:8px 0 8px 12px;box-shadow:inset 2px 0 0 {{ t.bar }};font:500 13px/1.4 var(--font-body);color:{{ t.color }}">{{ t.label }}</a>
+        </sc-for>
+        <button onClick="{{ toTop }}" style="margin-top:20px;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:0 0 0 12px;border:0;background:none;cursor:pointer;font:500 13px/1 var(--font-body);color:var(--color-stone);transition:color .2s" style-hover="color:var(--color-ink)"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-up" size="{{ 13 }}" hint-size="13px,13px"></x-import>맨 위로</button>
+      </aside>
+    </sc-if>
+  </div>
+
+  <footer style="border-top:1px solid var(--color-line)">
+    <div style="width:min(1300px, calc(100% - clamp(40px, 7vw, 100px)));margin:0 auto;padding:30px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font:400 12px/1.5 sans-serif;color:var(--color-stone)">
+      <span>© 2026 김미정. All rights reserved.</span>
+      <a href="mailto:9606kimmi@naver.com" style="color:var(--color-stone)">9606kimmi@naver.com</a>
+    </div>
+  </footer>
+
+  <div role="status" style="position:fixed;left:50%;bottom:30px;z-index:90;height:44px;padding:0 20px;display:flex;align-items:center;white-space:nowrap;border-radius:100px;background:var(--color-ink);color:var(--color-cream);font:500 14px/1 var(--font-body);pointer-events:none;box-shadow:0 12px 30px -12px rgba(20,20,18,.35);transition:opacity .3s, transform .4s cubic-bezier(.16,1,.3,1);opacity:{{ toastOpacity }};transform:{{ toastShift }}">{{ toastMsg }}</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;siteUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;링크&quot;}}">
+const TOC = [["s1", "배경 · 과제"], ["s2", "리서치"], ["s3", "문제 정의"], ["s4", "정보 구조"], ["s5", "화면"], ["s6", "운영 체계"], ["s7", "결과"], ["s8", "회고"]];
+const WORKS = [
+  { id: "beautypin", name: "뷰티핀", href: "beautipin.html" },
+  { id: "beaver-lab", name: "비버매장연구소", href: "beaver.html" },
+  { id: "unospay", name: "우노스페이", href: "unospay.html" },
+  { id: "elije", name: "엘리쥬", href: "elreju.html" }
+];
+const QUOTES = [
+  { t: "키오스크 견적 비교 기능이 있다면 상담 전화가 줄어들 것 같아요.", who: "영업팀" },
+  { t: "고객님께서 매뉴얼을 필요로 하십니다.", who: "고객지원팀" },
+  { t: "상담을 하기 위한 접근성이 조금 더 편해졌으면 좋겠어요.", who: "전사 설문" }
+];
+const PROBLEMS = [
+  { area: "제품 탐색", t: "제품의 차이와 활용 방식을 이해할 정보가 부족해요" },
+  { area: "상담 전환", t: "콘텐츠가 부족하고 상담 연결 버튼이 눈에 띄지 않아요" },
+  { area: "반복 문의", t: "정보와 이용 가이드가 부족해 같은 문의가 반복돼요" }
+];
+const DIRECTIONS = [
+  { title: "정보 탐색 구조 개선", desc: "사용자의 판단 순서에 맞게 메뉴와 제품 분류 재구성", to: "s4", label: "정보 구조" },
+  { title: "제품 이해와 비교 지원", desc: "구매 판단에 필요한 정보와 실제 화면 제공", to: "s5", label: "화면" },
+  { title: "신뢰 형성과 상담 전환 강화", desc: "객관적 지표와 실제 사례", to: "s5", label: "화면" },
+  { title: "지속 가능한 운영 체계", desc: "공지와 이용 가이드를 내부에서 직접 관리", to: "s6", label: "운영 체계" }
+];
+const MENUS = [
+  { name: "솔루션 소개", q: "이 서비스로 내 문제를 해결할 수 있을까?" },
+  { name: "제품 소개", q: "내가 어떤 제품을 구매할 수 있을까?" },
+  { name: "다양한 업종", q: "내 업종에서도 이 제품을 쓸 수 있을까?" },
+  { name: "고객 지원", q: "도입 후 어떤 지원을 받을 수 있을까?" },
+  { name: "공지사항", q: "구매 시 참고할 혜택이나 소식이 있을까?" }
+];
+const FLOW = ["시작", "주문", "결제", "적립", "호출"];
+const SCREENS = [
+  { name: "메인", src: "PDF 9p", asis: "무슨 서비스인지 첫 화면에서 안 보이고, 상담 CTA가 약했어요", tobe: "후킹 메시지, 상담·견적 CTA 우선 배치, 키오스크 작동 영상" },
+  { name: "제품 상세", src: "PDF 10p", asis: "핵심 정보와 상세 스펙이 섞여 비교가 어려웠어요", tobe: "이미지·크기·결제 유형을 상단에, 세부 사양은 분리, 컬러·설치사례는 하단" },
+  { name: "솔루션 소개", src: "PDF 11p", asis: "기능이 추상적인 특장점으로 묶여 있었어요", tobe: "이용 순서대로 단계형 내비게이션, 실제 키오스크 UI, 기능마다 이름 부여",
+    note: "기능마다 이름을 붙이자, 사용자와 내부 실무자가 같은 말로 소통할 수 있게 됐어요." },
+  { name: "비교", src: "PDF 12p", asis: "제품 간 차이를 알 방법이 없었어요", tobe: "매장 도식으로 제품 역할 설명 + 같은 기준의 스펙 비교표" },
+  { name: "신뢰", src: "PDF 13p", asis: "서비스 규모를 보여줄 근거가 없었어요", tobe: "누적 판매 수 등 정량 데이터 + 직접 방문 촬영한 설치 사례" }
+];
+const OPS = [
+  { icon: "megaphone", title: "공지 운영 체계", result: "팀별로 누가 무엇을 올릴지 정해졌어요",
+    rows: [["문제", "공지를 올릴 공간과 관리 기준이 없어 업데이트를 올리지 못했어요"], ["구조", "'우노스 소식'(이벤트·박람회·홍보 - 영업팀) / '업데이트'(기능 개선 안내 - 개발팀)"], ["도구", "썸네일·상세페이지 템플릿 + 디자인 요청 가이드 배포"]] },
+  { icon: "book-open", title: "이용 가이드 체계", result: "디자인팀 개입 없이 고객지원팀이 만든 가이드가 실제로 운영됐어요",
+    rows: [["문제", "반복 문의마다 같은 내용을 따로 안내했고, 가이드 수정에도 개발·디자인팀이 필요했어요"], ["구조", "고객지원팀이 직접 관리하는 Notion 템플릿"], ["도구", "작성 기준: 큰 주제는 회색 박스, 문장 종결 통일, 버튼명은 [괄호], 중요 내용은 붉은색"]] }
+];
+const RETRO = [
+  { learn: "정보 구조 개선은 내부 운영 효율로도 이어진다", miss: "내부 실무자 중심 조사라 실제 점주 목소리가 부족했어요", next: "점주 인터뷰 · 사용성 테스트" },
+  { learn: "명확한 이름은 커뮤니케이션 비용을 줄인다", miss: "정량 성과를 확인하지 못했어요", next: "처음부터 측정 지표 설정" }
+];
+
+class Component extends DCLogic {
+  state = { w: typeof window !== "undefined" ? window.innerWidth : 1440, active: 0, tab: 0, toastMsg: "", toastOn: false };
+  componentDidMount() {
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    this.onScroll = () => {
+      if (this.raf) return;
+      this.raf = requestAnimationFrame(() => {
+        this.raf = 0;
+        const secs = document.querySelectorAll("[data-sec]");
+        const line = window.innerHeight * 0.3;
+        let idx = 0;
+        secs.forEach((s, i) => { if (s.getBoundingClientRect().top < line) idx = i; });
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) idx = secs.length - 1;
+        if (idx !== this.state.active) this.setState({ active: idx });
+      });
+    };
+    window.addEventListener("resize", this.onResize);
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+    this.onScroll();
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.onResize);
+    window.removeEventListener("scroll", this.onScroll);
+    cancelAnimationFrame(this.raf);
+  }
+  jump(id) {
+    return e => {
+      e && e.preventDefault && e.preventDefault();
+      const el = document.getElementById(id);
+      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 84, behavior: "smooth" });
+    };
+  }
+  toast(msg) {
+    clearTimeout(this.tt);
+    this.setState({ toastMsg: msg, toastOn: true });
+    this.tt = setTimeout(() => this.setState({ toastOn: false }), 2400);
+  }
+  renderVals() {
+    const s = this.state, w = s.w;
+    const showLeft = w >= 1200, showRight = w >= 960;
+    const cols = showLeft ? "200px minmax(0, 1fr) 180px" : showRight ? "minmax(0, 1fr) 180px" : "minmax(0, 1fr)";
+    const c = SCREENS[s.tab];
+    return {
+      showLeft, showRight, cols,
+      works: WORKS.map((x, i) => { const on = x.id === "unospay"; return { ...x, no: String(i + 1).padStart(2, "0"), href: x.href || "#",
+        bg: on ? "var(--color-sand)" : "transparent", noColor: on ? "var(--color-ink)" : "var(--color-stone)", color: on ? "var(--color-ink)" : "var(--color-stone)",
+        onClick: e => { if (!x.href) { e.preventDefault(); this.toast(`${x.name} 상세 페이지는 다음 단계에서 만들어요`); } } }; }),
+      toc: TOC.map(([id, label], i) => { const on = s.active === i; return { id, label,
+        bar: on ? "var(--color-orange)" : "var(--color-line)", color: on ? "var(--color-ink)" : "var(--color-stone)", onClick: this.jump(id) }; }),
+      quotes: QUOTES,
+      problems: PROBLEMS.map((p, i) => ({ ...p, no: i + 1 })),
+      directions: DIRECTIONS.map((d, i) => ({ ...d, no: String(i + 1).padStart(2, "0"), go: this.jump(d.to) })),
+      menus: MENUS,
+      flow: FLOW.map((t, i) => ({ t, more: i < FLOW.length - 1 })),
+      wideMenu: w >= 700,
+      menuCols: w >= 700 ? "160px minmax(0, 1fr)" : "minmax(0, 1fr)",
+      retroCols: w >= 700 ? "minmax(0, 1fr) minmax(0, 1fr)" : "minmax(0, 1fr)",
+      bfCols: w >= 600 ? "minmax(0, 1fr) 36px minmax(0, 1fr)" : "minmax(0, 1fr)", bfArrow: w >= 600 ? "none" : "rotate(90deg)",
+      screens: SCREENS.map((x, i) => { const on = s.tab === i; return { name: x.name, on: on ? "true" : "false",
+        bg: on ? "var(--color-ink)" : "transparent", fg: on ? "var(--color-cream)" : "var(--color-stone)", pick: () => this.setState({ tab: i }) }; }),
+      tabNo: String(s.tab + 1).padStart(2, "0"), tabTotal: String(SCREENS.length).padStart(2, "0"),
+      tobeRatio: s.tab >= 3 ? "2/1" : "1/1",
+      cmpCols: s.tab >= 3 ? "minmax(0, 1fr)" : "repeat(2, minmax(0, 1fr))",
+      cur: { ...c, k: s.tab, hasAsis: s.tab < 3, hasNote: !!c.note, note: c.note || "" },
+      ops: OPS.map(o => ({ ...o, rows: o.rows.map(([k, v]) => ({ k, v })) })),
+      retro: RETRO,
+      siteLink: () => this.toast("홈페이지 우회 링크를 연결해 주세요"),
+      nextSoon: e => { e.preventDefault(); this.toast("엘리쥬 상세 페이지는 다음 단계에서 만들어요"); },
+      siteUrl: this.props.siteUrl || "#",
+      siteClick: e => { if (!this.props.siteUrl) { e.preventDefault(); this.toast("Tweaks에서 사이트 URL을 입력해 주세요"); } },
+      toTop: () => window.scrollTo({ top: 0, behavior: "smooth" }),
+      resume: () => this.toast("이력서 PDF를 연결해 주세요"),
+      toastMsg: s.toastMsg, toastOpacity: s.toastOn ? 1 : 0, toastShift: s.toastOn ? "translate(-50%,0)" : "translate(-50%,20px)"
+    };
+  }
+}
+</script>
+</body>
+</html>

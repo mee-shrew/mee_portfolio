@@ -1,0 +1,6 @@
+:root{
+--space-5:5px;--space-8:8px;--space-10:10px;--space-15:15px;--space-20:20px;--space-25:25px;--space-30:30px;--space-50:50px;--space-100:100px;--space-250:250px;--space-300:300px;
+--gutter-desktop:50px;--gutter-tablet:30px;--gutter-mobile:20px;--section-y:100px;--container-max:1200px;
+/* Breakpoints (Framer): desktop ≥1200, tablet 810–1199, mobile ≤809 */
+--bp-desktop:1200px;--bp-tablet:810px;--bp-mobile:809px;
+}
