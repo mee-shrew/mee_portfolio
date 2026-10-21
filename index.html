@@ -184,8 +184,8 @@
       </div>
     </div>
   </section><section id="about" data-screen-label="05 About" style="position:relative;padding:clamp(160px, 20vw, 300px) 0 0">
-    <div style="width:min(1300px, calc(100% - clamp(40px, 7vw, 100px)));margin:0 auto;display:flex;flex-wrap:wrap;gap:50px clamp(50px, 7vw, 100px);align-items:flex-start">
-      <div data-rv="" style="flex:5 1 380px;min-width:0">
+    <div style="width:min(1300px, calc(100% - clamp(40px, 7vw, 100px)));margin:0 auto;display:flex;flex-wrap:wrap;gap:50px clamp(50px, 7vw, 100px);align-items:stretch">
+      <div data-rv="" style="flex:5 1 380px;min-width:0;align-self:flex-start">
         <span style="display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-ink)"><i style="width:6px;height:6px;border-radius:50%;background:var(--color-orange)"></i>About</span>
         <h2 style="margin:20px 0 0;font:600 clamp(32px, 4.4vw, 56px)/1.4 var(--font-display);letter-spacing:-.035em;color:#000">안녕하세요,<br>디자이너 김미정입니다</h2>
         <ul style="margin:50px 0 0;padding:0;list-style:none;border-top:1px solid var(--color-line)">
@@ -206,7 +206,7 @@
           </sc-for>
         </div>
       </div>
-      <div data-rv="" data-delay="120" style="flex:6 1 420px;min-width:0;display:flex;flex-direction:column;gap:10px;padding-top:{{ qnaTop }}">
+      <div data-rv="" data-delay="120" style="flex:6 1 420px;min-width:0;display:flex;flex-direction:column;justify-content:flex-end;gap:10px">
         <span style="font:500 13px/1 var(--font-body);color:var(--color-stone);margin-bottom:10px">저는 이런 사람이에요</span>
         <sc-for list="{{ qna }}" as="q" hint-placeholder-count="4">
           <div style="border-radius:20px;background:{{ q.bg }};transition:background .25s">
@@ -398,7 +398,7 @@
   <div role="status" style="position:fixed;left:50%;bottom:30px;z-index:90;height:44px;padding:0 20px;display:flex;align-items:center;white-space:nowrap;border-radius:100px;background:var(--color-ink);color:var(--color-cream);font:500 14px/1 var(--font-body);pointer-events:none;box-shadow:0 12px 30px -12px rgba(20,20,18,.35);transition:opacity .3s, transform .4s cubic-bezier(.16,1,.3,1);opacity:{{ toastOpacity }};transform:{{ toastShift }}">{{ toastMsg }}</div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;projectOrder&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;임팩트순&quot;,&quot;시간순&quot;],&quot;default&quot;:&quot;임팩트순&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;구성&quot;},&quot;showProcess&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;구성&quot;},&quot;marqueeSpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:100,&quot;step&quot;:5,&quot;unit&quot;:&quot;px/s&quot;,&quot;default&quot;:30,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;모션&quot;},&quot;driveUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;링크&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;projectOrder&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;임팩트순&quot;,&quot;시간순&quot;],&quot;default&quot;:&quot;임팩트순&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;구성&quot;},&quot;showProcess&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;구성&quot;},&quot;marqueeSpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:100,&quot;step&quot;:5,&quot;unit&quot;:&quot;px/s&quot;,&quot;default&quot;:30,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;모션&quot;},&quot;driveUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://drive.google.com/drive/folders/1toGiBP0SaYeSAcnSM7hnlP974kZnNO6r?usp=sharing&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;링크&quot;}}">
 const PROJECTS = [
   { id: "beautypin", no: "01", name: "뷰티핀", cat: "웹·서비스", company: "스타닥", year: "2025", order: 2,
     summary: "외국인 관광객에게 직접 묻고, 그 답으로 필요한 서비스를 더해 Shopify로 구현한 프로젝트",
@@ -443,14 +443,14 @@ const SHELF = [
 ];
 const MARQUEE = ["뷰티핀 메인 화면", "비버매장연구소 부스 전경", "엘리쥬 콘셉트 사진", "카툰 설문지", "쇼핑백 실물 사진", "엘리쥬 랜딩페이지", "체험존 현장 사진", "뷰티핀 매거진 화면", "엘리쥬 박람회 백월"];
 const STEPS = [
-  { no: "01", key: "기획", en: "Define", title: "디자인 전에\n다시 한번 생각해요",
-    desc: "요청받은 그대로 바로 그리지 않고 한 번 더 생각해요. 헷갈리는 부분이 있으면 정확하게 묻고, 답을 확인한 뒤에 시작해요. 처음에 짚고 가야 나중에 다시 만드는 일이 없더라고요.",
+  { no: "01", key: "기획", en: "Define", title: "디자인 전에\n다시 한번 생각합니다",
+    desc: "요청받은 그대로 바로 그리지 않고 한 번 더 생각합니다. 헷갈리는 부분이 있으면 정확하게 묻고, 답을 확인한 뒤에 시작합니다. 처음에 짚고 가야 나중에 다시 만드는 일이 없기 때문입니다.",
     tags: ["현장 인터뷰", "문제 재정의", "방향 제안"] },
-  { no: "02", key: "디자인", en: "Design", title: "편하게 읽히고,\n기억되게 만들어요",
-    desc: "처음 보는 사람도 쉽게 이해할 수 있게 정보를 정리해요. 그 위에 브랜드 메시지를 얹고, 색과 이미지, 카피까지 같은 톤으로 맞춰요.",
+  { no: "02", key: "디자인", en: "Design", title: "편하게 읽히고,\n기억되게 만듭니다",
+    desc: "처음 보는 사람도 쉽게 이해할 수 있게 정보를 정리합니다. 그 위에 브랜드 메시지를 얹고, 색과 이미지, 카피까지 같은 톤으로 맞춥니다.",
     tags: ["메시지 설계", "비주얼 디렉션", "톤 일관성"] },
-  { no: "03", key: "구현", en: "Deliver", title: "시안이 구현될 때까지,\n끊임없이 검토해요",
-    desc: "부스·촬영·인쇄 업체와 직접 소통하며, 시안대로 나오는지 꼼꼼히 확인해요. 간단한 개발이 필요하면 AI로 직접 만들어 적용해요.",
+  { no: "03", key: "구현", en: "Deliver", title: "시안이 구현될 때까지,\n끊임없이 검토합니다",
+    desc: "부스·촬영·인쇄 업체와 직접 소통하며 시안대로 나오는지 꼼꼼히 확인합니다. 간단한 개발이 필요하면 AI를 활용해 직접 만들어 적용합니다.",
     tags: ["AI 구현", "현장 운영", "개선 반복"] }
 ];
 const ARCHIVE = [
@@ -472,7 +472,8 @@ const QNA = [
   { q: "함께 일할 때 어떤 동료인가요?", a: "해결 방법을 제안하고, 함께 조율하는 동료입니다. 의견이 다를 때는 충분한 근거를 가지고 제안하고, 동료들과 이야기하며 합의점을 찾습니다." },
   { q: "계획대로 안 될 때는 어떻게 하나요?", a: "방법을 바꾸며 개선합니다. 외국인 현장 인터뷰 중 질문이 길고 복잡해 관광객들이 부담스러워했고, 영어가 익숙하지 않은 분도 많았습니다. 그래서 여행 상황을 그린 카툰을 먼저 보여 주고 답변하는 방식으로 바꿨고, 훨씬 구체적인 답을 얻을 수 있었습니다." },
   { q: "어떤 분야의 일을 해봤나요?", a: "웹사이트 리디자인, 서비스 기획, 박람회 기획, 온·오프라인 콘텐츠까지 다양한 분야에서 일해 왔습니다. 브랜딩도, 박람회 기획도 처음이었지만 필요한 것을 공부하며 해냈습니다. 그렇게 쌓인 경험이 지금 제가 일하는 방식의 바탕이 되었습니다." },
-  { q: "요즘 가장 관심 있는 건 무엇인가요?", a: "디자이너가 직접 만들 수 있는 범위가 어디까지 넓어질 수 있는지에 관심이 많습니다. 요즘은 간단한 랜딩페이지를 혼자서도 구현부터 배포까지 할 수 있도록 AI와 함께 공부하고 있습니다." }
+  { q: "요즘 가장 관심 있는 건 무엇인가요?", a: "디자이너가 직접 만들 수 있는 범위가 어디까지 넓어질 수 있는지에 관심이 많습니다. 요즘은 간단한 랜딩페이지를 혼자서도 구현부터 배포까지 할 수 있도록 AI와 함께 공부하고 있습니다." },
+  { q: "포트폴리오는 어떤 툴로 만들었나요?", a: "이 사이트는 Claude Design으로 만들고 GitHub Pages로 배포했습니다. 프로젝트마다 어떤 내용을 어떤 순서로 보여줄지 먼저 기획하고, 그 구성에 맞춰 Claude Design에서 화면을 만들었습니다. 디자인부터 배포까지 직접 해보며, AI 툴을 실제 작업에 어떻게 쓸 수 있는지 익히는 과정이기도 했습니다." },
 ];
 const DETAIL = { beautypin: "beautipin.html", "beaver-lab": "beaver.html", unospay: "unospay.html", elije: "elreju.html" };
 const EMAIL = "9606kimmi@gmail.com";
@@ -795,8 +796,8 @@ class Component extends DCLogic {
       trackRef: this.trackRef, onTrackScroll: () => this.onTrack(),
       showProcess: this.props.showProcess ?? true,
       archive, archiveEmpty: archive.length === 0,
-      driveUrl: this.props.driveUrl || "#",
-      driveClick: e => { if (!this.props.driveUrl) { e.preventDefault(); this.toast("Tweaks에서 구글 드라이브 URL을 입력해 주세요"); } },
+      driveUrl: this.props.driveUrl || "https://drive.google.com/drive/folders/1toGiBP0SaYeSAcnSM7hnlP974kZnNO6r?usp=sharing",
+      driveClick: () => {},
       archiveAll: () => this.toast("아카이브 페이지는 다음 단계에서 만들어요"),
       qnaTop: w >= 1000 ? "calc(50px + clamp(89.6px, 12.32vw, 156.8px))" : "0px",
       timeline: TIMELINE.map(t => ({ ...t, items: t.what.split("\n") })), tools: TOOLS, qna,

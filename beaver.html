@@ -65,8 +65,8 @@
       <div style="margin-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 18px">
         <h1 style="margin:0;font:600 clamp(40px, 5vw, 60px)/1.4 var(--font-display);letter-spacing:-.04em;color:#000">비버매장연구소</h1>
       </div>
-      <p style="margin:10px 0 0;font:500 clamp(18px, 1.6vw, 21px)/1.65 var(--font-body);letter-spacing:-.02em;color:var(--color-ink);text-wrap:pretty">브랜드 메시지 '여유'를 부스, 쇼핑백, 체험존, SNS 이벤트까지 박람회 경험 전체로 풀어낸 프로젝트</p>
-      <p style="margin:10px 0 0;font:500 15px/1.6 var(--font-body);color:var(--color-stone)">프랜차이즈 창업 박람회 브랜드 론칭 @ 코엑스</p>
+      <p style="margin:10px 0 0;font:500 clamp(18px, 1.6vw, 21px)/1.65 var(--font-body);letter-spacing:-.02em;color:var(--color-ink);text-wrap:pretty">브랜드 메시지를 '여유'로 정하고, 부스부터 인쇄물, 현장 이벤트까지 박람회 디자인 전반을 맡은 프로젝트</p>
+      <p style="margin:10px 0 0;font:500 15px/1.6 var(--font-body);color:var(--color-stone)">프랜차이즈 창업 박람회 브랜드 론칭</p>
 
       <dl style="margin:40px 0 0;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 160px), 1fr));gap:0;border-top:1px solid var(--color-line);border-bottom:1px solid var(--color-line)">
         <div style="padding:20px 20px 20px 0"><dt style="font:500 12px/1 var(--font-body);color:var(--color-stone)">회사 · 기간</dt><dd style="margin:10px 0 0;font:500 14px/1.6 var(--font-body);color:var(--color-ink)">비버웍스<br>2023.03 – 08</dd></div>
@@ -74,7 +74,7 @@
         <div style="padding:20px 20px 20px 0"><dt style="font:500 12px/1 var(--font-body);color:var(--color-stone)">역할</dt><dd style="margin:10px 0 0;font:500 14px/1.6 var(--font-body);color:var(--color-ink)">디자인 단독<br><span style="color:var(--color-stone)">기획 공동 참여</span></dd></div>
         <div style="padding:20px 0"><dt style="font:500 12px/1 var(--font-body);color:var(--color-stone)">툴</dt><dd style="margin:10px 0 0;font:500 14px/1.6 var(--font-body);color:var(--color-ink)">Illustrator · Photoshop<br>After Effects · Premiere Pro</dd></div>
       </dl>
-      <p style="margin:20px 0 0;font:500 14px/1.7 var(--font-body);color:var(--color-stone)">브랜딩 · 부스 디자인 · 인쇄물 디자인 · 현장 프로그램 기획 · 시공 외주 디렉션</p>
+      <p style="margin:20px 0 0;font:500 14px/1.7 var(--font-body);color:var(--color-stone)">브랜딩 · 인쇄물 디자인 · 현장 프로그램 기획 · 시공 외주 디렉션</p>
 
       <div style="position:relative;margin-top:40px;aspect-ratio:16/10;border-radius:20px;overflow:hidden;background:var(--color-sand)">
         <image-slot id="bl-hero" shape="rounded" radius="20" placeholder="부스 전경 사진 (사람이 있는 컷)"></image-slot>
@@ -83,7 +83,7 @@
       <section id="s1" data-sec="0" style="scroll-margin-top:90px;margin-top:100px">
         <span style="font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">01 · Background</span>
         <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">배경 · 과제</h2>
-        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">키오스크, 포스(POS), 테이블오더 같은 매장 운영 기기를 파는 신규 브랜드입니다. 아직 알려지지 않은 브랜드를 박람회에서 처음 선보여야 했고, B2B·B2C 모두 가능한 제품이라 사장님부터 예비 창업자, 일반 방문객까지 다양한 사람이 찾아왔습니다.</p>
+        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">비버매장연구소는 키오스크, 포스(POS), 테이블오더 같은 매장 운영 기기를 판매하는 신규 브랜드입니다. 아직 알려지지 않은 브랜드를 프랜차이즈 창업 박람회에서 처음 선보여야 했습니다. 제품이 B2B와 B2C 모두에 해당해&nbsp; 매장 사장님부터 예비 창업자, 일반 방문객까지 다양한 사람을 한 부스에서 맞이해야 했습니다.</p>
         <div style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 210px), 1fr));gap:10px">
           <sc-for list="{{ tasks }}" as="t" hint-placeholder-count="3">
             <div style="padding:25px;border-radius:20px;background:var(--color-sand)">
@@ -98,32 +98,38 @@
       <section id="s2" data-sec="1" style="scroll-margin-top:90px;margin-top:100px">
         <span style="font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">02 · Planning — Concept</span>
         <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">브랜드 메시지 '여유'</h2>
-        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">키오스크·포스는 딱딱하고 기능 중심으로 보이기 쉬운 제품입니다. 그래서 기능보다 먼저 사장님이 얻게 되는 '여유'를 첫인상으로 전달하기로 했습니다.</p>
+        <div style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty"><p dir="ltr">키오스크와 포스는 딱딱한 기계로 느껴지기 쉬운 제품입니다. 그래서 기능을 하나하나 설명하기보다 사장님이 이 제품으로 무엇을 얻는지를 먼저 보여주기로 했습니다. 그 답을 '여유'라는 한 단어로 정리했습니다.</p><p dir="ltr"></p></div>
 
-        <blockquote style="margin:30px 0 0;padding:clamp(30px, 5vw, 50px);border-radius:20px;background:var(--color-ink)">
+        <blockquote style="position:relative;isolation:isolate;margin:30px 0 0;padding:clamp(30px, 5vw, 50px);min-height:340px;border-radius:20px;overflow:hidden;background:var(--color-ink)">
+          <div style="position:absolute;inset:0;z-index:-2">
+            <image-slot id="bl-brand-message" shape="rect" placeholder="브랜드 메시지 배경 이미지"></image-slot>
+          </div>
+          <div style="position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg, rgba(20,20,18,.92) 0%, rgba(20,20,18,.7) 40%, rgba(20,20,18,.15) 75%, rgba(20,20,18,0) 100%)"></div>
+          <div style="position:relative;pointer-events:none">
           <span style="display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-cream)"><i style="width:6px;height:6px;border-radius:50%;background:var(--color-orange)"></i>Brand Message</span>
           <p style="margin:25px 0 0;font:600 clamp(40px, 5vw, 60px)/1.3 var(--font-display);letter-spacing:-.04em;color:var(--color-cream)">여유</p>
-          <p style="margin:15px 0 0;max-width:520px;font:500 17px/1.7 var(--font-body);letter-spacing:-.01em;color:var(--color-stone);text-wrap:pretty">사장님께 드리는 두 가지 여유</p>
+          <p style="margin:15px 0 0;max-width:520px;font:500 17px/1.7 var(--font-body);letter-spacing:-.01em;color:var(--color-stone);text-wrap:pretty">사장님에게 여유를 드려요</p>
+          </div>
         </blockquote>
         <div style="margin-top:10px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr));gap:10px">
           <div style="padding:25px;border-radius:20px;background:var(--color-white);display:flex;flex-direction:column;gap:15px">
             <span style="width:36px;height:36px;border-radius:50%;background:var(--color-sand);color:var(--color-ink);display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="store" size="{{ 16 }}" hint-size="16px,16px"></x-import></span>
             <div>
               <h3 style="margin:0;font:600 20px/1.4 var(--font-display);letter-spacing:-.02em;color:#000">매장 환경의 여유</h3>
-              <p style="margin:10px 0 0;font:500 15px/1.7 var(--font-body);color:var(--color-stone)">키오스크·테이블오더로 주문과 응대 부담이 줄어드는 운영의 여유</p>
+              <p style="margin:10px 0 0;font:500 15px/1.7 var(--font-body);color:var(--color-stone)">키오스크와 테이블오더가 주문을 받아, 바쁜 시간에도 매장 운영에 여유가 생깁니다.</p>
             </div>
           </div>
           <div style="padding:25px;border-radius:20px;background:var(--color-white);display:flex;flex-direction:column;gap:15px">
             <span style="width:36px;height:36px;border-radius:50%;background:var(--color-sand);color:var(--color-ink);display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="wallet" size="{{ 16 }}" hint-size="16px,16px"></x-import></span>
             <div>
               <h3 style="margin:0;font:600 20px/1.4 var(--font-display);letter-spacing:-.02em;color:#000">지갑의 여유</h3>
-              <p style="margin:10px 0 0;font:500 15px/1.7 var(--font-body);color:var(--color-stone)">주문 인력을 기기가 대신해 인건비가 절약되는 경제적 여유</p>
+              <div style="margin:10px 0 0;font:500 15px/1.7 var(--font-body);color:var(--color-stone)"><p dir="ltr">주문을 받던 인력을 기기가 대신해, 인건비 부담이 줄어듭니다.</p><p dir="ltr"></p></div>
             </div>
           </div>
         </div>
 
         <h3 style="margin:50px 0 0;font:600 22px/1.4 var(--font-display);letter-spacing:-.02em;color:#000">메시지를 공간으로</h3>
-        <p style="margin:10px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">여유롭고 편안한 느낌의 파란색 톤을 부스 전체의 메인 컬러로 정했습니다.</p>
+        <p style="margin:10px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">편안하고 시원한 느낌의 파란색을 부스 전체의 메인 컬러로 정했습니다.</p>
         <div style="margin-top:20px;display:grid;grid-template-columns:{{ chipCols }};gap:10px">
           <div style="min-height:220px;padding:25px;border-radius:20px;background:linear-gradient(135deg, #2D90E6 0%, #3DD4DC 100%);display:flex;flex-direction:column;justify-content:space-between">
             <span style="font:600 13px/1 var(--font-body);color:#fff">Main Color</span>
@@ -141,9 +147,14 @@
       <section id="s3" data-sec="2" style="scroll-margin-top:90px;margin-top:100px">
         <span style="font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">03 · Planning — Program</span>
         <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">현장 프로그램 — 모으고, 퍼뜨리기</h2>
-        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">부스를 '보는 곳'이 아니라 '참여하는 곳'으로 설계했습니다. 두 프로그램이 각각 다른 목표를 맡습니다.</p>
-        <div style="position:relative;margin-top:30px;aspect-ratio:16/10;border-radius:20px;overflow:hidden;background:var(--color-sand)">
-          <image-slot id="bl-floorplan" shape="rounded" radius="20" placeholder="부스 평면도 (체험존 · 포토존 · 상담 공간 + 동선)"></image-slot>
+        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">방문객이 부스에 들어와 직접 참여할 수 있도록 두 가지 현장 프로그램을 기획했습니다. 하나는 부스로 사람을 모으고, 다른 하나는 부스 밖으로 브랜드를 퍼뜨리는 역할을 맡았습니다.</p>
+        <div style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr));gap:10px">
+          <div style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:var(--color-sand)">
+            <image-slot id="bl-floorplan" shape="rounded" radius="20" placeholder="현장 사진 1"></image-slot>
+          </div>
+          <div style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:var(--color-sand)">
+            <image-slot id="bl-floorplan-2" shape="rounded" radius="20" placeholder="현장 사진 2"></image-slot>
+          </div>
         </div>
         <div style="margin-top:10px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 300px), 1fr));gap:10px">
           <sc-for list="{{ programs }}" as="p" hint-placeholder-count="2">
@@ -182,8 +193,8 @@
 
       <section id="s4" data-sec="3" style="scroll-margin-top:90px;margin-top:100px">
         <span style="font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">04 · Design</span>
-        <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">아이덴티티와 적용물</h2>
-        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">파란 톤의 '여유'를 리플렛부터 쇼핑백까지 모든 접점에 같은 톤으로 썼습니다.</p>
+        <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">디자인<span data-om-id="882db8a8:81" style="letter-spacing: -0.03em;"> </span><span data-om-id="882db8a8:82" style="letter-spacing: -0.03em;">—</span><span data-om-id="882db8a8:83" style="letter-spacing: -0.03em;"> </span><span style="letter-spacing: -0.03em;">아이덴티티와 적용물</span><br></h2>
+        <div style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty"><p dir="ltr">리플렛부터 쇼핑백까지, 방문객이 만나는 모든 인쇄물에 파란 톤과 '여유' 메시지를 같은 방식으로 적용했습니다.</p><p dir="ltr"></p></div>
         
         <div style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr));gap:30px 10px">
           <sc-for list="{{ items }}" as="it" hint-placeholder-count="4">
@@ -201,7 +212,7 @@
       <section id="s5" data-sec="4" style="scroll-margin-top:90px;margin-top:100px">
         <span style="font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">05 · On-site</span>
         <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">실행 · 현장</h2>
-        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">기획과 디자인이 실제 현장에서 돌아간 모습입니다. 부스 동선을 따라 순서대로 담았습니다.</p>
+        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">기획하고 디자인한 것들이 박람회 현장에서 실제로 쓰인 모습입니다.</p>
         <div style="margin-top:30px;display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:30px 10px">
           <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="4">
             <figure style="margin:0;grid-column:{{ g.span }}">
@@ -245,7 +256,7 @@
       <section id="s7" data-sec="6" style="scroll-margin-top: 90px; margin-top: 100px">
         <span style="font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">07 · Retrospective</span>
         <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">회고</h2>
-        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">브랜딩도, 박람회 기획도 처음이었지만 메시지 하나를 정하고 모든 접점을 그 메시지로 맞추면 처음 보는 브랜드도 기억에 남는다는 걸 배웠습니다. 이 경험은 이후 엘리쥬 학회 비주얼처럼 공간과 인쇄물을 하나의 톤으로 이어가는 작업의 기준이 됐습니다.</p>
+        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">브랜딩은 처음이었기에 강의와 책을 찾아보며 브랜드 메시지를 정하는 방법부터 공부했습니다. 그 과정에서 사장님이 얻는 가치를 '여유'라는 한 단어로 정리했고, 이 메시지를 부스와 인쇄물, 현장 이벤트까지 박람회 전체에 엮어 하나의 톤으로 이어갔습니다. 메시지 하나가 정해지니 디자인의 방향도 분명해진다는 것을 배운 경험이었습니다.</p>
       </section>
 
       <nav style="margin-top:100px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr));gap:10px">
@@ -287,8 +298,8 @@
   <div role="status" style="position:fixed;left:50%;bottom:30px;z-index:90;height:44px;padding:0 20px;display:flex;align-items:center;white-space:nowrap;border-radius:100px;background:var(--color-ink);color:var(--color-cream);font:500 14px/1 var(--font-body);pointer-events:none;box-shadow:0 12px 30px -12px rgba(20,20,18,.35);transition:opacity .3s, transform .4s cubic-bezier(.16,1,.3,1);opacity:{{ toastOpacity }};transform:{{ toastShift }}">{{ toastMsg }}</div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;articleUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;링크&quot;}}">
-const TOC = [["s1", "배경 · 과제"], ["s2", "콘셉트 '여유'"], ["s3", "현장 프로그램"], ["s4", "디자인"], ["s5", "실행 · 현장"], ["s6", "결과"], ["s7", "회고"]];
+<script type="text/x-dc" data-dc-script data-props="{&quot;articleUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://www.mbn.co.kr/vod/programView/1335502&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;링크&quot;}}">
+const TOC = [["s1", "배경 · 과제"], ["s2", "브랜드 메시지"], ["s3", "현장 프로그램"], ["s4", "디자인"], ["s5", "실행 · 현장"], ["s6", "결과"], ["s7", "회고"]];
 const WORKS = [
   { id: "beautypin", name: "뷰티핀", href: "beautipin.html" },
   { id: "beaver-lab", name: "비버매장연구소", href: "beaver.html" },
@@ -296,17 +307,17 @@ const WORKS = [
   { id: "elije", name: "엘리쥬", href: "elreju.html" }
 ];
 const TASKS = [
-  { key: "인지", title: "기억에 남는 브랜드", desc: "비슷한 기기 부스가 많은 박람회에서 처음 보는 브랜드를 기억에 남게 만들기" },
-  { key: "다양한 방문객", title: "한 부스로 모두에게", desc: "사장님, 예비 창업자, 일반 방문객처럼 성격이 다른 사람 모두에게 말 걸기" },
-  { key: "연결", title: "구경에서 상담으로", desc: "체험으로 관심을 만들어 영업팀 상담으로 이어지게 하기 (상담·응대는 영업팀 담당)" }
+  { key: "인지", title: "기억에 남는 브랜드", desc: "비슷한 기기를 파는 부스가 많은 박람회에서 처음 본 브랜드를 방문객이 기억하게 만들어야 했습니다." },
+  { key: "모객", title: "발길을 멈추게 하는 부스", desc: "지나가던 방문객도 흥미를 느끼고 들어올 수 있도록, 누구나 쉽게 참여할 수 있는 거리를 만들어야 했습니다." },
+  { key: "연결", title: "구경에서 상담으로", desc: "체험하며 생긴 관심이 영업팀 상담까지 자연스럽게 이어지도록 해야 했습니다." }
 ];
 const PROGRAMS = [
   { icon: "monitor-smartphone", goal: "사람 모으기", name: "배리어프리 키오스크 체험존", flow: ["체험", "인상 깊은 키오스크 체크", "음료수"],
-    rows: [["보상", "음료수"], ["효과", "부스에 머무는 시간과 제품 체험을 자연스럽게 만듦"]],
-    points: ["제품을 '설명'이 아닌 '경험'으로 전달", "인상에 남은 키오스크를 체크하며 제품을 한 번 더 비교", "가벼운 보상으로 진입 장벽을 낮춤"] },
-  { icon: "camera", goal: "SNS 바이럴", name: "인스타 인증 이벤트", flow: ["부스 촬영", "인스타 업로드", "인증", "뽑기"],
+    rows: [["보상", "음료수"], ["효과", "방문객이 부스에 머물며 제품을 직접 써보게 됨"]],
+    points: ["키오스크를 직접 조작하며 제품 경험", "마음에 드는 키오스크를 체크하며 제품 비교", "음료수 보상으로 참여 부담을 낮춤"] },
+  { icon: "camera", goal: "SNS 바이럴", name: "인스타 사진 업로드 이벤트", flow: ["부스 촬영", "인스타 업로드", "인증", "뽑기"],
     rows: [["보상", "뽑기"], ["효과", "현장 밖까지 브랜드 노출 확산"]],
-    points: ["사진 찍고 싶은 부스여야 이벤트가 돌아감 → 파란 톤 부스 디자인과 연결", "뽑기라는 즉석 보상으로 참여를 바로 이끌어냄"] }
+    points: ["인증 후 바로 뽑기로 현장 참여 유도"] }
 ];
 const ITEMS = [
   { k: "leaflet", name: "리플렛", note: "" },
@@ -324,7 +335,7 @@ const GALLERY = [
 const RESULTS = [
   { label: "인스타그램 인증 게시글", value: "100건 +", link: "← 인스타 인증 이벤트" },
   { label: "디자인한 쇼핑백 배포", value: "9,000부 +", link: "← 디자인 적용물" },
-  { label: "박람회 기간 홈페이지 유입", value: "300% +", link: "", note: "론칭 직후 초기 유입이라 증가 폭이 크게 나타났습니다", text: true }
+  { label: "박람회 기간 홈페이지 유입", value: "크게 증가 +", link: "", note: "론칭 직후 초기 유입이라 증가 폭이 크게 나타났습니다", text: true }
 ];
 const TEAM = [
   { icon: "search", t: "브랜드 핵심 키워드 네이버 VIEW 1페이지 노출" },

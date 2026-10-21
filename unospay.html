@@ -66,8 +66,8 @@
         <h1 style="margin:0;font:600 clamp(40px, 5vw, 60px)/1.4 var(--font-display);letter-spacing:-.04em;color:#000">우노스페이</h1>
         <a href="{{ siteUrl }}" onClick="{{ siteClick }}" target="_blank" rel="noopener" aria-label="우노스페이 사이트 바로가기" style="height:40px;padding:0 8px 0 16px;display:inline-flex;align-items:center;gap:10px;border-radius:100px;background:var(--color-white);font:500 14px/1 var(--font-body);color:var(--color-ink);transition:background .2s" style-hover="background:var(--color-sand);color:var(--color-ink)">사이트 보기<span style="width:28px;height:28px;border-radius:50%;background:var(--color-ink);color:var(--color-cream);display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-up-right" size="{{ 14 }}" hint-size="14px,14px"></x-import></span></a>
       </div>
-      <p style="margin:10px 0 0;font:500 clamp(18px, 1.6vw, 21px)/1.65 var(--font-body);letter-spacing:-.02em;color:var(--color-ink);text-wrap:pretty">제품 비교와 정보 탐색이 어려워 같은 상담이 반복되던 홈페이지를, 실무자 리서치로 원인을 찾아 정보 구조와 운영 방식까지 다시 설계한 프로젝트</p>
-      <p style="margin:10px 0 0;font:500 15px/1.6 var(--font-body);color:var(--color-stone)">키오스크 서비스 홈페이지 리디자인</p>
+      <p style="margin:10px 0 0;font:500 clamp(18px, 1.6vw, 21px)/1.65 var(--font-body);letter-spacing:-.02em;color:var(--color-ink);text-wrap:pretty">같은 상담이 반복되던 키오스크 홈페이지를 실무자 리서치로 들여다보고, 정보 구조와 운영 방식까지 다시 설계한 프로젝트</p>
+      <p style="margin: 10px 0 0; font: 500 15px/1.6 var(--font-body); color: var(--color-stone)">키오스크<span style="color: var(--color-stone);">·포스</span><span style="color: var(--color-stone);">&nbsp;서비스 홈페이지 리디자인</span><br></p>
 
       <dl style="margin:40px 0 0;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 160px), 1fr));gap:0;border-top:1px solid var(--color-line);border-bottom:1px solid var(--color-line)">
         <div style="padding:20px 20px 20px 0"><dt style="font:500 12px/1 var(--font-body);color:var(--color-stone)">회사 · 기간</dt><dd style="margin:10px 0 0;font:500 14px/1.6 var(--font-body);color:var(--color-ink)">우노스<br>2022.06 – 08</dd></div>
@@ -75,7 +75,7 @@
         <div style="padding:20px 20px 20px 0"><dt style="font:500 12px/1 var(--font-body);color:var(--color-stone)">기여도</dt><dd style="margin:10px 0 0;font:500 14px/1.6 var(--font-body);color:var(--color-ink)">디자인 100%<br>기획 80%</dd></div>
         <div style="padding:20px 0"><dt style="font:500 12px/1 var(--font-body);color:var(--color-stone)">툴</dt><dd style="margin:10px 0 0;font:500 14px/1.6 var(--font-body);color:var(--color-ink)">Figma<br>Illustrator · Notion</dd></div>
       </dl>
-      <p style="margin:20px 0 0;font:500 14px/1.7 var(--font-body);color:var(--color-stone)">리서치 · 구조 설계 · UX/UI 디자인 · 운영 체계 설계 — 기획자와 함께 기획하고, 디자인은 단독</p>
+      <p style="margin:20px 0 0;font:500 14px/1.7 var(--font-body);color:var(--color-stone)">리서치 · 정보 구조 설계 · UX/UI 디자인 · 운영 템플릿·가이드 제작</p>
 
       <div style="position:relative;margin-top:40px;aspect-ratio:16/10;border-radius:20px;overflow:hidden;background:var(--color-sand)">
         <image-slot id="up-hero" shape="rounded" radius="20" placeholder="디바이스 목업 (노트북 · 태블릿 · 모바일)"></image-slot>
@@ -87,14 +87,14 @@
       <section id="s1" data-sec="0" style="scroll-margin-top:90px;margin-top:100px">
         <span style="font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">01 · Background</span>
         <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">배경 · 과제</h2>
-        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">매장용 키오스크·결제 솔루션(하드웨어 + 소프트웨어) 서비스입니다. 주요 문의 고객은 키오스크 결제 방식에 익숙하지 않은 신규 창업 점주였습니다.</p>
-        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">그런데 홈페이지만 보고는 제품 차이를 알기 어려워 상담 시간이 길어지고, 같은 문의가 반복됐습니다. 영업·고객지원팀은 같은 설명을 계속해야 했습니다.</p>
+        <div style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty"><p dir="ltr">우노스페이는 매장용 키오스크와 결제 솔루션을 하드웨어와 소프트웨어로 함께 제공하는 서비스입니다. 주로 문의하는 고객은 키오스크 결제 방식이 낯선 신규 창업 점주였습니다.</p><p dir="ltr"></p></div>
+        <div style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty"><div dir="ltr"><p data-pm-slice="0 0 []">하지만 홈페이지만으로는 우노스가 어떤 서비스를 제공하는지, 제품마다 무엇이 다른지 알기 어려워 상담이 길어지고 같은 문의가 반복됐습니다. 그때마다 영업팀과 고객지원팀은 같은 설명을 되풀이해야 했습니다.</p></div><p dir="ltr"></p></div>
       </section>
 
       <section id="s2" data-sec="1" style="scroll-margin-top:90px;margin-top:100px">
         <span style="font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">02 · Planning — Research</span>
-        <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">고객을 가장 많이 만나는 사람에게 묻기</h2>
-        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">문제를 추측하지 않고 확인부터 했습니다. 고객과 직접 상담하고 VOC를 받는 내부 실무자가 고객이 어디서 막히는지 가장 잘 알고 있었기 때문입니다.</p>
+        <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">리서치<span style="letter-spacing: -0.03em;"> </span><span style="letter-spacing: -0.03em;">—</span><span style="letter-spacing: -0.03em;"> </span><span style="letter-spacing: -0.03em;">고객을 가장 많이 만나는 사람에게 묻기</span><br></h2>
+        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">고객이 어디서 막히는지는 매일 상담 전화를 받고 VOC를 정리하는 영업팀과 고객지원팀이 가장 잘 알고 있었습니다. 그래서 전 직원 설문으로 의견을 넓게 모으고, 두 팀 실무자를 한 명씩 인터뷰해 구체적인 상황을 들었습니다.</p>
         <div style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr));gap:10px">
           <div style="padding:20px 25px;border-radius:20px;background:var(--color-sand);display:flex;align-items:center;gap:15px">
             <span style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--color-cream);color:var(--color-ink);display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="users" size="{{ 16 }}" hint-size="16px,16px"></x-import></span>
@@ -119,7 +119,7 @@
       <section id="s3" data-sec="2" style="scroll-margin-top:90px;margin-top:100px">
         <span style="font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">03 · Planning — Problem</span>
         <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">문제 정의 → 개선 방향</h2>
-        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">흩어진 의견을 문제 3개로 묶고, 해결 방향 4개로 바꿨습니다.</p>
+        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">설문과 인터뷰에서 나온 의견을 세 가지 문제로 정리하고, 이를 네 가지 개선 방향으로 연결했습니다.</p>
         <div style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 210px), 1fr));gap:10px">
           <sc-for list="{{ problems }}" as="p" hint-placeholder-count="3">
             <div style="padding:25px;border-radius:20px;background:var(--color-sand)">
@@ -132,7 +132,7 @@
         <blockquote style="margin:50px 0 0;padding:clamp(30px, 5vw, 50px);border-radius:20px;background:var(--color-ink)">
           <span style="display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-cream)"><i style="width:6px;height:6px;border-radius:50%;background:var(--color-orange)"></i>핵심 인사이트</span>
           <p style="margin:25px 0 0;font:600 clamp(26px, 3.2vw, 38px)/1.45 var(--font-display);letter-spacing:-.03em;color:var(--color-cream);text-wrap:balance">홈페이지가 답하지 못한 질문은<br>모두 상담 전화가 됐습니다</p>
-          <p style="margin:20px 0 0;max-width:520px;font:500 17px/1.7 var(--font-body);letter-spacing:-.01em;color:var(--color-stone);text-wrap:pretty">그리고 그 전화는 고스란히 실무자의 업무로 쌓이고 있었습니다.</p>
+          <p style="margin:20px 0 0;max-width:520px;font:500 17px/1.7 var(--font-body);letter-spacing:-.01em;color:var(--color-stone);text-wrap:pretty">그 전화는 고스란히 영업팀과 고객지원팀의 업무로 쌓였습니다.</p>
         </blockquote>
 
         <h3 style="margin:50px 0 0;font:600 22px/1.4 var(--font-display);letter-spacing:-.02em;color:#000">개선 방향 4가지</h3>
@@ -153,14 +153,14 @@
       <section id="s4" data-sec="3" style="scroll-margin-top:90px;margin-top:100px">
         <span style="font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">04 · Planning — IA</span>
         <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">정보 구조 재설계</h2>
-        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">내부 기준으로 짜여 있던 구조를 사용자 기준으로 바꿨습니다.</p>
+        <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">회사 내부의 제품 분류에 맞춰져 있던 메뉴를 사용자가 궁금해하는 순서에 맞춰 다시 짰습니다.</p>
 
         <h3 style="margin:60px 0 0;font:600 22px/1.4 var(--font-display);letter-spacing:-.02em;color:#000">① 글로벌 내비게이션</h3>
         <div style="margin-top:25px;display:grid;grid-template-columns:{{ bfCols }};align-items:stretch;gap:10px">
           <div style="padding:25px;border-radius:20px;background:var(--color-sand);display:flex;flex-direction:column;gap:12px">
             <span style="font:500 12px/1 var(--font-body);color:var(--color-stone)">AS IS · 내부 제품 분류 기준</span>
             <b style="font:600 16px/1.6 var(--font-body);color:#74726f">회사소개 / 하드웨어 / 소프트웨어 / 설치사례 / 고객지원</b>
-            <span style="font:500 13px/1.6 var(--font-body);color:var(--color-stone)">하드웨어와 소프트웨어를 별개 제품으로 오인함</span>
+            <span style="font:500 13px/1.6 var(--font-body);color:var(--color-stone)">하드웨어와 소프트웨어가 따로 사야 하는 제품처럼 보임</span>
           </div>
           <span aria-hidden="true" style="align-self:center;justify-self:center;width:36px;height:36px;border-radius:50%;background:var(--color-ink);color:var(--color-cream);display:flex;align-items:center;justify-content:center;transform:{{ bfArrow }}"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-right" size="{{ 16 }}" hint-size="16px,16px"></x-import></span>
           <div style="padding:25px;border-radius:20px;background:var(--color-white);display:flex;flex-direction:column;gap:12px">
@@ -221,13 +221,13 @@
           <div style="padding:25px;border-radius:20px;background:var(--color-sand);display:flex;flex-direction:column;gap:12px">
             <span style="font:500 12px/1 var(--font-body);color:var(--color-stone)">AS IS · 결제 방식부터</span>
             <b style="font:600 16px/1.6 var(--font-body);color:#74726f">선불 · 후불 · 유인 · 무인</b>
-            <span style="font:500 13px/1.6 var(--font-body);color:var(--color-stone)">신규 창업 점주에게는 어려운 기술적 선택</span>
+            <span style="font:500 13px/1.6 var(--font-body);color:var(--color-stone)">신규 창업 점주에게 낯선 결제 방식부터 고르게 함</span>
           </div>
           <span aria-hidden="true" style="align-self:center;justify-self:center;width:36px;height:36px;border-radius:50%;background:var(--color-ink);color:var(--color-cream);display:flex;align-items:center;justify-content:center;transform:{{ bfArrow }}"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-right" size="{{ 16 }}" hint-size="16px,16px"></x-import></span>
           <div style="padding:25px;border-radius:20px;background:var(--color-white);display:flex;flex-direction:column;gap:12px">
             <span style="font:500 12px/1 var(--font-body);color:var(--color-orange-hover)">TO BE · 매장 상황부터</span>
             <b style="font:600 16px/1.6 var(--font-body);color:#000">요식업 · 무인 매장 · 마라탕(저울 연동)</b>
-            <span style="font:500 13px/1.6 var(--font-body);color:var(--color-stone)">기능은 이용 흐름으로 따로 탐색</span>
+            <span style="font:500 13px/1.6 var(--font-body);color:var(--color-stone)">제품은 업종별로, 기능은 이용 흐름별로 분리</span>
           </div>
         </div>
         <div style="margin-top:15px;padding:20px 25px;border-radius:20px;background:var(--color-white);display:flex;flex-wrap:wrap;align-items:center;gap:8px">
@@ -307,21 +307,22 @@
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;font:600 18px/1.4 var(--font-display);letter-spacing:-.02em;color:#000">{{ cur.name }}<span style="font:500 13px/1 var(--font-body);color:var(--color-stone)">화면</span></div>
           <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr));gap:20px">
             <div><span style="display:block;font:500 12px/1 var(--font-body);color:var(--color-stone)">AS IS</span><span style="display: block; margin-top: 10px; font: 500 15px/1.6 var(--font-body); color: var(--color-ink)">{{ cur.asis }}</span></div>
-            <div style="padding-left:20px;box-shadow:inset 1px 0 0 var(--color-line)"><span style="display: block; font: 500 12px/1 var(--font-body); color: var(--color-orange-hover)">바꾼 것</span><span style="display:block;margin-top:10px;font:600 16px/1.6 var(--font-body);color:var(--color-ink)">{{ cur.tobe }}</span></div>
+            <div style="padding-left:20px;box-shadow:inset 1px 0 0 var(--color-line)"><span style="display: block; font: 500 12px/1 var(--font-body); color: var(--color-orange-hover)">TO BE</span><span style="display:block;margin-top:10px;font:600 16px/1.6 var(--font-body);color:var(--color-ink)">{{ cur.tobe }}</span></div>
           </div>
           <sc-if value="{{ cur.hasNote }}" hint-placeholder-val="{{ false }}">
             <p style="margin:20px 0 0;padding:15px 18px;border-radius:12px;background:var(--color-cream);font:500 14px/1.6 var(--font-body);color:var(--color-ink)">{{ cur.note }}</p>
           </sc-if>
-          <div style="margin-top:20px;display:grid;grid-template-columns:{{ cmpCols }};gap:10px">
+          <div style="position:relative;margin-top:20px;display:grid;grid-template-columns:{{ cmpCols }};gap:10px">
             <sc-if value="{{ cur.hasAsis }}" hint-placeholder-val="{{ true }}">
+            <div aria-hidden="true" style="position:absolute;left:50%;top:50%;z-index:2;transform:translate(-50%, -50%);width:44px;height:44px;border-radius:50%;background:var(--color-white);box-shadow:0 4px 14px rgba(0,0,0,.1);display:flex;align-items:center;justify-content:center;pointer-events:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></div>
             <figure style="margin:0">
               <div style="position:relative;aspect-ratio:1/1;border-radius:12px;overflow:hidden;background:var(--color-sand)"><image-slot id="up-screen-{{ cur.k }}-asis" shape="rounded" radius="12" placeholder="{{ cur.name }} AS IS ({{ cur.src }})"></image-slot></div>
-              <figcaption style="margin-top:10px;font:500 13px/1.5 var(--font-body);color:var(--color-stone)">AS IS</figcaption>
+              
             </figure>
             </sc-if>
             <figure style="margin:0">
               <div style="position:relative;aspect-ratio:{{ tobeRatio }};border-radius:12px;overflow:hidden;background:var(--color-sand)"><image-slot id="up-screen-{{ cur.k }}-tobe" shape="rounded" radius="12" placeholder="{{ cur.name }} TO BE ({{ cur.src }})"></image-slot></div>
-              <figcaption style="margin-top:10px;font:500 13px/1.5 var(--font-body);color:var(--color-stone)">TO BE</figcaption>
+              
             </figure>
           </div>
         </div>
@@ -458,22 +459,22 @@ const WORKS = [
 const QUOTES = [
   { t: "키오스크 견적 비교 기능이 있다면 상담 전화가 줄어들 것 같아요.", who: "영업팀" },
   { t: "고객님께서 매뉴얼을 필요로 하십니다.", who: "고객지원팀" },
-  { t: "상담을 하기 위한 접근성이 조금 더 편해졌으면 좋겠어요.", who: "전사 설문" }
+  { t: "상담을 하기 위한 접근성이 조금 더 편해졌으면 좋겠어요.", who: "영업지원팀" }
 ];
 const PROBLEMS = [
-  { area: "제품 탐색", t: "제품의 차이와 활용 방식을 이해할 정보가 부족합니다" },
-  { area: "상담 전환", t: "콘텐츠가 부족하고 상담 연결 버튼이 눈에 띄지 않습니다" },
-  { area: "반복 문의", t: "정보와 이용 가이드가 부족해 같은 문의가 반복됩니다" }
+  { area: "제품 탐색", t: "제품별 차이와 매장 활용 정보 부족" },
+  { area: "상담 전환", t: "상담을 결심할 콘텐츠 부족, 눈에 띄지 않는 상담 버튼" },
+  { area: "반복 문의", t: "이용 가이드 부재로 같은 질문이 상담으로 반복" }
 ];
 const DIRECTIONS = [
   { title: "정보 탐색 구조 개선", desc: "사용자의 판단 순서에 맞게 메뉴와 제품 분류 재구성", to: "s4", label: "정보 구조" },
   { title: "제품 이해와 비교 지원", desc: "구매 판단에 필요한 정보와 실제 화면 제공", to: "s5", label: "화면" },
-  { title: "신뢰 형성과 상담 전환 강화", desc: "객관적 지표와 실제 사례", to: "s5", label: "화면" },
-  { title: "지속 가능한 운영 체계", desc: "공지와 이용 가이드를 내부에서 직접 관리", to: "s6", label: "운영 체계" }
+  { title: "신뢰 형성과 상담 전환 강화", desc: "누적 판매 수 같은 지표와 실제 설치 사례로 신뢰 확보", to: "s5", label: "화면" },
+  { title: "내부에서 운영하는 체계", desc: "공지·이용 가이드 공간을 만들고, 팀별로 쓸 수 있는 템플릿 배포", to: "s6", label: "운영 체계" }
 ];
 const MENUS = [
   { name: "솔루션 소개", q: "이 서비스로 내 문제를 해결할 수 있을까?" },
-  { name: "제품 소개", q: "내가 어떤 제품을 구매할 수 있을까?" },
+  { name: "제품 소개", q: "나에게 맞는 제품은 무엇일까?" },
   { name: "다양한 업종", q: "내 업종에서도 이 제품을 쓸 수 있을까?" },
   { name: "고객 지원", q: "도입 후 어떤 지원을 받을 수 있을까?" },
   { name: "공지사항", q: "구매 시 참고할 혜택이나 소식이 있을까?" }
