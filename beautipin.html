@@ -67,7 +67,7 @@
         <span>스타닥 · 2025</span>
       </div>
       <div style="margin-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 18px">
-        <h1 style="margin: 0; font: 500 clamp(40px, 5vw, 60px)/1.4 var(--font-display); letter-spacing: -.04em; color: #000; font-weight: 600">뷰티핀 ( BeautiPin)</h1>
+        <h1 style="margin: 0; font: 500 clamp(40px, 5vw, 60px)/1.4 var(--font-display); letter-spacing: -.04em; color: #000; font-weight: 600">뷰티핀 (BeautiPin)</h1>
         <a href="{{ siteUrl }}" onClick="{{ siteClick }}" target="_blank" rel="noopener" aria-label="뷰티핀 사이트 바로가기" style="height:40px;padding:0 8px 0 16px;display:inline-flex;align-items:center;gap:10px;border-radius:100px;background:var(--color-white);font:500 14px/1 var(--font-body);color:var(--color-ink);transition:background .2s" style-hover="background:var(--color-sand);color:var(--color-ink)">사이트 보기<span style="width:28px;height:28px;border-radius:50%;background:var(--color-ink);color:var(--color-cream);display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-up-right" size="{{ 14 }}" hint-size="14px,14px"></x-import></span></a>
       </div>
       <p style="margin:10px 0 0;font:500 clamp(18px, 1.6vw, 21px)/1.65 var(--font-body);letter-spacing:-.02em;color:var(--color-ink);text-wrap:pretty">현장 리서치로 외국인 관광객이 원하는 것을 찾고, Shopify 기반 플랫폼에 담아낸 프로젝트</p>
@@ -273,7 +273,7 @@
         <div style="margin-top:30px;padding:clamp(30px, 4vw, 50px);border-radius:20px;background:var(--color-ink);color:var(--color-cream)">
           <span style="display:inline-flex;align-items:center;gap:8px;font:500 13px/1 var(--font-body);color:var(--color-stone)"><i style="width:6px;height:6px;border-radius:50%;background:var(--color-orange)"></i>제휴 피부과 시술 매출</span>
           <b style="display:block;margin-top:20px;font:500 clamp(48px, 6vw, 72px)/1.2 var(--font-display);letter-spacing:-.04em;color:var(--color-cream)">약 1억 원</b>
-          <p style="margin:15px 0 0;max-width:520px;font:500 16px/1.7 var(--font-body);color:var(--color-cream);opacity:.8">광고와 검색으로 유입된 외국인 관광객이 뷰티핀에서 예약을 마쳤고, 그 결과 강남의 제휴 피부과 한 곳에서 뷰티핀 운영 기간동안 약 1억 원의 외국인 고객 시술 매출이 발생했습니다.</p>
+          <p style="margin:15px 0 0;max-width:520px;font:500 16px/1.7 var(--font-body);color:var(--color-cream);opacity:.8">광고와 검색으로 유입된 외국인 관광객이 뷰티핀에서 예약을 마쳤고, 그 결과 강남의 제휴 피부과 한 곳에서 뷰티핀 운영 기간 동안 약 1억 원의 외국인 고객 시술 매출이 발생했습니다.</p>
         </div>
         <ul style="margin:10px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 260px), 1fr));gap:10px">
           <li style="padding: 25px; border-radius: 20px; display: flex; flex-direction: column; gap: 15px; background-color: var(--surface-muted)">
@@ -356,7 +356,7 @@ const FEATURES = [
 const QUESTIONS = [
   { q: "한국 여행 올 때 어떤 키워드를 찾나요?", a: "경복궁, 동대문, 명동 같은 관광지 키워드 위주", d: "관광 키워드로 검색되는 매거진을 만들고, 글 안에서 피부과 예약으로 연결" },
   { q: "여행 정보를 주로 어디서 찾나요?", a: "구글, 레딧, 인스타그램 등", d: "구글 검색 → 매거진\n커뮤니티 → 홈페이지 기능으로 추가\n인스타그램 → 인스타·스레드 광고 운영" },
-  { q: "피부과가 방문 목적인가요?", a: "약 50문답 중 3~4명", d: "여행 정보로 먼저 들어오게 하고, 그 안에서 피부과 예약으로 이어지는 구조" }
+  { q: "피부과가 방문 목적인가요?", a: "약 50명 중 3~4명", d: "여행 정보로 먼저 들어오게 하고, 그 안에서 피부과 예약으로 이어지는 구조" }
 ];
 const MENUS = [
   { name: "매거진", role: "관광 키워드로 검색되는 여행·뷰티·라이프 콘텐츠\n(SEO 유입 창구)", need: "한국 여행, 어디부터 가 볼까?", key: true, tag: "메인" },
@@ -376,7 +376,7 @@ const SCREENS = [
 ];
 const BUILDS = [
   { no: "01", icon: "loader", title: "첫 방문 로딩 스피너", rows: [["문제", "첫 화면에서 바로 나가는 방문자가 많음"], ["확인", "Hotjar로 보니 첫 진입 시 로딩 중에 이탈하는 것으로 보임"], ["해결", "처음 방문한 사람에게만 로딩 스피너 표시"], ["방법", "AI에게 코드를 받아 직접 적용"]] },
-  { no: "02", icon: "image-plus", title: "상세페이지 이미지 삽입", rows: [["문제", "Shopify 상세페이지 템플릿은 구조를 바꿀 수 없음"], ["확인", "템플릿을 안 쓰면 운영이 번거롭고, 쓰면 병원마다 다른 이미지를 넣을 수 없음"], ["해결", "템플릿은 유지하고, 필요한 상세페이지에만 이미지를 추가할 수 있게 수정"], ["방법", "AI에게 코드를 받아 직접 적용"]] }
+  { no: "02", icon: "image-plus", title: "상세페이지 배너 삽입", rows: [["문제", "Shopify 상세페이지 템플릿은 구조를 바꿀 수 없음"], ["확인", "템플릿을 안 쓰면 운영이 번거롭고, 쓰면 병원마다 다른 이미지를 넣을 수 없음"], ["해결", "템플릿은 유지하고, 필요한 상세페이지에만 이미지를 추가할 수 있게 수정"], ["방법", "AI에게 코드를 받아 직접 적용"]] }
 ];
 
 class Component extends DCLogic {
