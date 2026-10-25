@@ -21,6 +21,25 @@
   <script src="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/ds_bundle.js"></script>
   <meta name="image-slot-state" content="image-slots-main.state.json" data-resource-id="imageSlotStatePage">
   <meta name="ext-resource-dependency" content="image-slots-main.state.json" data-resource-id="imageSlotStatePage">
+  <meta name="ext-resource-dependency" content="images/index/spine-7.webp" data-resource-id="s-spine-7">
+  <meta name="ext-resource-dependency" content="images/index/spine-4.webp" data-resource-id="s-spine-4">
+  <meta name="ext-resource-dependency" content="images/index/spine-0.webp" data-resource-id="s-spine-0">
+  <meta name="ext-resource-dependency" content="images/index/spine-2.webp" data-resource-id="s-spine-2">
+  <meta name="ext-resource-dependency" content="images/index/hero-design-word.webp" data-resource-id="s-hero-design-word">
+  <meta name="ext-resource-dependency" content="images/index/spine-6.webp" data-resource-id="s-spine-6">
+  <meta name="ext-resource-dependency" content="images/index/spine-5.webp" data-resource-id="s-spine-5">
+  <meta name="ext-resource-dependency" content="images/index/spine-1.webp" data-resource-id="s-spine-1">
+  <meta name="ext-resource-dependency" content="images/index/spine-3.webp" data-resource-id="s-spine-3">
+  <meta name="ext-resource-dependency" content="images/index/mq-6.webp" data-resource-id="s-mq-6">
+  <meta name="ext-resource-dependency" content="images/index/mq-7.webp" data-resource-id="s-mq-7">
+  <meta name="ext-resource-dependency" content="images/index/mq-8.webp" data-resource-id="s-mq-8">
+  <meta name="ext-resource-dependency" content="images/index/mq-0.webp" data-resource-id="s-mq-0">
+  <meta name="ext-resource-dependency" content="images/index/mq-1.webp" data-resource-id="s-mq-1">
+  <meta name="ext-resource-dependency" content="images/index/mq-2.webp" data-resource-id="s-mq-2">
+  <meta name="ext-resource-dependency" content="images/index/mq-3.webp" data-resource-id="s-mq-3">
+  <meta name="ext-resource-dependency" content="images/index/mq-4.webp" data-resource-id="s-mq-4">
+  <meta name="ext-resource-dependency" content="images/index/mq-5.webp" data-resource-id="s-mq-5">
+  <script data-slot-defaults="1">window.__slotDefaults = Object.assign(window.__slotDefaults || {}, {"spine-7":"images/index/spine-7.webp","spine-4":"images/index/spine-4.webp","spine-0":"images/index/spine-0.webp","spine-2":"images/index/spine-2.webp","hero-design-word":"images/index/hero-design-word.webp","spine-6":"images/index/spine-6.webp","spine-5":"images/index/spine-5.webp","spine-1":"images/index/spine-1.webp","spine-3":"images/index/spine-3.webp","mq-6":"images/index/mq-6.webp","mq-7":"images/index/mq-7.webp","mq-8":"images/index/mq-8.webp","mq-0":"images/index/mq-0.webp","mq-1":"images/index/mq-1.webp","mq-2":"images/index/mq-2.webp","mq-3":"images/index/mq-3.webp","mq-4":"images/index/mq-4.webp","mq-5":"images/index/mq-5.webp"});</script>
   <script src="./image-slot.js"></script>
   <meta name="ext-resource-dependency" content="image-slots.state.json" data-resource-id="imageSlotState">
   <title>김미정 · 디자이너 포트폴리오</title>
@@ -67,7 +86,7 @@
               </div>
             </div>
             
-            <a href="#about" onClick="{{ goAbout }}" style="font:500 14px/1 var(--font-body)">About</a><a href="#archive" onClick="{{ goArchive }}" style="font:500 14px/1 var(--font-body)">Archive</a>
+            <a href="archive.html" style="font:500 14px/1 var(--font-body)">Design Archive</a>
           </nav>
           <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Button" variant="dark" icon="download" on-click="{{ resume }}" hint-size="120px,40px">Resume</x-import>
         </div>
@@ -87,8 +106,7 @@
       <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
         <a href="#work" onClick="{{ p.goTo }}" style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid var(--color-line);font:500 17px/1.2 var(--font-body)">{{ p.name }}<span style="font:500 13px/1 var(--font-body);color:var(--color-stone)">{{ p.cat }}</span></a>
       </sc-for>
-      <a href="#archive" onClick="{{ goArchive }}" style="padding:20px 0 15px;border-bottom:1px solid var(--color-line);font:500 17px/1.2 var(--font-body)">Archive</a>
-      <a href="#about" onClick="{{ goAbout }}" style="padding:15px 0;border-bottom:1px solid var(--color-line);font:500 17px/1.2 var(--font-body)">About</a>
+      <a href="archive.html" style="padding:20px 0 15px;border-bottom:1px solid var(--color-line);font:500 17px/1.2 var(--font-body)">Design Archive</a>
       <div style="margin-top:20px">
         <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Button" variant="dark" size="lg" icon="download" full-width="{{ true }}" on-click="{{ resume }}" hint-size="100%,50px">이력서 다운로드</x-import>
       </div>
@@ -164,7 +182,7 @@
               </div>
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:15px;margin-top:25px">
                 <h3 style="margin:0;font:600 clamp(24px, 2.2vw, 30px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">{{ p.name }}</h3>
-                <a href="{{ p.detailUrl }}" aria-label="{{ p.name }} 상세 보기" style-hover="transform:translate(2px, -2px)" style="transition:transform .25s;text-decoration:none;cursor:pointer;flex-shrink:0;align-self:center;width:36px;height:36px;border-radius:50%;background:var(--color-orange);display:flex;align-items:center;justify-content:center;color:#000"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></a>
+                <a href="{{ p.detailUrl }}" aria-label="{{ p.name }} 상세 보기" style="flex-shrink:0;align-self:center;height:44px;padding:0 6px 0 18px;display:inline-flex;align-items:center;gap:10px;border-radius:100px;background:var(--color-white);font:500 14px/1 var(--font-body);color:var(--color-ink);text-decoration:none;white-space:nowrap;transition:background .2s" style-hover="background:var(--color-sand);color:var(--color-ink)">자세히 보기<span style="width:32px;height:32px;border-radius:50%;background:var(--color-orange);color:#000;display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-up-right" size="{{ 15 }}" hint-size="15px,15px"></x-import></span></a>
               </div>
               <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px;font:500 13px/1 var(--font-body);color:var(--color-stone)">
                 <span style="display:inline-flex;align-items:center;height:26px;padding:0 11px;border-radius:100px;background:var(--color-sand);color:var(--color-ink)">{{ p.cat }}</span>
@@ -185,57 +203,14 @@
         </sc-for>
       </div>
     </div>
-  </section><section id="about" data-screen-label="05 About" style="position:relative;padding:clamp(160px, 20vw, 300px) 0 0">
-    <div style="width:min(1300px, calc(100% - clamp(40px, 7vw, 100px)));margin:0 auto;display:flex;flex-wrap:wrap;gap:50px clamp(50px, 7vw, 100px);align-items:stretch">
-      <div data-rv="" style="flex:5 1 380px;min-width:0;align-self:flex-start">
-        <span style="display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-ink)"><i style="width:6px;height:6px;border-radius:50%;background:var(--color-orange)"></i>About</span>
-        <h2 style="margin:20px 0 0;font:600 clamp(32px, 4.4vw, 56px)/1.4 var(--font-display);letter-spacing:-.035em;color:#000">안녕하세요,<br>디자이너 김미정입니다</h2>
-        <ul style="margin:50px 0 0;padding:0;list-style:none;border-top:1px solid var(--color-line)">
-          <sc-for list="{{ timeline }}" as="t" hint-placeholder-count="3">
-            <li style="display:flex;align-items:baseline;gap:10px 20px;padding:20px 0;border-bottom:1px solid var(--color-line);flex-wrap:wrap">
-              <b style="width:100px;flex-shrink:0;font:500 16px/1.3 var(--font-body);color:var(--color-ink)">{{ t.company }}<em style="display:block;margin-top:5px;font:500 12px/1.4 var(--font-body);font-style:normal;color:var(--color-stone)">{{ t.year }}</em></b>
-              <span style="flex:1 1 200px;display:flex;flex-direction:column;gap:4px">
-                <sc-for list="{{ t.items }}" as="w" hint-placeholder-count="3">
-                  <span style="display:grid;grid-template-columns:4px minmax(0, 1fr);gap:10px;align-items:baseline;font:500 15px/1.6 var(--font-body);color:var(--color-stone)"><i style="width:4px;height:4px;border-radius:50%;background:var(--color-stone);transform:translateY(-3px)"></i>{{ w }}</span>
-                </sc-for>
-              </span>
-            </li>
-          </sc-for>
-        </ul>
-        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:30px">
-          <sc-for list="{{ tools }}" as="tool" hint-placeholder-count="8">
-            <span style="height:32px;padding:0 13px;display:inline-flex;align-items:center;border-radius:100px;background:var(--color-sand);font:500 13px/1 var(--font-body);color:var(--color-ink)">{{ tool }}</span>
-          </sc-for>
-        </div>
-      </div>
-      <div data-rv="" data-delay="120" style="flex:6 1 420px;min-width:0;display:flex;flex-direction:column;justify-content:flex-end;gap:10px">
-        <span style="font:500 13px/1 var(--font-body);color:var(--color-stone);margin-bottom:10px">저는 이런 사람이에요</span>
-        <sc-for list="{{ qna }}" as="q" hint-placeholder-count="4">
-          <div style="border-radius:20px;background:{{ q.bg }};transition:background .25s">
-            <button onClick="{{ q.toggle }}" onMouseEnter="{{ q.enter }}" onMouseLeave="{{ q.leave }}" aria-expanded="{{ q.open }}" style="width:100%;min-height:68px;display:flex;align-items:center;gap:15px;padding:15px 15px 15px 25px;border:0;background:transparent;cursor:pointer;text-align:left">
-              <span style="flex:1;font:500 17px/1.5 var(--font-body);letter-spacing:-.02em;color:var(--color-ink)">{{ q.q }}</span>
-              <span style="flex-shrink:0;width:30px;height:30px;border-radius:50%;background:{{ q.iconBg }};color:{{ q.iconColor }};display:flex;align-items:center;justify-content:center;transition:background .25s, transform .3s cubic-bezier(.2,.7,.2,1);transform:{{ q.iconRot }}">
-                <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="plus" size="{{ 16 }}" hint-size="16px,16px"></x-import>
-              </span>
-            </button>
-            <div style="display:grid;grid-template-rows:{{ q.rows }};transition:grid-template-rows .35s cubic-bezier(.2,.7,.2,1)">
-              <div style="overflow:hidden;min-height:0">
-                <p style="margin:0;padding:0 60px 25px 25px;font:500 15px/1.75 var(--font-body);letter-spacing:-.01em;color:var(--color-stone);text-wrap:pretty">{{ q.a }}</p>
-              </div>
-            </div>
-          </div>
-        </sc-for>
-      </div>
-    </div>
-  </section>
-  <section id="archive" data-screen-label="04 Archive" style="position: relative; padding: clamp(160px, 20vw, 300px) 0 0">
+  </section><section id="archive" data-screen-label="04 Archive" style="position: relative; padding: clamp(160px, 20vw, 300px) 0 0">
     <div style="width:min(1300px, calc(100% - clamp(40px, 7vw, 100px)));margin:0 auto">
       <div data-rv="" style="display:flex;justify-content:space-between;align-items:flex-end;gap:25px;flex-wrap:wrap;margin-bottom:50px">
         <div>
           <span style="display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-ink)"><i style="width:6px;height:6px;border-radius:50%;background:var(--color-orange)"></i>Archive</span>
           <h2 style="margin:20px 0 0;font:600 clamp(32px, 4.4vw, 56px)/1.4 var(--font-display);letter-spacing:-.035em;color:#000;text-wrap:balance">온 · 오프라인을 넘나드는<br>다양한 작업들</h2>
         </div>
-        <a href="{{ driveUrl }}" onClick="{{ driveClick }}" target="_blank" rel="noopener" style="height:48px;padding:0 8px 0 20px;display:inline-flex;align-items:center;gap:12px;border-radius:100px;background:var(--color-white);font:500 15px/1 var(--font-body);color:var(--color-ink);transition:background .2s" style-hover="background:var(--color-sand);color:var(--color-ink)">작업 아카이브<span style="width:34px;height:34px;border-radius:50%;background:var(--color-ink);color:var(--color-cream);display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-up-right" size="{{ 16 }}" hint-size="16px,16px"></x-import></span></a>
+        <a href="archive.html" style="height:48px;padding:0 8px 0 20px;display:inline-flex;align-items:center;gap:12px;border-radius:100px;background:var(--color-white);font:500 15px/1 var(--font-body);color:var(--color-ink);transition:background .2s" style-hover="background:var(--color-sand);color:var(--color-ink)">작업물 더 보기<span style="width:34px;height:34px;border-radius:50%;background:var(--color-orange);color:#000;display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-up-right" size="{{ 16 }}" hint-size="16px,16px"></x-import></span></a>
       </div>
       <sc-if value="{{ shelfRow }}" hint-placeholder-val="{{ true }}">
         <div data-rv="30" style="display:flex;width:100%;height:clamp(440px, 46vw, 600px);border-top:1px solid var(--color-line);border-bottom:1px solid var(--color-line)">
@@ -267,6 +242,52 @@
           </sc-for>
         </div>
       </sc-if>
+    </div>
+  </section>
+  <section id="about" data-screen-label="05 About" style="position:relative;padding:clamp(160px, 20vw, 300px) 0 0">
+    <div style="width:min(1300px, calc(100% - clamp(40px, 7vw, 100px)));margin:0 auto;display:flex;flex-wrap:wrap;gap:50px clamp(50px, 7vw, 100px);align-items:stretch">
+      <div data-rv="" style="flex:5 1 380px;min-width:0;align-self:flex-start">
+        <span style="display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-ink)"><i style="width:6px;height:6px;border-radius:50%;background:var(--color-orange)"></i>About</span>
+        <h2 style="margin:20px 0 0;font:600 clamp(32px, 4.4vw, 56px)/1.4 var(--font-display);letter-spacing:-.035em;color:#000">안녕하세요,<br>디자이너 김미정입니다</h2>
+        <ul style="margin:50px 0 0;padding:0;list-style:none;border-top:1px solid var(--color-line)">
+          <sc-for list="{{ timeline }}" as="t" hint-placeholder-count="3">
+            <li style="display:flex;align-items:baseline;gap:10px 20px;padding:20px 0;border-bottom:1px solid var(--color-line);flex-wrap:wrap">
+              <b style="width:100px;flex-shrink:0;font:500 16px/1.3 var(--font-body);color:var(--color-ink)">{{ t.company }}<em style="display:block;margin-top:5px;font:500 12px/1.4 var(--font-body);font-style:normal;color:var(--color-stone)">{{ t.year }}</em></b>
+              <span style="flex:1 1 200px;display:flex;flex-direction:column;gap:4px">
+                <sc-for list="{{ t.items }}" as="w" hint-placeholder-count="3">
+                  <span style="display:grid;grid-template-columns:4px minmax(0, 1fr);gap:10px;align-items:baseline;font:500 15px/1.6 var(--font-body);color:var(--color-stone)"><i style="width:4px;height:4px;border-radius:50%;background:var(--color-stone);transform:translateY(-3px)"></i>{{ w }}</span>
+                </sc-for>
+              </span>
+            </li>
+          </sc-for>
+        </ul>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:10px;margin-top:40px">
+          <sc-for list="{{ tools }}" as="tool" hint-placeholder-count="4">
+            <div style="display:flex;flex-direction:column;gap:12px;padding:20px 22px;border-radius:20px;background:var(--color-sand)">
+              <span style="font:600 12px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">{{ tool.cat }}</span>
+              <span style="font:500 15px/1.6 var(--font-body);color:var(--color-ink);text-wrap:pretty">{{ tool.items }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div data-rv="" data-delay="120" style="flex:6 1 420px;min-width:0;display:flex;flex-direction:column;justify-content:flex-end;gap:10px">
+        <span style="font:500 13px/1 var(--font-body);color:var(--color-stone);margin-bottom:10px">저는 이런 사람이에요</span>
+        <sc-for list="{{ qna }}" as="q" hint-placeholder-count="4">
+          <div style="border-radius:20px;background:{{ q.bg }};transition:background .25s">
+            <button onClick="{{ q.toggle }}" onMouseEnter="{{ q.enter }}" onMouseLeave="{{ q.leave }}" aria-expanded="{{ q.open }}" style="width:100%;min-height:68px;display:flex;align-items:center;gap:15px;padding:15px 15px 15px 25px;border:0;background:transparent;cursor:pointer;text-align:left">
+              <span style="flex:1;font:500 17px/1.5 var(--font-body);letter-spacing:-.02em;color:var(--color-ink)">{{ q.q }}</span>
+              <span style="flex-shrink:0;width:30px;height:30px;border-radius:50%;background:{{ q.iconBg }};color:{{ q.iconColor }};display:flex;align-items:center;justify-content:center;transition:background .25s, transform .3s cubic-bezier(.2,.7,.2,1);transform:{{ q.iconRot }}">
+                <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="plus" size="{{ 16 }}" hint-size="16px,16px"></x-import>
+              </span>
+            </button>
+            <div style="display:grid;grid-template-rows:{{ q.rows }};transition:grid-template-rows .35s cubic-bezier(.2,.7,.2,1)">
+              <div style="overflow:hidden;min-height:0">
+                <p style="margin:0;padding:0 60px 25px 25px;font:500 15px/1.75 var(--font-body);letter-spacing:-.01em;color:var(--color-stone);text-wrap:pretty">{{ q.a }}</p>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
     </div>
   </section>
   <sc-if value="{{ showProcess }}" hint-placeholder-val="{{ true }}">
@@ -353,8 +374,7 @@
         </div>
         <nav style="display:flex;gap:25px;flex-wrap:wrap">
           <a href="#work" onClick="{{ goWork }}" style="font:500 14px/1 var(--font-body);color:var(--color-cream)">Work</a>
-          <a href="#archive" onClick="{{ goArchive }}" style="font:500 14px/1 var(--font-body);color:var(--color-cream)">Archive</a>
-          <a href="#about" onClick="{{ goAbout }}" style="font:500 14px/1 var(--font-body);color:var(--color-cream)">About</a>
+          <a href="archive.html" style="font:500 14px/1 var(--font-body);color:var(--color-cream)">Design Archive</a>
           <a href="#" onClick="{{ resume }}" style="font:500 14px/1 var(--font-body);color:var(--color-cream)">Resume</a>
         </nav>
         <div style="flex-basis:100%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:20px;font:400 12px/1.5 sans-serif;color:var(--color-stone)">
@@ -402,22 +422,22 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;projectOrder&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;임팩트순&quot;,&quot;시간순&quot;],&quot;default&quot;:&quot;임팩트순&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;구성&quot;},&quot;showProcess&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;구성&quot;},&quot;marqueeSpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:100,&quot;step&quot;:5,&quot;unit&quot;:&quot;px/s&quot;,&quot;default&quot;:30,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;모션&quot;},&quot;driveUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://drive.google.com/drive/folders/1toGiBP0SaYeSAcnSM7hnlP974kZnNO6r?usp=sharing&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;링크&quot;}}">
 const PROJECTS = [
-  { id: "beautypin", no: "01", name: "뷰티핀", cat: "웹·서비스", company: "스타닥", year: "2025", order: 2,
-    summary: "외국인 관광객을 직접 만나 무엇이 필요한지 묻고, 그 답을 바탕으로 서비스를 더해 Shopify로 구현했습니다.",
-    kpis: [{ value: "약 1억 원", label: "제휴 피부과 한 곳의 외국인 예약 시술 매출" }],
-    image: "뷰티핀 메인 화면 캡처 (데스크톱 + 모바일)" },
-  { id: "beaver-lab", no: "02", name: "비버매장연구소", cat: "공간·경험", company: "비버웍스", year: "2023", order: 1,
+  { id: "beaver-lab", no: "01", name: "비버매장연구소", cat: "공간·경험", company: "비버웍스", year: "2023", order: 1,
     summary: "신규 브랜드를 박람회에서 처음 알리기 위해 브랜드 메시지 '여유'를 정하고, 부스·체험존·인쇄물 디자인부터 현장 운영까지 함께했습니다.",
     kpis: [{ count: 100, suffix: "건+", label: "인스타그램 인증 게시글" }, { count: 9000, suffix: "부+", label: "현장에서 배포된 쇼핑백" }],
     image: "코엑스 박람회 부스 전경 사진" },
+  { id: "elije", no: "02", name: "엘리쥬", cat: "콘텐츠", company: "스타닥", year: "2025", order: 3,
+    summary: "로고와 방향성만 있던 신제품의 브랜드 메시지와 콘셉트 사진을 만들고, 상담 랜딩페이지부터 박람회 부스까지 하나의 톤으로 이어갔습니다.",
+    kpis: [{ value: "피부에 빛을 불어넣다", quote: true, label: "콘셉트 사진과 함께 2026년 현재까지 브랜드 메시지로 쓰이고 있습니다" }],
+    image: "스튜디오 콘셉트 사진 (맑은 톤의 제품 컷)" },
   { id: "unospay", no: "03", name: "우노스페이", cat: "웹·서비스", company: "우노스", year: "2022", order: 0,
     summary: "고객 문의가 실무자에게 몰리는 원인을 리서치로 찾고, 홈페이지 정보 구조와 운영 방식을 다시 설계했습니다.",
     kpis: [{ value: "상담 설명이 수월해졌어요", quote: true, label: "리디자인 후 영업팀 피드백" }],
     image: "우노스페이 홈페이지 화면" },
-  { id: "elije", no: "04", name: "엘리쥬", cat: "콘텐츠", company: "스타닥", year: "2025", order: 3,
-    summary: "로고와 방향성만 있던 신제품의 브랜드 메시지와 콘셉트 사진을 만들고, 상담 랜딩페이지부터 박람회 부스까지 하나의 톤으로 이어갔습니다.",
-    kpis: [{ value: "피부에 빛을 불어넣다", quote: true, label: "콘셉트 사진과 함께 2026년 현재까지 브랜드 메시지로 쓰이고 있습니다" }],
-    image: "스튜디오 콘셉트 사진 (맑은 톤의 제품 컷)" }
+  { id: "beautypin", no: "04", name: "뷰티핀", cat: "웹·서비스", company: "스타닥", year: "2025", order: 2,
+    summary: "외국인 관광객을 직접 만나 무엇이 필요한지 묻고, 그 답을 바탕으로 서비스를 더해 Shopify로 구현했습니다.",
+    kpis: [{ value: "약 1억 원", label: "제휴 피부과 한 곳의 외국인 예약 시술 매출" }],
+    image: "뷰티핀 메인 화면 캡처 (데스크톱 + 모바일)" }
 ];
 const SOFT = { soft: true, style: "marble", scale: 0.2, warp: 0.45, gloss: 0, veins: 0 };
 const ART = {
@@ -468,7 +488,12 @@ const TIMELINE = [
   { company: "비버웍스", year: "2023", what: "비버매장연구소 브랜딩\n박람회 콘텐츠 기획 및 디자인\n온 · 오프라인 콘텐츠 기획 및 디자인" },
   { company: "우노스", year: "2020 - 2023", what: "우노스 홈페이지 리디자인\n홈페이지 운영 가이드 제작 및 배포\n제안서 기획 및 디자인\n온 · 오프라인 콘텐츠 기획 및 디자인" }
 ];
-const TOOLS = ["Figma", "Illustrator", "Photoshop", "After Effects", "Premiere Pro", "Shopify", "Imweb", "Cafe24", "Midjourney", "Claude", "Notion", "HTML", "CSS"];
+const TOOLS = [
+  { cat: "Design", items: "Figma, Illustrator, Photoshop" },
+  { cat: "Motion & Video", items: "After Effects, Premiere Pro" },
+  { cat: "Web", items: "Shopify, Imweb, Cafe24, HTML, CSS" },
+  { cat: "AI", items: "Claude, Midjourney, Higgsfield" }
+];
 const QNA = [
   { q: "어떤 디자이너인가요?", a: "직접 찾아보고 확인하는 디자이너입니다. 전달받은 자료를 화면에 옮기는 것만으로는 충분하지 않다고 생각합니다. 완성도 있는 디자인은 그 자료를 얼마나 깊이 이해하느냐에서 시작되기 때문입니다. 그래서 새로운 작업을 시작하면 비슷한 제품과 서비스, 레퍼런스를 폭넓게 찾아보며 그 분야를 먼저 이해한 뒤에 디자인을 시작합니다." },
   { q: "함께 일할 때 어떤 동료인가요?", a: "해결 방법을 제안하고, 함께 조율하는 동료입니다. 의견이 다를 때는 충분한 근거를 가지고 제안하고, 동료들과 이야기하며 합의점을 찾습니다." },
