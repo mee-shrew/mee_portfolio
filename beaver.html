@@ -21,6 +21,22 @@
   <script src="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/ds_bundle.js"></script>
   <meta name="image-slot-state" content="image-slots-beaverlab.state.json" data-resource-id="imageSlotStatePage">
   <meta name="ext-resource-dependency" content="image-slots-beaverlab.state.json" data-resource-id="imageSlotStatePage">
+  <meta name="ext-resource-dependency" content="images/beaver/bl-floorplan.webp" data-resource-id="s-bl-floorplan">
+  <meta name="ext-resource-dependency" content="images/beaver/bl-leaflet-design.webp" data-resource-id="s-bl-leaflet-design">
+  <meta name="ext-resource-dependency" content="images/beaver/bl-brochure-design.webp" data-resource-id="s-bl-brochure-design">
+  <meta name="ext-resource-dependency" content="images/beaver/bl-site-0.webp" data-resource-id="s-bl-site-0">
+  <meta name="ext-resource-dependency" content="images/beaver/bl-site-1.webp" data-resource-id="s-bl-site-1">
+  <meta name="ext-resource-dependency" content="images/beaver/bl-site-2.webp" data-resource-id="s-bl-site-2">
+  <meta name="ext-resource-dependency" content="images/beaver/bl-site-3.webp" data-resource-id="s-bl-site-3">
+  <meta name="ext-resource-dependency" content="images/beaver/bl-site-4.webp" data-resource-id="s-bl-site-4">
+  <meta name="ext-resource-dependency" content="images/beaver/bl-floorplan-2.webp" data-resource-id="s-bl-floorplan-2">
+  <meta name="ext-resource-dependency" content="images/beaver/bl-brand-message.webp" data-resource-id="s-bl-brand-message">
+  <meta name="ext-resource-dependency" content="images/beaver/bl-hero.webp" data-resource-id="s-bl-hero">
+  <meta name="ext-resource-dependency" content="images/beaver/bl-blue-booth.webp" data-resource-id="s-bl-blue-booth">
+  <meta name="ext-resource-dependency" content="images/beaver/bl-zone.webp" data-resource-id="s-bl-zone">
+  <meta name="ext-resource-dependency" content="images/beaver/bl-bag-design.webp" data-resource-id="s-bl-bag-design">
+  <meta name="ext-resource-dependency" content="images/beaver/bl-banner-design.webp" data-resource-id="s-bl-banner-design">
+  <script data-slot-defaults="1">window.__slotDefaults = Object.assign(window.__slotDefaults || {}, {"bl-floorplan":"images/beaver/bl-floorplan.webp","bl-leaflet-design":"images/beaver/bl-leaflet-design.webp","bl-brochure-design":"images/beaver/bl-brochure-design.webp","bl-site-0":"images/beaver/bl-site-0.webp","bl-site-1":"images/beaver/bl-site-1.webp","bl-site-2":"images/beaver/bl-site-2.webp","bl-site-3":"images/beaver/bl-site-3.webp","bl-site-4":"images/beaver/bl-site-4.webp","bl-floorplan-2":"images/beaver/bl-floorplan-2.webp","bl-brand-message":"images/beaver/bl-brand-message.webp","bl-hero":"images/beaver/bl-hero.webp","bl-blue-booth":"images/beaver/bl-blue-booth.webp","bl-zone":"images/beaver/bl-zone.webp","bl-bag-design":"images/beaver/bl-bag-design.webp","bl-banner-design":"images/beaver/bl-banner-design.webp"});</script>
   <script src="./image-slot.js"></script>
   <meta name="ext-resource-dependency" content="image-slots.state.json" data-resource-id="imageSlotState">
   <title>비버매장연구소 · 김미정 포트폴리오</title>
@@ -53,8 +69,10 @@
       <aside style="position:sticky;top:114px;display:flex;flex-direction:column;gap:5px">
         <span style="padding:0 12px 10px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">Selected Work</span>
         <sc-for list="{{ works }}" as="w" hint-placeholder-count="4">
-          <a href="{{ w.href }}" onClick="{{ w.onClick }}" style="display:flex;align-items:center;justify-content:space-between;gap:10px;height:40px;padding:0 12px;border-radius:12px;background:{{ w.bg }};font:500 14px/1 var(--font-body);color:{{ w.color }}">{{ w.name }}<span style="font:500 12px/1 var(--font-body);color:{{ w.noColor }}">{{ w.no }}</span></a>
+          <a href="{{ w.href }}" style-hover="color:var(--color-ink)" onClick="{{ w.onClick }}" style="display:flex;align-items:center;justify-content:space-between;gap:10px;height:40px;padding:0 12px;border-radius:12px;background:{{ w.bg }};font:500 14px/1 var(--font-body);color:{{ w.color }};transition:color .2s">{{ w.name }}<span style="font:500 12px/1 var(--font-body);color:inherit">{{ w.no }}</span></a>
         </sc-for>
+        <span style="margin:10px 12px;height:1px;background:var(--color-line)"></span>
+        <a href="archive.html" style="display:flex;align-items:center;justify-content:space-between;gap:10px;height:40px;padding:0 12px;border-radius:12px;background:transparent;font:600 14px/1 var(--font-body);color:var(--color-orange);transition:background .2s,color .2s">디자인 아카이브<x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="layout-grid" size="{{ 13 }}" hint-size="13px,13px"></x-import></a>
       </aside>
     </sc-if>
 
@@ -269,10 +287,10 @@
             <span style="font:600 16px/1.3 var(--font-display);letter-spacing:-.02em;color:var(--color-ink)">뷰티핀</span>
           </span>
         </a>
-        <a href="unospay.html" style="display:flex;align-items:center;justify-content:flex-end;gap:15px;padding:16px 16px 16px 20px;border-radius:100px;background:var(--color-white);text-align:right;transition:background .2s" style-hover="background:var(--color-sand);color:var(--color-ink)">
+        <a href="elreju.html" style="display:flex;align-items:center;justify-content:flex-end;gap:15px;padding:16px 16px 16px 20px;border-radius:100px;background:var(--color-white);text-align:right;transition:background .2s" style-hover="background:var(--color-sand);color:var(--color-ink)">
           <span style="min-width:0;display:flex;flex-direction:column;align-items:flex-end;gap:6px">
             <span style="font:500 12px/1 var(--font-body);color:var(--color-stone)">다음 프로젝트</span>
-            <span style="font:600 16px/1.3 var(--font-display);letter-spacing:-.02em;color:var(--color-ink)">우노스페이</span>
+            <span style="font:600 16px/1.3 var(--font-display);letter-spacing:-.02em;color:var(--color-ink)">엘리쥬</span>
           </span>
           <span style="flex-shrink:0;width:40px;height:40px;border-radius:50%;background:var(--color-ink);color:var(--color-cream);display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-right" size="{{ 16 }}" hint-size="16px,16px"></x-import></span>
         </a>
@@ -283,7 +301,7 @@
       <aside style="position:sticky;top:114px;display:flex;flex-direction:column">
         <span style="padding-bottom:15px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">On this page</span>
         <sc-for list="{{ toc }}" as="t" hint-placeholder-count="7">
-          <a href="#{{ t.id }}" onClick="{{ t.onClick }}" style="display:flex;align-items:center;gap:10px;padding:8px 0 8px 12px;box-shadow:inset 2px 0 0 {{ t.bar }};font:500 13px/1.4 var(--font-body);color:{{ t.color }}">{{ t.label }}</a>
+          <a href="#{{ t.id }}" style-hover="color:var(--color-ink)" onClick="{{ t.onClick }}" style="display:flex;align-items:center;gap:10px;padding:8px 0 8px 12px;box-shadow:inset 2px 0 0 {{ t.bar }};font:500 13px/1.4 var(--font-body);color:{{ t.color }};transition:color .2s">{{ t.label }}</a>
         </sc-for>
         <button onClick="{{ toTop }}" style="margin-top:20px;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:0 0 0 12px;border:0;background:none;cursor:pointer;font:500 13px/1 var(--font-body);color:var(--color-stone);transition:color .2s" style-hover="color:var(--color-ink)"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-up" size="{{ 13 }}" hint-size="13px,13px"></x-import>맨 위로</button>
       </aside>
@@ -303,10 +321,10 @@
 <script type="text/x-dc" data-dc-script data-props="{&quot;articleUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://www.mbn.co.kr/vod/programView/1335502&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;링크&quot;}}">
 const TOC = [["s1", "배경 · 과제"], ["s2", "브랜드 메시지"], ["s3", "현장 프로그램"], ["s4", "디자인"], ["s5", "실행 · 현장"], ["s6", "결과"], ["s7", "회고"]];
 const WORKS = [
-  { id: "beautypin", name: "뷰티핀", href: "beautipin.html" },
   { id: "beaver-lab", name: "비버매장연구소", href: "beaver.html" },
+  { id: "elije", name: "엘리쥬", href: "elreju.html" },
   { id: "unospay", name: "우노스페이", href: "unospay.html" },
-  { id: "elije", name: "엘리쥬", href: "elreju.html" }
+  { id: "beautypin", name: "뷰티핀", href: "beautipin.html" }
 ];
 const TASKS = [
   { key: "인지", title: "기억에 남는 브랜드", desc: "비슷한 기기를 파는 부스가 많은 박람회에서 처음 본 브랜드를 방문객이 기억하게 만들어야 했습니다." },

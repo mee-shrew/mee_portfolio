@@ -21,6 +21,20 @@
   <script src="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/ds_bundle.js"></script>
   <meta name="image-slot-state" content="image-slots-elije.state.json" data-resource-id="imageSlotStatePage">
   <meta name="ext-resource-dependency" content="image-slots-elije.state.json" data-resource-id="imageSlotStatePage">
+  <meta name="ext-resource-dependency" content="images/elreju/el-moodboard.webp" data-resource-id="s-el-moodboard">
+  <meta name="ext-resource-dependency" content="images/elreju/el-shoot.webp" data-resource-id="s-el-shoot">
+  <meta name="ext-resource-dependency" content="images/elreju/el-hero.webp" data-resource-id="s-el-hero">
+  <meta name="ext-resource-dependency" content="images/elreju/el-message-bg.webp" data-resource-id="s-el-message-bg">
+  <meta name="ext-resource-dependency" content="images/elreju/el-leaflet-design.webp" data-resource-id="s-el-leaflet-design">
+  <meta name="ext-resource-dependency" content="images/elreju/el-rw-01-to.webp" data-resource-id="s-el-rw-01-to">
+  <meta name="ext-resource-dependency" content="images/elreju/el-rw-02-to.webp" data-resource-id="s-el-rw-02-to">
+  <meta name="ext-resource-dependency" content="images/elreju/el-backwall-design.webp" data-resource-id="s-el-backwall-design">
+  <meta name="ext-resource-dependency" content="images/elreju/el-banner-design.webp" data-resource-id="s-el-banner-design">
+  <meta name="ext-resource-dependency" content="images/elreju/el-landing-full.webp" data-resource-id="s-el-landing-full">
+  <meta name="ext-resource-dependency" content="images/elreju/el-backwall-real.webp" data-resource-id="s-el-backwall-real">
+  <meta name="ext-resource-dependency" content="images/elreju/el-banner-real.webp" data-resource-id="s-el-banner-real">
+  <meta name="ext-resource-dependency" content="images/elreju/el-leaflet-real.webp" data-resource-id="s-el-leaflet-real">
+  <script data-slot-defaults="1">window.__slotDefaults = Object.assign(window.__slotDefaults || {}, {"el-moodboard":"images/elreju/el-moodboard.webp","el-shoot":"images/elreju/el-shoot.webp","el-hero":"images/elreju/el-hero.webp","el-message-bg":"images/elreju/el-message-bg.webp","el-leaflet-design":"images/elreju/el-leaflet-design.webp","el-rw-01-to":"images/elreju/el-rw-01-to.webp","el-rw-02-to":"images/elreju/el-rw-02-to.webp","el-backwall-design":"images/elreju/el-backwall-design.webp","el-banner-design":"images/elreju/el-banner-design.webp","el-landing-full":"images/elreju/el-landing-full.webp","el-backwall-real":"images/elreju/el-backwall-real.webp","el-banner-real":"images/elreju/el-banner-real.webp","el-leaflet-real":"images/elreju/el-leaflet-real.webp"});</script>
   <script src="./image-slot.js"></script>
   <meta name="ext-resource-dependency" content="image-slots.state.json" data-resource-id="imageSlotState">
   <title>엘리쥬 · 김미정 포트폴리오</title>
@@ -53,8 +67,10 @@
       <aside style="position:sticky;top:114px;display:flex;flex-direction:column;gap:5px">
         <span style="padding:0 12px 10px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">Selected Work</span>
         <sc-for list="{{ works }}" as="w" hint-placeholder-count="4">
-          <a href="{{ w.href }}" style="display:flex;align-items:center;justify-content:space-between;gap:10px;height:40px;padding:0 12px;border-radius:12px;background:{{ w.bg }};font:500 14px/1 var(--font-body);color:{{ w.color }}">{{ w.name }}<span style="font:500 12px/1 var(--font-body);color:{{ w.noColor }}">{{ w.no }}</span></a>
+          <a href="{{ w.href }}" style-hover="color:var(--color-ink)" style="display:flex;align-items:center;justify-content:space-between;gap:10px;height:40px;padding:0 12px;border-radius:12px;background:{{ w.bg }};font:500 14px/1 var(--font-body);color:{{ w.color }};transition:color .2s">{{ w.name }}<span style="font:500 12px/1 var(--font-body);color:inherit">{{ w.no }}</span></a>
         </sc-for>
+        <span style="margin:10px 12px;height:1px;background:var(--color-line)"></span>
+        <a href="archive.html" style="display:flex;align-items:center;justify-content:space-between;gap:10px;height:40px;padding:0 12px;border-radius:12px;background:transparent;font:600 14px/1 var(--font-body);color:var(--color-orange);transition:background .2s,color .2s">디자인 아카이브<x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="layout-grid" size="{{ 13 }}" hint-size="13px,13px"></x-import></a>
       </aside>
     </sc-if>
 
@@ -312,17 +328,17 @@
       </section>
 
       <nav style="margin-top:100px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr));gap:10px">
-        <a href="unospay.html" style="display:flex;align-items:center;gap:15px;padding:16px 20px 16px 16px;border-radius:100px;background:var(--color-white);transition:background .2s" style-hover="background:var(--color-sand);color:var(--color-ink)">
+        <a href="beaver.html" style="display:flex;align-items:center;gap:15px;padding:16px 20px 16px 16px;border-radius:100px;background:var(--color-white);transition:background .2s" style-hover="background:var(--color-sand);color:var(--color-ink)">
           <span style="flex-shrink:0;width:40px;height:40px;border-radius:50%;color:var(--color-ink);display:flex;align-items:center;justify-content:center;background-color:var(--border-subtle)"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-left" size="{{ 16 }}" hint-size="16px,16px"></x-import></span>
           <span style="min-width:0;display:flex;flex-direction:column;gap:6px">
             <span style="font:500 12px/1 var(--font-body);color:var(--color-stone)">이전 프로젝트</span>
-            <span style="font:600 16px/1.3 var(--font-display);letter-spacing:-.02em;color:var(--color-ink)">우노스페이</span>
+            <span style="font:600 16px/1.3 var(--font-display);letter-spacing:-.02em;color:var(--color-ink)">비버매장연구소</span>
           </span>
         </a>
-        <a href="beautipin.html" style="display:flex;align-items:center;justify-content:flex-end;gap:15px;padding:16px 16px 16px 20px;border-radius:100px;background:var(--color-white);text-align:right;transition:background .2s" style-hover="background:var(--color-sand);color:var(--color-ink)">
+        <a href="unospay.html" style="display:flex;align-items:center;justify-content:flex-end;gap:15px;padding:16px 16px 16px 20px;border-radius:100px;background:var(--color-white);text-align:right;transition:background .2s" style-hover="background:var(--color-sand);color:var(--color-ink)">
           <span style="min-width:0;display:flex;flex-direction:column;align-items:flex-end;gap:6px">
             <span style="font:500 12px/1 var(--font-body);color:var(--color-stone)">다음 프로젝트</span>
-            <span style="font:600 16px/1.3 var(--font-display);letter-spacing:-.02em;color:var(--color-ink)">뷰티핀</span>
+            <span style="font:600 16px/1.3 var(--font-display);letter-spacing:-.02em;color:var(--color-ink)">우노스페이</span>
           </span>
           <span style="flex-shrink:0;width:40px;height:40px;border-radius:50%;background:var(--color-ink);color:var(--color-cream);display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-right" size="{{ 16 }}" hint-size="16px,16px"></x-import></span>
         </a>
@@ -333,7 +349,7 @@
       <aside style="position:sticky;top:114px;display:flex;flex-direction:column">
         <span style="padding-bottom:15px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">On this page</span>
         <sc-for list="{{ toc }}" as="t" hint-placeholder-count="7">
-          <a href="#{{ t.id }}" onClick="{{ t.onClick }}" style="display:flex;align-items:center;gap:10px;padding:8px 0 8px 12px;box-shadow:inset 2px 0 0 {{ t.bar }};font:500 13px/1.4 var(--font-body);color:{{ t.color }}">{{ t.label }}</a>
+          <a href="#{{ t.id }}" style-hover="color:var(--color-ink)" onClick="{{ t.onClick }}" style="display:flex;align-items:center;gap:10px;padding:8px 0 8px 12px;box-shadow:inset 2px 0 0 {{ t.bar }};font:500 13px/1.4 var(--font-body);color:{{ t.color }};transition:color .2s">{{ t.label }}</a>
         </sc-for>
         <button onClick="{{ toTop }}" style="margin-top:20px;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:0 0 0 12px;border:0;background:none;cursor:pointer;font:500 13px/1 var(--font-body);color:var(--color-stone);transition:color .2s" style-hover="color:var(--color-ink)"><x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-up" size="{{ 13 }}" hint-size="13px,13px"></x-import>맨 위로</button>
       </aside>
@@ -353,10 +369,10 @@
 <script type="text/x-dc" data-dc-script data-props="{&quot;siteUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://elreju.co.kr/&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;링크&quot;}}">
 const TOC = [["s1", "배경 · 과제"], ["s2", "키워드 → 이미지"], ["s3", "메시지"], ["s4", "콘텐츠 기획"], ["s5", "랜딩 · 박람회"], ["s6", "결과"], ["s7", "회고"]];
 const WORKS = [
-  { id: "beautypin", name: "뷰티핀", href: "beautipin.html" },
   { id: "beaver-lab", name: "비버매장연구소", href: "beaver.html" },
+  { id: "elije", name: "엘리쥬", href: "elreju.html" },
   { id: "unospay", name: "우노스페이", href: "unospay.html" },
-  { id: "elije", name: "엘리쥬", href: "elreju.html" }
+  { id: "beautypin", name: "뷰티핀", href: "beautipin.html" }
 ];
 const REWRITES = [
   { title: "성분 정리", from: "트라넥삼산, 마데카소사이드, 글루타치온 등 제품에 들어가는 성분과 성분별 효과를 줄글로 나열", did: "제품이 어떻게 효과를 내는지부터 성분별 효과, 제품 효과, 차별점 순서로 내용을 나눠 리플렛을 구성", out: "효과별 카피" },
