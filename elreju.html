@@ -19,8 +19,6 @@
   <link rel="stylesheet" href="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/tokens/base.css">
   <link rel="stylesheet" href="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/styles.css">
   <script src="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/ds_bundle.js"></script>
-  <meta name="image-slot-state" content="image-slots-elije.state.json" data-resource-id="imageSlotStatePage">
-  <meta name="ext-resource-dependency" content="image-slots-elije.state.json" data-resource-id="imageSlotStatePage">
   <meta name="ext-resource-dependency" content="images/elreju/el-moodboard.webp" data-resource-id="s-el-moodboard">
   <meta name="ext-resource-dependency" content="images/elreju/el-shoot.webp" data-resource-id="s-el-shoot">
   <meta name="ext-resource-dependency" content="images/elreju/el-hero.webp" data-resource-id="s-el-hero">
@@ -31,6 +29,8 @@
   <meta name="ext-resource-dependency" content="images/elreju/el-backwall-design.webp" data-resource-id="s-el-backwall-design">
   <meta name="ext-resource-dependency" content="images/elreju/el-banner-design.webp" data-resource-id="s-el-banner-design">
   <meta name="ext-resource-dependency" content="images/elreju/el-landing-full.webp" data-resource-id="s-el-landing-full">
+  <meta name="image-slot-state" content="image-slots-elije.state.json" data-resource-id="imageSlotStatePage">
+  <meta name="ext-resource-dependency" content="image-slots-elije.state.json" data-resource-id="imageSlotStatePage">
   <meta name="ext-resource-dependency" content="images/elreju/el-backwall-real.webp" data-resource-id="s-el-backwall-real">
   <meta name="ext-resource-dependency" content="images/elreju/el-banner-real.webp" data-resource-id="s-el-banner-real">
   <meta name="ext-resource-dependency" content="images/elreju/el-leaflet-real.webp" data-resource-id="s-el-leaflet-real">
@@ -57,9 +57,29 @@
         <span style="width:1px;height:16px;background:var(--color-line-strong)"></span>
         <span style="font:500 14px/1 var(--font-body);color:var(--color-stone);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Work / 엘리쥬</span>
       </div>
-      <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Button" variant="dark" icon="download" on-click="{{ resume }}" hint-size="120px,40px">Resume</x-import>
+      <sc-if value="{{ hdrDesk }}" hint-placeholder-val="{{ true }}">
+        <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Button" variant="dark" icon="download" on-click="{{ resume }}" hint-size="120px,40px">Resume</x-import>
+      </sc-if>
+      <sc-if value="{{ hdrMob }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ menuToggle }}" aria-label="메뉴" style="flex-shrink:0;width:44px;height:44px;border:0;border-radius:50%;background:var(--color-sand);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px">
+          <span style="display:block;width:16px;height:1.5px;background:var(--color-ink);transition:transform .3s cubic-bezier(.2,.7,.2,1);transform:{{ burgerTop }}"></span>
+          <span style="display:block;width:16px;height:1.5px;background:var(--color-ink);transition:transform .3s cubic-bezier(.2,.7,.2,1);transform:{{ burgerBot }}"></span>
+        </button>
+      </sc-if>
     </div>
   </header>
+  <sc-if value="{{ hdrMob }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;top:64px;left:0;right:0;z-index:49;padding:5px 20px 25px;background:rgba(248,245,240,.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:inset 0 -1px 0 var(--color-line);display:flex;flex-direction:column;opacity:{{ menuOpacity }};transform:{{ menuShift }};pointer-events:{{ menuEvents }};transition:opacity .25s, transform .3s cubic-bezier(.2,.7,.2,1)">
+      <span style="padding:15px 0 8px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">Work</span>
+      <sc-for list="{{ works }}" as="w" hint-placeholder-count="4">
+        <a href="{{ w.href }}" style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid var(--color-line);font:500 17px/1.2 var(--font-body);color:var(--color-ink)">{{ w.name }}<span style="font:500 13px/1 var(--font-body);color:var(--color-stone)">{{ w.no }}</span></a>
+      </sc-for>
+      <a href="archive.html" style="display:flex;justify-content:space-between;align-items:center;padding:20px 0 15px;border-bottom:1px solid var(--color-line);font:600 17px/1.2 var(--font-body);color:var(--color-orange)">디자인 아카이브<x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-up-right" size="{{ 16 }}" hint-size="16px,16px"></x-import></a>
+      <div style="margin-top:20px">
+        <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Button" variant="dark" size="lg" icon="download" full-width="{{ true }}" on-click="{{ resume }}" hint-size="100%,50px">이력서 다운로드</x-import>
+      </div>
+    </div>
+  </sc-if>
 
   <div style="width:min(1300px, calc(100% - clamp(40px, 7vw, 100px)));margin:0 auto;display:grid;grid-template-columns:{{ cols }};gap:50px;align-items:start;padding:50px 0 100px">
 
@@ -161,12 +181,12 @@
         <span style="font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">03 · Planning — Message</span>
         <h2 style="margin:15px 0 0;font:600 clamp(28px, 3vw, 36px)/1.4 var(--font-display);letter-spacing:-.03em;color:#000">브랜드 메시지</h2>
         <p style="margin:15px 0 0;font:500 17px/1.8 var(--font-body);letter-spacing:-.01em;color:var(--color-ink);text-wrap:pretty">회사의 방향 '미백'과 이미지 키워드 '빛, 투명한, 맑은'을 묶어 브랜드 메시지를 '피부에 빛을 불어넣다'로 정하고, 이를 중심으로 전체 브랜딩을 진행했습니다. MTS(작은 바늘)로 간단하게 시술해 가격과 시술 부담이 적다는 점은 차별점으로 내세웠습니다.</p>
-        <div style="position:relative;margin-top:30px;aspect-ratio:16/10;min-height:320px;border-radius:20px;overflow:hidden;background:var(--color-ink)">
+        <div style="position:relative;margin-top:30px;aspect-ratio:16/10;border-radius:20px;overflow:hidden;background:var(--color-ink)">
           <image-slot id="el-message-bg" shape="rounded" radius="20" placeholder="콘셉트 사진 (메시지 배경)"></image-slot>
           <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg, rgba(20,20,18,0) 35%, rgba(20,20,18,.72) 100%)"></div>
-          <div style="position:absolute;left:clamp(25px, 4vw, 45px);right:clamp(25px, 4vw, 45px);bottom:clamp(25px, 4vw, 45px);pointer-events:none">
+          <div style="position:absolute;left:clamp(20px, 4vw, 45px);right:clamp(20px, 4vw, 45px);bottom:clamp(20px, 4vw, 45px);pointer-events:none">
             <span style="display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-cream)"><i style="width:6px;height:6px;border-radius:50%;background:var(--color-orange)"></i>Key Message</span>
-            <p style="margin:15px 0 0;font:600 clamp(36px, 5vw, 60px)/1.3 var(--font-display);letter-spacing:-.04em;color:#fff">피부에 빛을<br>불어넣다</p>
+            <p style="margin:12px 0 0;font:600 clamp(28px, 5vw, 60px)/1.3 var(--font-display);letter-spacing:-.04em;color:#fff">피부에 빛을<br>불어넣다</p>
           </div>
         </div>
         <div style="margin-top:10px;padding:20px 25px;border-radius:20px;background:var(--color-white);display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font:500 14px/1 var(--font-body);color:var(--color-stone)">
@@ -434,6 +454,10 @@ class Component extends DCLogic {
     const showLeft = w >= 1200, showRight = w >= 960;
     const cols = showLeft ? "200px minmax(0, 1fr) 180px" : showRight ? "minmax(0, 1fr) 180px" : "minmax(0, 1fr)";
     return {
+      hdrDesk: w >= 810, hdrMob: w < 810,
+      menuToggle: () => this.setState(st => ({ menu: !st.menu })),
+      menuOpacity: s.menu ? 1 : 0, menuShift: s.menu ? "none" : "translateY(-10px)", menuEvents: s.menu ? "auto" : "none",
+      burgerTop: s.menu ? "translateY(3.25px) rotate(45deg)" : "none", burgerBot: s.menu ? "translateY(-3.25px) rotate(-45deg)" : "none",
       showLeft, showRight, cols,
       works: WORKS.map((x, i) => { const on = x.id === "elije"; return { ...x, no: String(i + 1).padStart(2, "0"),
         bg: on ? "var(--color-sand)" : "transparent", noColor: on ? "var(--color-ink)" : "var(--color-stone)", color: on ? "var(--color-ink)" : "var(--color-stone)" }; }),

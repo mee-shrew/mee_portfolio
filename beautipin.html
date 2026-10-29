@@ -19,8 +19,6 @@
   <link rel="stylesheet" href="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/tokens/base.css">
   <link rel="stylesheet" href="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/styles.css">
   <script src="ds/beaver-store-lab-design-system-793eb2d2-1b96-4b65-8843-567ff5db8256/ds_bundle.js"></script>
-  <meta name="image-slot-state" content="image-slots-beautypin.state.json" data-resource-id="imageSlotStatePage">
-  <meta name="ext-resource-dependency" content="image-slots-beautypin.state.json" data-resource-id="imageSlotStatePage">
   <meta name="ext-resource-dependency" content="images/beautipin/bp-screen-0.webp" data-resource-id="s-bp-screen-0">
   <meta name="ext-resource-dependency" content="images/beautipin/bp-screen-1.webp" data-resource-id="s-bp-screen-1">
   <meta name="ext-resource-dependency" content="images/beautipin/bp-screen-3.webp" data-resource-id="s-bp-screen-3">
@@ -29,6 +27,8 @@
   <meta name="ext-resource-dependency" content="images/beautipin/bp-screen-6.webp" data-resource-id="s-bp-screen-6">
   <meta name="ext-resource-dependency" content="images/beautipin/bp-build-hero.webp" data-resource-id="s-bp-build-hero">
   <meta name="ext-resource-dependency" content="images/beautipin/bp-cartoon.webp" data-resource-id="s-bp-cartoon">
+  <meta name="image-slot-state" content="image-slots-beautypin.state.json" data-resource-id="imageSlotStatePage">
+  <meta name="ext-resource-dependency" content="image-slots-beautypin.state.json" data-resource-id="imageSlotStatePage">
   <meta name="ext-resource-dependency" content="images/beautipin/logo-beautypin.webp" data-resource-id="s-logo-beautypin">
   <meta name="ext-resource-dependency" content="images/beautipin/bp-field-1.webp" data-resource-id="s-bp-field-1">
   <meta name="ext-resource-dependency" content="images/beautipin/bp-field-2.webp" data-resource-id="s-bp-field-2">
@@ -57,9 +57,29 @@
         <span style="width:1px;height:16px;background:var(--color-line-strong)"></span>
         <span style="font:500 14px/1 var(--font-body);color:var(--color-stone);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Work / 뷰티핀</span>
       </div>
-      <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Button" variant="dark" icon="download" on-click="{{ resume }}" hint-size="120px,40px">Resume</x-import>
+      <sc-if value="{{ hdrDesk }}" hint-placeholder-val="{{ true }}">
+        <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Button" variant="dark" icon="download" on-click="{{ resume }}" hint-size="120px,40px">Resume</x-import>
+      </sc-if>
+      <sc-if value="{{ hdrMob }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ menuToggle }}" aria-label="메뉴" style="flex-shrink:0;width:44px;height:44px;border:0;border-radius:50%;background:var(--color-sand);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px">
+          <span style="display:block;width:16px;height:1.5px;background:var(--color-ink);transition:transform .3s cubic-bezier(.2,.7,.2,1);transform:{{ burgerTop }}"></span>
+          <span style="display:block;width:16px;height:1.5px;background:var(--color-ink);transition:transform .3s cubic-bezier(.2,.7,.2,1);transform:{{ burgerBot }}"></span>
+        </button>
+      </sc-if>
     </div>
   </header>
+  <sc-if value="{{ hdrMob }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;top:64px;left:0;right:0;z-index:49;padding:5px 20px 25px;background:rgba(248,245,240,.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:inset 0 -1px 0 var(--color-line);display:flex;flex-direction:column;opacity:{{ menuOpacity }};transform:{{ menuShift }};pointer-events:{{ menuEvents }};transition:opacity .25s, transform .3s cubic-bezier(.2,.7,.2,1)">
+      <span style="padding:15px 0 8px;font:600 13px/1 var(--font-body);letter-spacing:.02em;color:var(--color-stone)">Work</span>
+      <sc-for list="{{ works }}" as="w" hint-placeholder-count="4">
+        <a href="{{ w.href }}" style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid var(--color-line);font:500 17px/1.2 var(--font-body);color:var(--color-ink)">{{ w.name }}<span style="font:500 13px/1 var(--font-body);color:var(--color-stone)">{{ w.no }}</span></a>
+      </sc-for>
+      <a href="archive.html" style="display:flex;justify-content:space-between;align-items:center;padding:20px 0 15px;border-bottom:1px solid var(--color-line);font:600 17px/1.2 var(--font-body);color:var(--color-orange)">디자인 아카이브<x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Icon" name="arrow-up-right" size="{{ 16 }}" hint-size="16px,16px"></x-import></a>
+      <div style="margin-top:20px">
+        <x-import component-from-global-scope="BeaverStoreLabDesignSystem_793eb2.Button" variant="dark" size="lg" icon="download" full-width="{{ true }}" on-click="{{ resume }}" hint-size="100%,50px">이력서 다운로드</x-import>
+      </div>
+    </div>
+  </sc-if>
 
   
 
@@ -436,6 +456,10 @@ class Component extends DCLogic {
     const showLeft = w >= 1200, showRight = w >= 960;
     const cols = showLeft ? "200px minmax(0, 1fr) 180px" : showRight ? "minmax(0, 1fr) 180px" : "minmax(0, 1fr)";
     return {
+      hdrDesk: w >= 810, hdrMob: w < 810,
+      menuToggle: () => this.setState(st => ({ menu: !st.menu })),
+      menuOpacity: s.menu ? 1 : 0, menuShift: s.menu ? "none" : "translateY(-10px)", menuEvents: s.menu ? "auto" : "none",
+      burgerTop: s.menu ? "translateY(3.25px) rotate(45deg)" : "none", burgerBot: s.menu ? "translateY(-3.25px) rotate(-45deg)" : "none",
       showLeft, showRight, cols,
       works: WORKS.map((x, i) => { const on = x.id === "beautypin"; return { ...x, no: String(i + 1).padStart(2, "0"), href: x.href || "#",
         bg: on ? "var(--color-sand)" : "transparent", noColor: on ? "var(--color-ink)" : "var(--color-stone)", color: on ? "var(--color-ink)" : "var(--color-stone)",
